@@ -1,0 +1,75 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/8/2018 6:19:55 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAGGI-G"
+  DTS:CreatorName="MAGGI-G\vinic"
+  DTS:DTSID="{4E769030-DFB9-4DD5-ACE8-81B4C5EEFFD7}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="IN_ODS_BASE_ORDEM_SERVICO_ITEM"
+  DTS:PackageType="5"
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{7D5E261D-38C5-438D-B2C0-52CBBFC108C8}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4FF10258-D22C-4E80-B4B8-BA5B5961D03F}"
+      DTS:ObjectName="52.168.77.45.DW.vinicius.dutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=52.168.77.45;User ID=vinicius.dutra;Initial Catalog=DW;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH0ueHa3BUUWfmA6Qv5NRlgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADbIFwW6xzHI3tsKC1zU2luhyc95tgRr5XJdfAo4pYR1wAAAAAOgAAAAAIAACAAAAAh0Cqw1yH/weJ06Nmb7oaQC89BSeLOmWPwJVHOg3u00yAAAADdTtQkwoOxZnZC58X4/ABpFqAXnH2ZrFeFRNRiQULXHEAAAAAzutx+QyEkvBRC28n/mRvAbevbCNVSkMsh1wuOFxoEAjf6BMN2Y+ytbviKunbHBTYl7R4cme7wt/34ziC00Plb</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga da ODS_BASE_ORDEM_SERVICO_ITEM"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Carga da ODS_BASE_ORDEM_SERVICO_ITEM"
+      DTS:DTSID="{8F5E29D6-1209-4405-9638-B6F5ACDCC963}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga da ODS_BASE_ORDEM_SERVICO_ITEM"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4FF10258-D22C-4E80-B4B8-BA5B5961D03F}"
+          SQLTask:SqlStatementSource="MERGE [dbo].[ODS_BASE_ORDEM_SERVICO_ITEM] AS ODS&#xA;USING [dbo].[STG_TC_SGE_OS_SERVICO] AS STG&#xA;ON (ODS.[CODIGO_ORDEM_SERVICO] = STG.[ID_OS] AND ODS.[CODIGO_SEQUENCIA] = STG.[ID_SEQ])&#xA;WHEN MATCHED &#xA;THEN &#xA;&#x9;UPDATE SET &#xA;&#x9;&#x9;ODS.[CODIGO_SERVICO] = STG.[ID_SERVICO],&#xA;&#x9;&#x9;ODS.[QUANTIDADE] = STG.[QUANTIDADE], &#xA;&#x9;&#x9;ODS.[CODIGO_PRODUTO] = STG.[ID_PRODUTO], &#xA;&#x9;&#x9;ODS.[NUMERO_SERIAL] = STG.[NR_SERIAL],&#xA;&#x9;&#x9;ODS.[NUMERO_SERIAL_2] = STG.[NR_SERIAL2],&#xA;&#x9;&#x9;ODS.[CODIGO_EXTRATO] = STG.[ID_EXTRATO],&#xA;&#x9;&#x9;ODS.[CODIGO_SMS] = STG.[ID_SMS],&#xA;&#x9;&#x9;ODS.[DATA_SOLICITACAO_SERVICO] = STG.[DT_SOLIC_SERVICO], &#xA;&#x9;&#x9;ODS.[DATA_CONCLUSAO_SERVICO] = STG.[DT_CONCLUSAO_SERVICO], &#xA;&#x9;&#x9;ODS.[MOTIVO] = STG.[MOTIVO], &#xA;&#x9;&#x9;ODS.[VALOR_COMISSAO_LOJA] = STG.[VLR_COM_LOJA], &#xA;&#x9;&#x9;ODS.[VALOR_COMISSAO_DISTRIBUIDOR] = STG.[VLR_COM_DISTRIB], &#xA;&#x9;&#x9;ODS.[VALOR_COMISSAO_LOJA_BONUS] = STG.[VLR_COM_LOJA_BONUS], &#xA;&#x9;&#x9;ODS.[VALOR_COMISSAO_DISTRIBUIDOR_BONUS] = STG.[VLR_COM_DISTRIB_BONUS], &#xA;&#x9;&#x9;ODS.[LOG_USUARIO_INCLUSAO] = STG.[LG_US_INC], &#xA;&#x9;&#x9;ODS.[LOG_DATA_INCLUSAO] = STG.[LG_DT_INC], &#xA;&#x9;&#x9;ODS.[LOG_USUARIO_ALTERACAO] = STG.[LG_US_ALT], &#xA;&#x9;&#x9;ODS.[LOG_DATA_ALTERACAO] = STG.[LG_DT_ALT], &#xA;&#x9;&#x9;ODS.[CODIGO_TIPO_OS] = STG.[ID_TIPO_OS], &#xA;&#x9;&#x9;ODS.[DATA_SOLICIACAO_ATIVACAO] = STG.[DT_SOLIC_ATIVACAO], &#xA;&#x9;&#x9;ODS.[DATA_ATIVACAO] = STG.[DT_ATIVACAO], &#xA;&#x9;&#x9;ODS.[FLAG_CANCELAMENTO] = STG.[FLG_CAN], &#xA;&#x9;&#x9;ODS.[DATA_INATIVACAO] = STG.[DT_INATIVACAO], &#xA;&#x9;&#x9;ODS.[DATA_CANCELAMENTO] = STG.[DT_CANCELAMENTO], &#xA;&#x9;&#x9;ODS.[MOTIVO_CANCELAMENTO] = STG.[MOTIVO_CAN], &#xA;&#x9;&#x9;ODS.[CODIGO_LOJA] = STG.[ID_LOJA], &#xA;&#x9;&#x9;ODS.[SERIAL_ASSISTENCIA] = STG.[SERIAL_ASSITENCIA], &#xA;&#x9;&#x9;ODS.[CODIGO_LANCAMENTO_OI] = STG.[ID_LANC_OI], &#xA;&#x9;&#x9;ODS.[CODIGO_DISTRIBUIDOR_ORIGEM] = STG.[ID_DISTRIB_ORIGEM], &#xA;&#x9;&#x9;ODS.[DIFERENTE_DISTRIBUIDOR_ORIGEM] = STG.[DIF_DISTRIB_ORIGEM], &#xA;&#x9;&#x9;ODS.[LATITUDE_ITEM_SERVICO] = STG.[LAT], &#xA;&#x9;&#x9;ODS.[LONGITUDE_ITEM_SERVICO] = STG.[LNG], &#xA;&#x9;&#x9;ODS.[FLAG_LOCAL_INSTALACAO] = STG.[FLG_LOCAL_INSTAL], &#xA;&#x9;&#x9;ODS.[CODIGO_CANAL_HABILITACAO] = STG.[FLG_CANAL_HAB], &#xA;&#x9;&#x9;ODS.[DATA_ALTERACAO] = GETDATE()&#xA;WHEN NOT MATCHED BY TARGET &#xA;THEN &#xA;&#x9;INSERT ([CODIGO_ORDEM_SERVICO],[CODIGO_SEQUENCIA],[CODIGO_SERVICO],[QUANTIDADE],[CODIGO_PRODUTO],[NUMERO_SERIAL],[NUMERO_SERIAL_2],[CODIGO_EXTRATO],[CODIGO_SMS],[DATA_SOLICITACAO_SERVICO],[DATA_CONCLUSAO_SERVICO],&#xA;&#x9;&#x9;&#x9;[MOTIVO],[VALOR_COMISSAO_LOJA],[VALOR_COMISSAO_DISTRIBUIDOR],[VALOR_COMISSAO_LOJA_BONUS],[VALOR_COMISSAO_DISTRIBUIDOR_BONUS],[LOG_USUARIO_INCLUSAO],[LOG_DATA_INCLUSAO],[LOG_USUARIO_ALTERACAO],[LOG_DATA_ALTERACAO],&#xA;&#x9;&#x9;&#x9;[CODIGO_TIPO_OS],[DATA_SOLICIACAO_ATIVACAO],[DATA_ATIVACAO],[FLAG_CANCELAMENTO],[DATA_INATIVACAO],[DATA_CANCELAMENTO],[MOTIVO_CANCELAMENTO],[CODIGO_LOJA],[SERIAL_ASSISTENCIA],[CODIGO_LANCAMENTO_OI],&#xA;&#x9;&#x9;&#x9;[CODIGO_DISTRIBUIDOR_ORIGEM],[DIFERENTE_DISTRIBUIDOR_ORIGEM],[LATITUDE_ITEM_SERVICO],[LONGITUDE_ITEM_SERVICO],[FLAG_LOCAL_INSTALACAO],[CODIGO_CANAL_HABILITACAO],[DATA_INCLUSAO],[DATA_ALTERACAO])&#xA;&#x9;VALUES (STG.[ID_OS],STG.[ID_SEQ],STG.[ID_SERVICO],STG.[QUANTIDADE],STG.[ID_PRODUTO],STG.[NR_SERIAL],STG.[NR_SERIAL2],STG.[ID_EXTRATO],STG.[ID_SMS],STG.[DT_SOLIC_SERVICO],STG.[DT_CONCLUSAO_SERVICO],&#xA;&#x9;&#x9;&#x9;STG.[MOTIVO],STG.[VLR_COM_LOJA],STG.[VLR_COM_DISTRIB],STG.[VLR_COM_LOJA_BONUS],STG.[VLR_COM_DISTRIB_BONUS],STG.[LG_US_INC],STG.[LG_DT_INC],STG.[LG_US_ALT],STG.[LG_DT_ALT],STG.[ID_TIPO_OS],&#xA;&#x9;&#x9;&#x9;STG.[DT_SOLIC_ATIVACAO],STG.[DT_ATIVACAO],STG.[FLG_CAN],STG.[DT_INATIVACAO],STG.[DT_CANCELAMENTO],STG.[MOTIVO_CAN],STG.[ID_LOJA],STG.[SERIAL_ASSITENCIA],STG.[ID_LANC_OI],STG.[ID_DISTRIB_ORIGEM],&#xA;&#x9;&#x9;&#x9;STG.[DIF_DISTRIB_ORIGEM],STG.[LAT],STG.[LNG],STG.[FLG_LOCAL_INSTAL],STG.[FLG_CANAL_HAB],GETDATE(),GETDATE())&#xA;;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="296,42"
+          Id="Package\Carga da ODS_BASE_ORDEM_SERVICO_ITEM"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/8/2018 5:24:09 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAGGI-G"
+  DTS:CreatorName="MAGGI-G\vinic"
+  DTS:DTSID="{87627573-E05F-4C09-8848-14E2F128DEDD}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="IN_ODS_CONSUMIDOR_ENDERECO"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{D396A38E-8751-4289-BC74-E654415FD2DA}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DD428E4B-F99A-4EAC-8186-FE69C304B175}"
+      DTS:ObjectName="52.168.77.45.DW.vinicius.dutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=52.168.77.45;User ID=vinicius.dutra;Initial Catalog=DW;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAT6/qe2skOESN8ocLsgXSaAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB6e9ktzbLUhUZ9cBdfMt3cN9oznX4lHnspLDalMHSrxwAAAAAOgAAAAAIAACAAAABz7wg+6N6O8mu0IBhRH/tLKTdYMmjc9xYW3qm5FPvDPSAAAADNjxrOpVpgaNOIyij1XXCupVbQcTbeVh30lko9JznZ3EAAAAAh2FAZLO3/WOPKNWZ4vRi7FHq/ZwfDWfMLiKNF8ErfugIzrNeV63dDYS+7eH+GaDHswe3K/zN4dkM+ARncS0rZ</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga da ODS_CONSUMIDOR_ENDERECO"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Carga da ODS_CONSUMIDOR_ENDERECO"
+      DTS:DTSID="{D7ECB9D5-4338-4B68-B6C7-54F518B51807}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga da ODS_CONSUMIDOR_ENDERECO"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DD428E4B-F99A-4EAC-8186-FE69C304B175}"
+          SQLTask:SqlStatementSource="MERGE [dbo].[ODS_CONSUMIDOR_ENDERECO] AS ODS&#xA;USING [dbo].[STG_TC_SGE_CLIENTE_ENDERECO] AS STG&#xA;ON (ODS.[CODIGO_CONSUMIDOR] = STG.[ID_CLIENTE] AND ODS.[CODIGO_ENDERECO] = STG.[ID_ENDERECO])&#xA;WHEN MATCHED &#xA;THEN &#xA;&#x9;UPDATE SET &#xA;&#x9;&#x9;ODS.[DESCRICAO] = STG.[DESCRICAO],&#xA;&#x9;&#x9;ODS.[FLAG_ESTADO_LOJA] = STG.[FLG_ESTADO_LOJA],&#xA;&#x9;&#x9;ODS.[LOGRADOURO_ENDERECO] = STG.[LOG_ENDERECO],&#xA;&#x9;&#x9;ODS.[ENDERECO] = STG.[ENDERECO],&#xA;&#x9;&#x9;ODS.[NUMERO_ENDERECO] = STG.[NUM_ENDERECO],&#xA;&#x9;&#x9;ODS.[COMPLEMENTO_ENDERECO] = STG.[ENDERECO_COM],&#xA;&#x9;&#x9;ODS.[BAIRRO_ENDERECO] = STG.[BAIRRO],&#xA;&#x9;&#x9;ODS.[CODIGO_CIDADE_ENDERECO] = STG.[ID_CIDADE],&#xA;&#x9;&#x9;ODS.[ESTADO] = STG.[ID_ESTADO],&#xA;&#x9;&#x9;ODS.[CEP_ENDERECO] = STG.[CEP],&#xA;&#x9;&#x9;ODS.[LATITUDE_ENDERECO] = STG.[LAT],&#xA;&#x9;&#x9;ODS.[LONGITUDE_ENDERECO] = STG.[LNG],&#xA;&#x9;&#x9;ODS.[FLAG_INSTALACAO] = STG.[FLG_INSTALACAO], &#xA;&#x9;&#x9;ODS.[LOG_USUARIO_INCLUSAO] = STG.[LG_US_INC], &#xA;&#x9;&#x9;ODS.[LOG_DATA_INCLUSAO] = STG.[LG_DT_INC], &#xA;&#x9;&#x9;ODS.[LOG_USUARIO_ALTERACAO] = STG.[LG_US_ALT], &#xA;&#x9;&#x9;ODS.[LOG_DATA_ALTERACAO] = STG.[LG_DT_ALT], &#xA;&#x9;&#x9;ODS.[DATA_ALTERACAO] = GETDATE()&#xA;WHEN NOT MATCHED BY TARGET &#xA;THEN &#xA;&#x9;INSERT ([CODIGO_CONSUMIDOR],[CODIGO_ENDERECO],[DESCRICAO],[FLAG_ESTADO_LOJA],[LOGRADOURO_ENDERECO],[ENDERECO],[NUMERO_ENDERECO],[COMPLEMENTO_ENDERECO],[BAIRRO_ENDERECO],[CODIGO_CIDADE_ENDERECO],&#xA;&#x9;&#x9;&#x9;[ESTADO],[CEP_ENDERECO],[LATITUDE_ENDERECO],[LONGITUDE_ENDERECO],[FLAG_INSTALACAO],[LOG_USUARIO_INCLUSAO],[LOG_DATA_INCLUSAO],[LOG_USUARIO_ALTERACAO],[LOG_DATA_ALTERACAO],[DATA_INCLUSAO],&#xA;&#x9;&#x9;&#x9;[DATA_ALTERACAO])&#xA;&#x9;VALUES (STG.[ID_CLIENTE],STG.[ID_ENDERECO],STG.[DESCRICAO],STG.[FLG_ESTADO_LOJA],STG.[LOG_ENDERECO],STG.[ENDERECO],STG.[NUM_ENDERECO],STG.[ENDERECO_COM],STG.[BAIRRO],STG.[ID_CIDADE],STG.[ID_ESTADO],&#xA;&#x9;&#x9;&#x9;STG.[CEP],STG.[LAT],STG.[LNG],STG.[FLG_INSTALACAO],STG.[LG_US_INC],STG.[LG_DT_INC],STG.[LG_US_ALT],STG.[LG_DT_ALT],GETDATE(),GETDATE())&#xA;;     " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="277,42"
+          Id="Package\Carga da ODS_CONSUMIDOR_ENDERECO"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

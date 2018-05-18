@@ -1,0 +1,1178 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/4/2018 3:55:19 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAGGI-G"
+  DTS:CreatorName="MAGGI-G\vinic"
+  DTS:DTSID="{069E0213-797A-433E-A98A-F65802474E3B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="IN_STG_TC_SGE_EXTOI_DETALHE"
+  DTS:PackageType="5"
+  DTS:VersionBuild="42"
+  DTS:VersionGUID="{C226A5E9-DCC0-48E3-A582-F00C86FBF644}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[10.203.48.11.Sige3_Hom.ViniDutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{78A5AE8F-A7EE-4D6D-AB5E-0A48F7D94F1A}"
+      DTS:ObjectName="10.203.48.11.Sige3_Hom.ViniDutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=10.203.48.11;User ID=ViniDutra;Initial Catalog=Sige3_Hom;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH0ueHa3BUUWfmA6Qv5NRlgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACEStCEB9DO6sv9eMMD2i1tJx0lUSr4UlpE6TWLsgBmDwAAAAAOgAAAAAIAACAAAAAC71jCfRwjeeNONL/ePAey9q68P1mWInjGR+sGcwclfSAAAAAsGXHDZGWUlEIRkpreqaLCslRXS8kBRCiRO+ve2ReOuEAAAAAClyaUu3X45xVDDPttIJQKl51JTGwvPQZKGtp37qA0HS6fiTfuEO1FHZ0NqQ0EyV0rJ8dzW2fOpk4P9UQq+GbP</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1FC5702B-AFD0-429A-ABE2-BFD323B6A4CD}"
+      DTS:ObjectName="52.168.77.45.DW.vinicius.dutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=52.168.77.45;User ID=vinicius.dutra;Initial Catalog=DW;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH0ueHa3BUUWfmA6Qv5NRlgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABCOkqvO/n8gfa7mjNsVzhc4zUW4m/6UUA6PYCE4dB7iAAAAAAOgAAAAAIAACAAAACRLNVbFAnAnK48FcCdkUwNsBnQd8ABYEV82BM3xZTFLiAAAAATzt2jB3wkRiCcud+maDUgctWVCPcCQbjgBdIb26FHS0AAAAD4qw+P3UV0kCqw40evRQlV+GPhLBJ07Xb/0O9IDa1efwj1qtiZQ7gw2kxc6fU6UhlOBWAwgO+AXsla3Kd0xCtF</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{417DB774-DB15-4092-8BE6-A21A9E548554}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga da stage STG_TC_SGE_EXTOI_DETALHE"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Grava dados na stage STG_TC_SGE_EXTOI_DETALHE"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[STG_TC_SGE_EXTOI_DETALHE]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+                  connectionManagerRefId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].Columns[DT_CARGA]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DT_CARGA"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[DT_CARGA]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].Columns[Contrato]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Contrato"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[CONTRATO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Contrato]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].Columns[id_os]"
+                      cachedDataType="i4"
+                      cachedName="id_os"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[ID_OS]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[id_os]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].Columns[id_servico]"
+                      cachedDataType="i4"
+                      cachedName="id_servico"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[ID_SERVICO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[id_servico]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].Columns[Valor_Previsto_Receber_oi]"
+                      cachedDataType="r8"
+                      cachedName="Valor_Previsto_Receber_oi"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[VALOR_PREVISTO_RECEBER_OI]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Valor_Previsto_Receber_oi]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].Columns[Valor_Recebido_oi]"
+                      cachedDataType="r8"
+                      cachedName="Valor_Recebido_oi"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[VALOR_RECEBIDO_OI]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Valor_Recebido_oi]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].Columns[Valor_Previsto_Pagar_Loja]"
+                      cachedDataType="r8"
+                      cachedName="Valor_Previsto_Pagar_Loja"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[VALOR_PREVISTO_PAGAR_LOJA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Valor_Previsto_Pagar_Loja]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].Columns[Valor_Pago_Loja]"
+                      cachedDataType="r8"
+                      cachedName="Valor_Pago_Loja"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[VALOR_PAGO_LOJA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Valor_Pago_Loja]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].Columns[Valor_Previsto_Pagar_Distrib]"
+                      cachedDataType="r8"
+                      cachedName="Valor_Previsto_Pagar_Distrib"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[VALOR_PREVISTO_PAGAR_DISTRIB]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Valor_Previsto_Pagar_Distrib]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].Columns[Valor_Pago_Distrib]"
+                      cachedDataType="r8"
+                      cachedName="Valor_Pago_Distrib"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[VALOR_PAGO_DISTRIB]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Valor_Pago_Distrib]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].Columns[id_oc_Loja]"
+                      cachedDataType="i4"
+                      cachedName="id_oc_Loja"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[ID_OC_LOJA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[id_oc_Loja]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].Columns[id_oc_Distrib]"
+                      cachedDataType="i4"
+                      cachedName="id_oc_Distrib"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[ID_OC_DISTRIB]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[id_oc_Distrib]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].Columns[id_loja]"
+                      cachedDataType="i4"
+                      cachedName="id_loja"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[ID_LOJA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[id_loja]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].Columns[id_distrib]"
+                      cachedDataType="i4"
+                      cachedName="id_distrib"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[ID_DISTRIB]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[id_distrib]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].Columns[id_status]"
+                      cachedDataType="i4"
+                      cachedName="id_status"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[ID_STATUS]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[id_status]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].Columns[flgUpgrade]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="flgUpgrade"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[FLGUPGRADE]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[flgUpgrade]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].Columns[flg_Avaliar]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="flg_Avaliar"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[FLG_AVALIAR]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[flg_Avaliar]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].Columns[dt_habilitacao]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="dt_habilitacao"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[DT_HABILITACAO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[dt_habilitacao]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].Columns[dt_ger_Ocpagto]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="dt_ger_Ocpagto"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[DT_GER_OCPAGTO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[dt_ger_Ocpagto]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].Columns[dt_Calculo]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="dt_Calculo"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[DT_CALCULO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[dt_Calculo]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].Columns[Obs]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Obs"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[OBS]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Obs]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].Columns[Id_Seq]"
+                      cachedDataType="i4"
+                      cachedName="Id_Seq"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[ID_SEQ]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Id_Seq]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].Columns[CPF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="14"
+                      cachedName="CPF"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[CPF]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[CPF]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].Columns[msg_critica_rec]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="msg_critica_rec"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[MSG_CRITICA_REC]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[msg_critica_rec]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].Columns[msg_critica_pag]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="msg_critica_pag"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[MSG_CRITICA_PAG]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[msg_critica_pag]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[CONTRATO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="CONTRATO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[ID_OS]"
+                      dataType="i4"
+                      name="ID_OS" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[ID_SERVICO]"
+                      dataType="i4"
+                      name="ID_SERVICO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[VALOR_PREVISTO_RECEBER_OI]"
+                      dataType="r8"
+                      name="VALOR_PREVISTO_RECEBER_OI" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[VALOR_RECEBIDO_OI]"
+                      dataType="r8"
+                      name="VALOR_RECEBIDO_OI" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[VALOR_PREVISTO_PAGAR_LOJA]"
+                      dataType="r8"
+                      name="VALOR_PREVISTO_PAGAR_LOJA" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[VALOR_PAGO_LOJA]"
+                      dataType="r8"
+                      name="VALOR_PAGO_LOJA" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[VALOR_PREVISTO_PAGAR_DISTRIB]"
+                      dataType="r8"
+                      name="VALOR_PREVISTO_PAGAR_DISTRIB" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[VALOR_PAGO_DISTRIB]"
+                      dataType="r8"
+                      name="VALOR_PAGO_DISTRIB" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[ID_OC_LOJA]"
+                      dataType="i4"
+                      name="ID_OC_LOJA" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[ID_OC_DISTRIB]"
+                      dataType="i4"
+                      name="ID_OC_DISTRIB" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[ID_LOJA]"
+                      dataType="i4"
+                      name="ID_LOJA" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[ID_DISTRIB]"
+                      dataType="i4"
+                      name="ID_DISTRIB" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[ID_STATUS]"
+                      dataType="i4"
+                      name="ID_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[FLGUPGRADE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="FLGUPGRADE" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[FLG_AVALIAR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="FLG_AVALIAR" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[DT_HABILITACAO]"
+                      dataType="dbTimeStamp"
+                      name="DT_HABILITACAO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[DT_GER_OCPAGTO]"
+                      dataType="dbTimeStamp"
+                      name="DT_GER_OCPAGTO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[DT_CALCULO]"
+                      dataType="dbTimeStamp"
+                      name="DT_CALCULO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[OBS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="OBS" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[ID_SEQ]"
+                      dataType="i4"
+                      name="ID_SEQ" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[CPF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      name="CPF" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[MSG_CRITICA_REC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="MSG_CRITICA_REC" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[MSG_CRITICA_PAG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="MSG_CRITICA_PAG" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      name="DT_CARGA" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Obtém os dados da tabela Tc_Sge_extoi_detalhe"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Tc_Sge_Bairro]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        Contrato, id_os, id_servico, Valor_Previsto_Receber_oi, Valor_Recebido_oi, Valor_Previsto_Pagar_Loja, Valor_Pago_Loja, Valor_Previsto_Pagar_Distrib, Valor_Pago_Distrib, id_oc_Loja, id_oc_Distrib, id_loja, id_distrib, 
+                         id_status, flgUpgrade, flg_Avaliar, dt_habilitacao, dt_ger_Ocpagto, dt_Calculo, Obs, Id_Seq, CPF, msg_critica_rec, msg_critica_pag, GETDATE() AS DT_CARGA
+FROM            Tc_Sge_extoi_detalhe</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[10.203.48.11.Sige3_Hom.ViniDutra]"
+                  connectionManagerRefId="Package.ConnectionManagers[10.203.48.11.Sige3_Hom.ViniDutra]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[DT_CARGA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[DT_CARGA]"
+                      name="DT_CARGA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Contrato]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[Contrato]"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Contrato]"
+                      name="Contrato"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[id_os]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[id_os]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[id_os]"
+                      name="id_os"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[id_servico]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[id_servico]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[id_servico]"
+                      name="id_servico"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Valor_Previsto_Receber_oi]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[Valor_Previsto_Receber_oi]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Valor_Previsto_Receber_oi]"
+                      name="Valor_Previsto_Receber_oi"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Valor_Recebido_oi]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[Valor_Recebido_oi]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Valor_Recebido_oi]"
+                      name="Valor_Recebido_oi"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Valor_Previsto_Pagar_Loja]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[Valor_Previsto_Pagar_Loja]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Valor_Previsto_Pagar_Loja]"
+                      name="Valor_Previsto_Pagar_Loja"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Valor_Pago_Loja]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[Valor_Pago_Loja]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Valor_Pago_Loja]"
+                      name="Valor_Pago_Loja"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Valor_Previsto_Pagar_Distrib]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[Valor_Previsto_Pagar_Distrib]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Valor_Previsto_Pagar_Distrib]"
+                      name="Valor_Previsto_Pagar_Distrib"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Valor_Pago_Distrib]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[Valor_Pago_Distrib]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Valor_Pago_Distrib]"
+                      name="Valor_Pago_Distrib"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[id_oc_Loja]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[id_oc_Loja]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[id_oc_Loja]"
+                      name="id_oc_Loja"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[id_oc_Distrib]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[id_oc_Distrib]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[id_oc_Distrib]"
+                      name="id_oc_Distrib"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[id_loja]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[id_loja]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[id_loja]"
+                      name="id_loja"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[id_distrib]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[id_distrib]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[id_distrib]"
+                      name="id_distrib"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[id_status]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[id_status]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[id_status]"
+                      name="id_status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[flgUpgrade]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[flgUpgrade]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[flgUpgrade]"
+                      name="flgUpgrade"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[flg_Avaliar]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[flg_Avaliar]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[flg_Avaliar]"
+                      name="flg_Avaliar"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[dt_habilitacao]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[dt_habilitacao]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[dt_habilitacao]"
+                      name="dt_habilitacao"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[dt_ger_Ocpagto]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[dt_ger_Ocpagto]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[dt_ger_Ocpagto]"
+                      name="dt_ger_Ocpagto"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[dt_Calculo]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[dt_Calculo]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[dt_Calculo]"
+                      name="dt_Calculo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Obs]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[Obs]"
+                      length="500"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Obs]"
+                      name="Obs"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Id_Seq]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[Id_Seq]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[Id_Seq]"
+                      name="Id_Seq"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[CPF]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[CPF]"
+                      length="14"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[CPF]"
+                      name="CPF"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[msg_critica_rec]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[msg_critica_rec]"
+                      length="100"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[msg_critica_rec]"
+                      name="msg_critica_rec"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[msg_critica_pag]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[msg_critica_pag]"
+                      length="100"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].Columns[msg_critica_pag]"
+                      name="msg_critica_pag"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      name="DT_CARGA" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[Contrato]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Contrato" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[id_os]"
+                      dataType="i4"
+                      name="id_os" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[id_servico]"
+                      dataType="i4"
+                      name="id_servico" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[Valor_Previsto_Receber_oi]"
+                      dataType="r8"
+                      name="Valor_Previsto_Receber_oi" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[Valor_Recebido_oi]"
+                      dataType="r8"
+                      name="Valor_Recebido_oi" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[Valor_Previsto_Pagar_Loja]"
+                      dataType="r8"
+                      name="Valor_Previsto_Pagar_Loja" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[Valor_Pago_Loja]"
+                      dataType="r8"
+                      name="Valor_Pago_Loja" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[Valor_Previsto_Pagar_Distrib]"
+                      dataType="r8"
+                      name="Valor_Previsto_Pagar_Distrib" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[Valor_Pago_Distrib]"
+                      dataType="r8"
+                      name="Valor_Pago_Distrib" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[id_oc_Loja]"
+                      dataType="i4"
+                      name="id_oc_Loja" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[id_oc_Distrib]"
+                      dataType="i4"
+                      name="id_oc_Distrib" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[id_loja]"
+                      dataType="i4"
+                      name="id_loja" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[id_distrib]"
+                      dataType="i4"
+                      name="id_distrib" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[id_status]"
+                      dataType="i4"
+                      name="id_status" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[flgUpgrade]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="flgUpgrade" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[flg_Avaliar]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="flg_Avaliar" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[dt_habilitacao]"
+                      dataType="dbTimeStamp"
+                      name="dt_habilitacao" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[dt_ger_Ocpagto]"
+                      dataType="dbTimeStamp"
+                      name="dt_ger_Ocpagto" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[dt_Calculo]"
+                      dataType="dbTimeStamp"
+                      name="dt_Calculo" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[Obs]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Obs" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[Id_Seq]"
+                      dataType="i4"
+                      name="Id_Seq" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[CPF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      name="CPF" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[msg_critica_rec]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="msg_critica_rec" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output].ExternalColumns[msg_critica_pag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="msg_critica_pag" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[Contrato]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[Contrato]"
+                      name="Contrato" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[id_os]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[id_os]"
+                      name="id_os" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[id_servico]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[id_servico]"
+                      name="id_servico" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[Valor_Previsto_Receber_oi]"
+                      dataType="r8"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[Valor_Previsto_Receber_oi]"
+                      name="Valor_Previsto_Receber_oi" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[Valor_Recebido_oi]"
+                      dataType="r8"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[Valor_Recebido_oi]"
+                      name="Valor_Recebido_oi" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[Valor_Previsto_Pagar_Loja]"
+                      dataType="r8"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[Valor_Previsto_Pagar_Loja]"
+                      name="Valor_Previsto_Pagar_Loja" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[Valor_Pago_Loja]"
+                      dataType="r8"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[Valor_Pago_Loja]"
+                      name="Valor_Pago_Loja" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[Valor_Previsto_Pagar_Distrib]"
+                      dataType="r8"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[Valor_Previsto_Pagar_Distrib]"
+                      name="Valor_Previsto_Pagar_Distrib" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[Valor_Pago_Distrib]"
+                      dataType="r8"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[Valor_Pago_Distrib]"
+                      name="Valor_Pago_Distrib" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[id_oc_Loja]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[id_oc_Loja]"
+                      name="id_oc_Loja" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[id_oc_Distrib]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[id_oc_Distrib]"
+                      name="id_oc_Distrib" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[id_loja]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[id_loja]"
+                      name="id_loja" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[id_distrib]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[id_distrib]"
+                      name="id_distrib" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[id_status]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[id_status]"
+                      name="id_status" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[flgUpgrade]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[flgUpgrade]"
+                      name="flgUpgrade" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[flg_Avaliar]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[flg_Avaliar]"
+                      name="flg_Avaliar" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[dt_habilitacao]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[dt_habilitacao]"
+                      name="dt_habilitacao" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[dt_ger_Ocpagto]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[dt_ger_Ocpagto]"
+                      name="dt_ger_Ocpagto" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[dt_Calculo]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[dt_Calculo]"
+                      name="dt_Calculo" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[Obs]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[Obs]"
+                      name="Obs" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[Id_Seq]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[Id_Seq]"
+                      name="Id_Seq" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[CPF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[CPF]"
+                      name="CPF" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[msg_critica_rec]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[msg_critica_rec]"
+                      name="msg_critica_rec" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[msg_critica_pag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[msg_critica_pag]"
+                      name="msg_critica_pag" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[DT_CARGA]"
+                      name="DT_CARGA" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE.Paths[OLE DB Source Output]"
+              endId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Limpa a stage STG_TC_SGE_EXTOI_DETALHE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Limpa a stage STG_TC_SGE_EXTOI_DETALHE"
+      DTS:DTSID="{93C9D430-A97A-4D7F-BD7C-40079473D60D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Limpa a stage STG_TC_SGE_EXTOI_DETALHE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1FC5702B-AFD0-429A-ABE2-BFD323B6A4CD}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[STG_TC_SGE_EXTOI_DETALHE]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{11286FC9-62DA-49B0-A9C3-4F68CBE33DAC}"
+      DTS:From="Package\Limpa a stage STG_TC_SGE_EXTOI_DETALHE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="302,42"
+          Id="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE"
+          TopLeft="5.50000000000003,107.5" />
+        <NodeLayout
+          Size="297,42"
+          Id="Package\Limpa a stage STG_TC_SGE_EXTOI_DETALHE"
+          TopLeft="8,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="156.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="333,42"
+          Id="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE"
+          TopLeft="5.50000000000003,107.5" />
+        <NodeLayout
+          Size="309,42"
+          Id="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe"
+          TopLeft="17.5,5.5" />
+        <EdgeLayout
+          Id="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE.Paths[OLE DB Source Output]"
+          TopLeft="172,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Grava dados na stage STG_TC_SGE_EXTOI_DETALHE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga da stage STG_TC_SGE_EXTOI_DETALHE\Obtém os dados da tabela Tc_Sge_extoi_detalhe">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

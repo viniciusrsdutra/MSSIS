@@ -1,0 +1,913 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/17/2018 2:57:03 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAGGI-G"
+  DTS:CreatorName="MAGGI-G\vinic"
+  DTS:DTSID="{CCFA29E7-372D-47A3-8509-3E48BDBCBC17}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="IN_STG_OLOS_INBOUNDCALLDATA"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{A9F29ABC-77EB-4779-BBE2-E016B3FE78AD}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[10.1.0.123.ExportData.OlosRemoteLogin]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{58DC3C98-7B52-4F99-9F84-6A4DAE51C684}"
+      DTS:ObjectName="10.1.0.123.ExportData.OlosRemoteLogin">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=10.1.0.123;User ID=OlosRemoteLogin;Initial Catalog=ExportData;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH0ueHa3BUUWfmA6Qv5NRlgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAylnbS65vDStma/4Y0j/L9Nk6gM9lZ+gzM0BAUM7IuYAAAAAAOgAAAAAIAACAAAADWTrwi7mKEGMt+pVfFeloOBJ2iwa8Vx5ds+jvz4ku4hyAAAADOvE+NLYBTdcePDqWsd9P/hNwS10wXGtp1Z5vF8qlYIkAAAAB0Mo3Hny6adJ6Pe74uxU/0MWpA6AgA+mFs60G+xYST7R6p3YSMTAHYwEZ/+FMSC2Q+bCqlDJuIpkuFVCHOPd+x</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1B5606E3-B6E5-45A8-ACC9-00B630463480}"
+      DTS:ObjectName="52.168.77.45.DW.vinicius.dutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=52.168.77.45;User ID=vinicius.dutra;Initial Catalog=DW;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH0ueHa3BUUWfmA6Qv5NRlgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADzyg4BlhMspM/ruXNYoXsHw/Ex4Ui0CDWDDFPyKdxfKAAAAAAOgAAAAAIAACAAAAACm95Dm6e6wXl5q+EXVmiXHB0pC9tgWMBVzrHwzpIaCCAAAAACQj/WvfTwsSA0sZJ61FX+P4yjkO9VsG3xDPP/80Gh/UAAAAAJiMcw3EM92WPNTS8BbdeE4CjmFiJmMIsJc9a+jEJlvjT4JRG7UwrGrzcG1GUsQBFbTyIJYgfUYpGxQT0ANkxj</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{01456FEC-717C-4231-AB15-A08EC593BFC2}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga da stage STG_OLOS_INBOUNDCALLDATA"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Carga na stage STG_OLOS_INBOUNDCALLDATA"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[STG_OLOS_INBOUNDCALLDATA]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+                  connectionManagerRefId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].Columns[PlataformID]"
+                      cachedDataType="i4"
+                      cachedName="PlataformID"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[PlataformID]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[PlataformID]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].Columns[CampaignId]"
+                      cachedDataType="i4"
+                      cachedName="CampaignId"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[CampaignId]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[CampaignId]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].Columns[CallId]"
+                      cachedDataType="i8"
+                      cachedName="CallId"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[CallId]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[CallId]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].Columns[AgentId]"
+                      cachedDataType="i4"
+                      cachedName="AgentId"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[AgentId]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[AgentId]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].Columns[DispositionId]"
+                      cachedDataType="i4"
+                      cachedName="DispositionId"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[DispositionId]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[DispositionId]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].Columns[CallStart]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CallStart"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[CallStart]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[CallStart]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].Columns[AgentStart]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="AgentStart"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[AgentStart]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[AgentStart]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].Columns[CallEnd]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CallEnd"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[CallEnd]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[CallEnd]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].Columns[WrapEnd]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="WrapEnd"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[WrapEnd]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[WrapEnd]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].Columns[QueueStart]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="QueueStart"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[QueueStart]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[QueueStart]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].Columns[QueueEnd]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="QueueEnd"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[QueueEnd]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[QueueEnd]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].Columns[Ani]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Ani"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[Ani]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[Ani]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].Columns[Dnis]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Dnis"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[Dnis]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[Dnis]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].Columns[CampaignData]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="CampaignData"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[CampaignData]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[CampaignData]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].Columns[CustomerId]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CustomerId"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[CustomerId]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[CustomerId]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].Columns[InboundDispositionId]"
+                      cachedDataType="i4"
+                      cachedName="InboundDispositionId"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[InboundDispositionId]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[InboundDispositionId]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].Columns[DT_CARGA]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DT_CARGA"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[DT_CARGA]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[PlataformID]"
+                      dataType="i4"
+                      name="PlataformID" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[CampaignId]"
+                      dataType="i4"
+                      name="CampaignId" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[CallId]"
+                      dataType="i8"
+                      name="CallId" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[AgentId]"
+                      dataType="i4"
+                      name="AgentId" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[DispositionId]"
+                      dataType="i4"
+                      name="DispositionId" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[CallStart]"
+                      dataType="dbTimeStamp"
+                      name="CallStart" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[AgentStart]"
+                      dataType="dbTimeStamp"
+                      name="AgentStart" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[CallEnd]"
+                      dataType="dbTimeStamp"
+                      name="CallEnd" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[WrapEnd]"
+                      dataType="dbTimeStamp"
+                      name="WrapEnd" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[QueueStart]"
+                      dataType="dbTimeStamp"
+                      name="QueueStart" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[QueueEnd]"
+                      dataType="dbTimeStamp"
+                      name="QueueEnd" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[Ani]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Ani" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[Dnis]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Dnis" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[CampaignData]"
+                      codePage="1252"
+                      dataType="text"
+                      name="CampaignData" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[CustomerId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="CustomerId" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[InboundDispositionId]"
+                      dataType="i4"
+                      name="InboundDispositionId" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      name="DT_CARGA" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Obtém dados da tabela InboundCallData"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        CallId, PlataformID, CampaignId, AgentId, DispositionId, CallStart, AgentStart, CallEnd, WrapEnd, QueueStart, QueueEnd, Ani, Dnis, CampaignData, CustomerId, InboundDispositionId, GETDATE() AS DT_CARGA
+FROM            InboundCallData</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[10.1.0.123.ExportData.OlosRemoteLogin]"
+                  connectionManagerRefId="Package.ConnectionManagers[10.1.0.123.ExportData.OlosRemoteLogin]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[PlataformID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[PlataformID]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[PlataformID]"
+                      name="PlataformID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[DT_CARGA]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[DT_CARGA]"
+                      name="DT_CARGA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[CampaignId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[CampaignId]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[CampaignId]"
+                      name="CampaignId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[CallId]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[CallId]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[CallId]"
+                      name="CallId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[AgentId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[AgentId]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[AgentId]"
+                      name="AgentId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[DispositionId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[DispositionId]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[DispositionId]"
+                      name="DispositionId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[CallStart]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[CallStart]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[CallStart]"
+                      name="CallStart"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[AgentStart]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[AgentStart]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[AgentStart]"
+                      name="AgentStart"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[CallEnd]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[CallEnd]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[CallEnd]"
+                      name="CallEnd"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[WrapEnd]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[WrapEnd]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[WrapEnd]"
+                      name="WrapEnd"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[QueueStart]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[QueueStart]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[QueueStart]"
+                      name="QueueStart"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[QueueEnd]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[QueueEnd]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[QueueEnd]"
+                      name="QueueEnd"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[Ani]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[Ani]"
+                      length="255"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[Ani]"
+                      name="Ani"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[Dnis]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[Dnis]"
+                      length="255"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[Dnis]"
+                      name="Dnis"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[CampaignData]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[CampaignData]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[CampaignData]"
+                      name="CampaignData"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[CustomerId]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[CustomerId]"
+                      length="255"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[CustomerId]"
+                      name="CustomerId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[InboundDispositionId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[InboundDispositionId]"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].Columns[InboundDispositionId]"
+                      name="InboundDispositionId"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[PlataformID]"
+                      dataType="i4"
+                      name="PlataformID" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      name="DT_CARGA" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[CampaignId]"
+                      dataType="i4"
+                      name="CampaignId" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[CallId]"
+                      dataType="i8"
+                      name="CallId" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[AgentId]"
+                      dataType="i4"
+                      name="AgentId" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[DispositionId]"
+                      dataType="i4"
+                      name="DispositionId" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[CallStart]"
+                      dataType="dbTimeStamp"
+                      name="CallStart" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[AgentStart]"
+                      dataType="dbTimeStamp"
+                      name="AgentStart" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[CallEnd]"
+                      dataType="dbTimeStamp"
+                      name="CallEnd" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[WrapEnd]"
+                      dataType="dbTimeStamp"
+                      name="WrapEnd" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[QueueStart]"
+                      dataType="dbTimeStamp"
+                      name="QueueStart" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[QueueEnd]"
+                      dataType="dbTimeStamp"
+                      name="QueueEnd" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[Ani]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Ani" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[Dnis]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Dnis" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[CampaignData]"
+                      codePage="1252"
+                      dataType="text"
+                      name="CampaignData" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[CustomerId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="CustomerId" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output].ExternalColumns[InboundDispositionId]"
+                      dataType="i4"
+                      name="InboundDispositionId" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[CallId]"
+                      dataType="i8"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[CallId]"
+                      name="CallId" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[CampaignId]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[CampaignId]"
+                      name="CampaignId" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[PlataformID]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[PlataformID]"
+                      name="PlataformID" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[AgentId]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[AgentId]"
+                      name="AgentId" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[DispositionId]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[DispositionId]"
+                      name="DispositionId" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[CallStart]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[CallStart]"
+                      name="CallStart" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[AgentStart]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[AgentStart]"
+                      name="AgentStart" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[CallEnd]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[CallEnd]"
+                      name="CallEnd" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[WrapEnd]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[WrapEnd]"
+                      name="WrapEnd" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[QueueStart]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[QueueStart]"
+                      name="QueueStart" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[QueueEnd]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[QueueEnd]"
+                      name="QueueEnd" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[Ani]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[Ani]"
+                      name="Ani" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[Dnis]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[Dnis]"
+                      name="Dnis" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[CampaignData]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[CampaignData]"
+                      name="CampaignData" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[CustomerId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[CustomerId]"
+                      name="CustomerId" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[InboundDispositionId]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[InboundDispositionId]"
+                      name="InboundDispositionId" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[DT_CARGA]"
+                      name="DT_CARGA" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA.Paths[OLE DB Source Output]"
+              endId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Limpa a stage STG_OLOS_INBOUNDCALLDATA"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Limpa a stage STG_OLOS_INBOUNDCALLDATA"
+      DTS:DTSID="{FC595713-BD82-4C6A-919A-C40277B68C53}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Limpa a stage STG_OLOS_INBOUNDCALLDATA"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1B5606E3-B6E5-45A8-ACC9-00B630463480}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[STG_OLOS_INBOUNDCALLDATA]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{9B309C82-5E5A-4705-B5BD-614874361452}"
+      DTS:From="Package\Limpa a stage STG_OLOS_INBOUNDCALLDATA"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="307,42"
+          Id="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA"
+          TopLeft="5.50000000000003,107.5" />
+        <NodeLayout
+          Size="301,42"
+          Id="Package\Limpa a stage STG_OLOS_INBOUNDCALLDATA"
+          TopLeft="8,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="158.75,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="307,42"
+          Id="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA"
+          TopLeft="5.50000000000003,107.5" />
+        <NodeLayout
+          Size="270,42"
+          Id="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData"
+          TopLeft="22.5,5.5" />
+        <EdgeLayout
+          Id="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA.Paths[OLE DB Source Output]"
+          TopLeft="158.25,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Carga na stage STG_OLOS_INBOUNDCALLDATA">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga da stage STG_OLOS_INBOUNDCALLDATA\Obtém dados da tabela InboundCallData">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

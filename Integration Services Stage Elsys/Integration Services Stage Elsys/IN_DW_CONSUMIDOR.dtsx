@@ -1,0 +1,75 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/16/2018 11:25:00 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAGGI-G"
+  DTS:CreatorName="MAGGI-G\vinic"
+  DTS:DTSID="{7DCEB502-B481-47A7-946F-76605C638DEE}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="IN_DW_CONSUMIDOR"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{05796523-F543-4193-A887-AE886F62D165}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{CAD612F9-4858-4215-A6B0-263F8881BE43}"
+      DTS:ObjectName="52.168.77.45.DW.vinicius.dutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=52.168.77.45;User ID=vinicius.dutra;Initial Catalog=DW;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAT6/qe2skOESN8ocLsgXSaAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA/JB/zWyYw7OdbNbLNLl9WY/53cvyL+m6A/ufSLbkTZQAAAAAOgAAAAAIAACAAAAAeTpinxJAeJCU2uku5ZO+6DTZ6TH4iF//iVWhAvWjWDyAAAAAwS6jcmR6eXZfooYFa4AWBJY2zB32rPOK4TOQeJa3CR0AAAAAX9Lo57NW9AJy7Ilt0F/NOzibyVemUa1wrOkgmvHwThCwORmeew7+Yn8YO4u4ZSMdES0EdlPncbnl6OBykPuOV</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga da DW_CONSUMIDOR"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Carga da DW_CONSUMIDOR"
+      DTS:DTSID="{4D940D2A-74C8-4C5C-B9A0-156625EE403D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga da DW_CONSUMIDOR"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CAD612F9-4858-4215-A6B0-263F8881BE43}"
+          SQLTask:SqlStatementSource="MERGE [DBO].[DW_CONSUMIDOR] AS DW&#xA;USING (SELECT CONS.[CODIGO_CONSUMIDOR],CASE WHEN CONSEND.[CODIGO_ENDERECO] IS NULL THEN -1 ELSE CONSEND.[CODIGO_ENDERECO] END AS [CODIGO_ENDERECO],CONS.[TIPO_CONSUMIDOR],CONS.[NOME_CONSUMIDOR],CONS.[NOME_FANTASIA_CONSUMIDOR],CONS.[CNPJ_CONSUMIDOR],CONS.[INSCRICAO_ESTADUAL_CONSUMIDOR],&#xA;&#x9;&#x9;CONS.[CPF_CONSUMIDOR],CONS.[RG_CONSUMIDOR],CONS.[DDD_TELEFONE_CONSUMIDOR],CONS.[TELEFONE_CONSUMIDOR],CONS.[DDD_CELULAR_CONSUMIDOR],CONS.[CELULAR_CONSUMIDOR],CONS.[FLAG_SEXO_CONSUMIDOR],&#xA;&#x9;&#x9;CONS.[NOME_PAI_CONSUMIDOR],CONS.[NOME_MAE_CONSUMIDOR],CONS.[DATA_NASCIMENTO_CONSUMIDOR],CONS.[EMAIL_CONSUMIDOR],CONS.[RECEBE_EMAIL],CONS.[RECEBE_SMS],CONS.[LATITUDE_CONSUMIDOR],&#xA;&#x9;&#x9;CONS.[LONGITUDE_CONSUMIDOR],CONSEND.[LOGRADOURO_ENDERECO],CONSEND.[ENDERECO],CONSEND.[NUMERO_ENDERECO],CONSEND.[COMPLEMENTO_ENDERECO],CONSEND.[BAIRRO_ENDERECO],CONSEND.[CEP_ENDERECO],&#xA;&#x9;&#x9;CONSEND.[ESTADO],CID.[CIDADE],CONSEND.[CODIGO_CIDADE_ENDERECO],CID.[LATITUDE_CIDADE],CID.[LONGITUDE_CIDADE],CID.[IBGE],CID.[POPULACAO],CID.[PESSOAS_DOMICILIO],CID.[TELESPECTADORES_POTENCIAIS],&#xA;&#x9;&#x9;CID.[DTV],CID.[PENETRACAO_DTV],CID.[TEM_OI],CID.[TEM_SKY],CID.[TEM_CLARO],CID.[ANTENA_OI],CID.[ANTENA_SKY],CID.[ANTENA_CLARO],CID.[PONTOS],CID.[PONTOS_MOTIVO],CID.[GLOBO_EXCLUSIVA]&#xA;&#x9;&#x9;FROM [DBO].[ODS_CONSUMIDOR] CONS&#xA;&#x9;&#x9;LEFT OUTER JOIN [DBO].[ODS_CONSUMIDOR_ENDERECO] CONSEND ON (CONS.[CODIGO_CONSUMIDOR] = CONSEND.[CODIGO_CONSUMIDOR])&#xA;&#x9;&#x9;LEFT OUTER JOIN [DBO].[ODS_CIDADE] CID ON (CONSEND.CODIGO_CIDADE_ENDERECO = CID.CODIGO_CIDADE)) AS ODS&#xA;ON (DW.[CODIGO_CONSUMIDOR] = ODS.[CODIGO_CONSUMIDOR] AND DW.[CODIGO_ENDERECO] = ODS.[CODIGO_ENDERECO])&#xA;WHEN MATCHED &#xA;THEN&#xA;&#x9;UPDATE SET &#xA;&#x9;&#x9;DW.[TIPO_CONSUMIDOR] = ODS.[TIPO_CONSUMIDOR], &#xA;&#x9;&#x9;DW.[NOME_CONSUMIDOR] = ODS.[NOME_CONSUMIDOR], &#xA;&#x9;&#x9;DW.[NOME_FANTASIA_CONSUMIDOR] = ODS.[NOME_FANTASIA_CONSUMIDOR],&#xA;&#x9;&#x9;DW.[CNPJ_CONSUMIDOR] = ODS.[CNPJ_CONSUMIDOR],&#xA;&#x9;&#x9;DW.[INSCRICAO_ESTADUAL_CONSUMIDOR] = ODS.[INSCRICAO_ESTADUAL_CONSUMIDOR],&#xA;&#x9;&#x9;DW.[CPF_CONSUMIDOR] = ODS.[CPF_CONSUMIDOR],&#xA;&#x9;&#x9;DW.[RG_CONSUMIDOR] = ODS.[RG_CONSUMIDOR],&#xA;&#x9;&#x9;DW.[DDD_TELEFONE_CONSUMIDOR] = ODS.[DDD_TELEFONE_CONSUMIDOR],&#xA;&#x9;&#x9;DW.[TELEFONE_CONSUMIDOR] = ODS.[TELEFONE_CONSUMIDOR], &#xA;&#x9;&#x9;DW.[DDD_CELULAR_CONSUMIDOR] = ODS.[DDD_CELULAR_CONSUMIDOR],&#xA;&#x9;&#x9;DW.[CELULAR_CONSUMIDOR] = ODS.[CELULAR_CONSUMIDOR],&#xA;&#x9;&#x9;DW.[SEXO] = ODS.[FLAG_SEXO_CONSUMIDOR],&#xA;&#x9;&#x9;DW.[NOME_PAI_CONSUMIDOR] = ODS.[NOME_PAI_CONSUMIDOR],&#xA;&#x9;&#x9;DW.[NOME_MAE_CONSUMIDOR] = ODS.[NOME_MAE_CONSUMIDOR],&#xA;&#x9;&#x9;DW.[DATA_NASCIMENTO_CONSUMIDOR] = ODS.[DATA_NASCIMENTO_CONSUMIDOR],&#xA;&#x9;&#x9;DW.[EMAIL_CONSUMIDOR] = ODS.[EMAIL_CONSUMIDOR],&#xA;&#x9;&#x9;DW.[RECEBE_EMAIL] = ODS.[RECEBE_EMAIL],&#xA;&#x9;&#x9;DW.[RECEBE_SMS] = ODS.[RECEBE_SMS],&#xA;&#x9;&#x9;DW.[LATITUDE_CONSUMIDOR] = ODS.[LATITUDE_CONSUMIDOR],&#xA;&#x9;&#x9;DW.[LONGITUDE_CONSUMIDOR] = ODS.[LONGITUDE_CONSUMIDOR],&#xA;&#x9;&#x9;DW.[LOGRADOURO_CONSUMIDOR] = ODS.[LOGRADOURO_ENDERECO],&#xA;&#x9;&#x9;DW.[ENDERECO_CONSUMIDOR] = ODS.[ENDERECO],&#xA;&#x9;&#x9;DW.[NUMERO_ENDERECO_CONSUMIDOR] = ODS.[NUMERO_ENDERECO],&#xA;&#x9;&#x9;DW.[COMPLEMENTO_ENDERECO_CONSUMIDOR] = ODS.[COMPLEMENTO_ENDERECO],&#xA;&#x9;&#x9;DW.[BAIRRO_CONSUMIDOR] = ODS.[BAIRRO_ENDERECO],&#xA;&#x9;&#x9;DW.[CEP_CONSUMIDOR] = ODS.[CEP_ENDERECO],&#xA;&#x9;&#x9;DW.[ESTADO_CONSUMIDOR] = ODS.[ESTADO],&#xA;&#x9;&#x9;DW.[CIDADE_CONSUMIDOR] = ODS.[CIDADE],&#xA;&#x9;&#x9;DW.[CODIGO_CIDADE_CONSUMIDOR] = ODS.[CODIGO_CIDADE_ENDERECO],&#xA;&#x9;&#x9;DW.[LATITUDE_CIDADE] = ODS.[LATITUDE_CIDADE],&#xA;&#x9;&#x9;DW.[LONGITUDE_CIDADE] = ODS.[LONGITUDE_CIDADE],&#xA;&#x9;&#x9;DW.[IBGE] = ODS.[IBGE],&#xA;&#x9;&#x9;DW.[POPULACAO] = ODS.[POPULACAO],&#xA;&#x9;&#x9;DW.[PESSOAS_DOMICILIO] = ODS.[PESSOAS_DOMICILIO],&#xA;&#x9;&#x9;DW.[TELESPECTADORES_POTENCIAIS] = ODS.[TELESPECTADORES_POTENCIAIS],&#xA;&#x9;&#x9;DW.[DTV] = ODS.[DTV],&#xA;&#x9;&#x9;DW.[PENETRACAO_DTV] = ODS.[PENETRACAO_DTV],&#xA;&#x9;&#x9;DW.[TEM_OI] = ODS.[TEM_OI],&#xA;&#x9;&#x9;DW.[TEM_CLARO] = ODS.[TEM_CLARO],&#xA;&#x9;&#x9;DW.[TEM_SKY] = ODS.[TEM_SKY],&#xA;&#x9;&#x9;DW.[ANTENA_OI] = ODS.[ANTENA_OI],&#xA;&#x9;&#x9;DW.[ANTENA_SKY] = ODS.[ANTENA_SKY],&#xA;&#x9;&#x9;DW.[ANTENA_CLARO] = ODS.[ANTENA_CLARO],&#xA;&#x9;&#x9;DW.[PONTUACAO] = ODS.[PONTOS],&#xA;&#x9;&#x9;DW.[MOTIVO_PONTUACAO] = ODS.[PONTOS_MOTIVO],&#xA;&#x9;&#x9;DW.[GLOBO_EXCLUSIVA] = ODS.[GLOBO_EXCLUSIVA],&#xA;&#x9;&#x9;DW.[DATA_ALTERACAO] = GETDATE()&#xA;WHEN NOT MATCHED BY TARGET &#xA;THEN &#xA;&#x9;INSERT ([Codigo_Consumidor],[Codigo_Endereco],[Tipo_Consumidor],[Nome_Consumidor],[Nome_Fantasia_Consumidor],[CNPJ_Consumidor],[Inscricao_Estadual_Consumidor],[CPF_Consumidor],[RG_Consumidor],&#xA;&#x9;&#x9;&#x9;[DDD_Telefone_Consumidor],[Telefone_Consumidor],[DDD_Celular_Consumidor],[Celular_Consumidor],[Sexo],[Nome_Pai_Consumidor],[Nome_Mae_Consumidor],[Data_Nascimento_Consumidor],[Email_Consumidor],&#xA;&#x9;&#x9;&#x9;[Recebe_Email],[Recebe_SMS],[Latitude_Consumidor],[Longitude_Consumidor],[Logradouro_Consumidor],[Endereco_Consumidor],[Numero_Endereco_Consumidor],[Complemento_Endereco_Consumidor],[Bairro_Consumidor],&#xA;&#x9;&#x9;&#x9;[CEP_Consumidor],[Estado_Consumidor],[Cidade_Consumidor],[Codigo_Cidade_Consumidor],[Latitude_Cidade],[Longitude_Cidade],[IBGE],[Populacao],[Pessoas_Domicilio],[Telespectadores_Potenciais],[DTV],&#xA;&#x9;&#x9;&#x9;[Penetracao_DTV],[Tem_OI],[Tem_CLARO],[Tem_SKY],[Antena_OI],[Antena_SKY],[Antena_CLARO],[Pontuacao],[Motivo_Pontuacao],[Globo_Exclusiva],[Data_Inclusao],[Data_Alteracao],[Data_Inicio_Vigencia],&#xA;&#x9;&#x9;&#x9;[Data_Fim_Vigencia],[Flag_Mais_Atual])&#xA;&#x9;VALUES (ODS.[CODIGO_CONSUMIDOR],ODS.[CODIGO_ENDERECO],ODS.[TIPO_CONSUMIDOR],ODS.[NOME_CONSUMIDOR],ODS.[NOME_FANTASIA_CONSUMIDOR],ODS.[CNPJ_CONSUMIDOR],ODS.[INSCRICAO_ESTADUAL_CONSUMIDOR],&#xA;&#x9;&#x9;&#x9;ODS.[CPF_CONSUMIDOR],ODS.[RG_CONSUMIDOR],ODS.[DDD_TELEFONE_CONSUMIDOR],ODS.[TELEFONE_CONSUMIDOR],ODS.[DDD_CELULAR_CONSUMIDOR],ODS.[CELULAR_CONSUMIDOR],ODS.[FLAG_SEXO_CONSUMIDOR],&#xA;&#x9;&#x9;&#x9;ODS.[NOME_PAI_CONSUMIDOR],ODS.[NOME_MAE_CONSUMIDOR],ODS.[DATA_NASCIMENTO_CONSUMIDOR],ODS.[EMAIL_CONSUMIDOR],ODS.[RECEBE_EMAIL],ODS.[RECEBE_SMS],ODS.[LATITUDE_CONSUMIDOR],&#xA;&#x9;&#x9;&#x9;ODS.[LONGITUDE_CONSUMIDOR],ODS.[LOGRADOURO_ENDERECO],ODS.[ENDERECO],ODS.[NUMERO_ENDERECO],ODS.[COMPLEMENTO_ENDERECO],ODS.[BAIRRO_ENDERECO],ODS.[CEP_ENDERECO],ODS.[ESTADO],ODS.[CIDADE],&#xA;&#x9;&#x9;&#x9;ODS.[CODIGO_CIDADE_ENDERECO],ODS.[LATITUDE_CIDADE],ODS.[LONGITUDE_CIDADE],ODS.[IBGE],ODS.[POPULACAO],ODS.[PESSOAS_DOMICILIO],ODS.[TELESPECTADORES_POTENCIAIS],ODS.[DTV],ODS.[PENETRACAO_DTV],&#xA;&#x9;&#x9;&#x9;ODS.[TEM_OI],ODS.[TEM_CLARO],ODS.[TEM_SKY],ODS.[ANTENA_OI],ODS.[ANTENA_SKY],ODS.[ANTENA_CLARO],ODS.[PONTOS],ODS.[PONTOS_MOTIVO],ODS.[GLOBO_EXCLUSIVA],GETDATE(),GETDATE(),&#xA;&#x9;&#x9;&#x9;'1900-01-01 00:00:00.000',NULL,'A')&#xA;;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="215,42"
+          Id="Package\Carga da DW_CONSUMIDOR"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

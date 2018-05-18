@@ -1,0 +1,671 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/4/2018 3:55:19 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAGGI-G"
+  DTS:CreatorName="MAGGI-G\vinic"
+  DTS:DTSID="{0A2B6D37-03AF-410C-8941-FC5C4C8BAFF4}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="IN_STG_TC_SGE_BAIRRO"
+  DTS:PackageType="5"
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{7532AB43-A533-40B8-B991-D38D3D172170}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[10.203.48.11.Sige3_Hom.ViniDutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C416AF86-ED89-4FE7-AC2B-D28771E04BBD}"
+      DTS:ObjectName="10.203.48.11.Sige3_Hom.ViniDutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=10.203.48.11;User ID=ViniDutra;Initial Catalog=Sige3_Hom;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAT6/qe2skOESN8ocLsgXSaAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD7nY/X80Fs2sXR1Vy81kfaOHYVL/NRKXrUwLsqQu9PawAAAAAOgAAAAAIAACAAAAA0/eHfZUKPG6ytwL19brSHOS/FWBJpY+AmIq6hxE0icyAAAAAyQZTmlO+1Q0QyAvUh6kyzqeIrVt176v1houLqqpms7EAAAAAzrN5wyLpiYZDQcDXHsmFQsPY7n/jxwpKToNAAPLLDRH5/azbF3p/Y3xFGtpK7ZzUmaNL605ZS+JzooInDLMDU</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5623CC09-542F-4EDB-BDD4-59FF800B97AA}"
+      DTS:ObjectName="52.168.77.45.DW.vinicius.dutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=52.168.77.45;User ID=vinicius.dutra;Initial Catalog=DW;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAT6/qe2skOESN8ocLsgXSaAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABwqbl8CH0HDLia8t1spB3AWOUQw017bHPNS6f19RXg8QAAAAAOgAAAAAIAACAAAAAkmdkGJJ7N5jhUmyMLVBkZEdRSF21HxDEYUzSEGKaRVyAAAAARfY077osw64iIuvSiwEh52TuVT2YOAuVg2S8kV+kL8EAAAADpIR300hGvIWF61EKGxLJmtuUd1zlrYh053L5ygg39awUcCL/ST1kuCzjgffPoCmE/XYuJrXFQsqfGDuO98qnC</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga da stage STG_TC_SGE_BAIRRO"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{118D511C-CA62-4981-BD7F-FAEE6CC5F1BE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga da stage STG_TC_SGE_BAIRRO"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Grava dados na stage STG_TC_SGE_BAIRRO do DW"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[STG_TC_SGE_BAIRRO]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+                  connectionManagerRefId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input].Columns[id_Bairro]"
+                      cachedDataType="i4"
+                      cachedName="id_Bairro"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_BAIRRO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].Columns[id_Bairro]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input].Columns[id_estado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="id_estado"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_ESTADO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].Columns[id_estado]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input].Columns[id_cidade]"
+                      cachedDataType="i4"
+                      cachedName="id_cidade"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_CIDADE]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].Columns[id_cidade]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input].Columns[Bairro]"
+                      cachedDataType="wstr"
+                      cachedLength="72"
+                      cachedName="Bairro"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input].ExternalColumns[BAIRRO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].Columns[Bairro]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input].Columns[Bairro_ABREV]"
+                      cachedDataType="wstr"
+                      cachedLength="36"
+                      cachedName="Bairro_ABREV"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input].ExternalColumns[BAIRRO_ABREV]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].Columns[Bairro_ABREV]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input].Columns[lat]"
+                      cachedDataType="numeric"
+                      cachedName="lat"
+                      cachedPrecision="11"
+                      cachedScale="7"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LAT]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].Columns[lat]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input].Columns[lng]"
+                      cachedDataType="numeric"
+                      cachedName="lng"
+                      cachedPrecision="11"
+                      cachedScale="7"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LNG]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].Columns[lng]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input].Columns[DT_CARGA]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DT_CARGA"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].Columns[DT_CARGA]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_BAIRRO]"
+                      dataType="i4"
+                      name="ID_BAIRRO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_ESTADO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="ID_ESTADO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_CIDADE]"
+                      dataType="i4"
+                      name="ID_CIDADE" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input].ExternalColumns[BAIRRO]"
+                      dataType="wstr"
+                      length="72"
+                      name="BAIRRO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input].ExternalColumns[BAIRRO_ABREV]"
+                      dataType="wstr"
+                      length="36"
+                      name="BAIRRO_ABREV" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LAT]"
+                      dataType="numeric"
+                      name="LAT"
+                      precision="11"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LNG]"
+                      dataType="numeric"
+                      name="LNG"
+                      precision="11"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      name="DT_CARGA" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Obtém os dados da tabela Tc_SGE_Bairro do SIGE"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Tc_Sge_Bairro]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        id_Bairro, id_estado, id_cidade, Bairro, Bairro_ABREV, lat, lng, GETDATE() AS DT_CARGA
+FROM            Tc_Sge_Bairro</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[10.203.48.11.Sige3_Hom.ViniDutra]"
+                  connectionManagerRefId="Package.ConnectionManagers[10.203.48.11.Sige3_Hom.ViniDutra]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].Columns[id_Bairro]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].ExternalColumns[id_Bairro]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].Columns[id_Bairro]"
+                      name="id_Bairro"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].Columns[id_estado]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].ExternalColumns[id_estado]"
+                      length="2"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].Columns[id_estado]"
+                      name="id_estado"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].Columns[id_cidade]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].ExternalColumns[id_cidade]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].Columns[id_cidade]"
+                      name="id_cidade"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].Columns[Bairro]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Bairro]"
+                      length="72"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].Columns[Bairro]"
+                      name="Bairro"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].Columns[Bairro_ABREV]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Bairro_ABREV]"
+                      length="36"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].Columns[Bairro_ABREV]"
+                      name="Bairro_ABREV"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].Columns[lat]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].ExternalColumns[lat]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].Columns[lat]"
+                      name="lat"
+                      precision="11"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].Columns[lng]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].ExternalColumns[lng]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].Columns[lng]"
+                      name="lng"
+                      precision="11"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].Columns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].ExternalColumns[DT_CARGA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].Columns[DT_CARGA]"
+                      name="DT_CARGA"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].ExternalColumns[id_Bairro]"
+                      dataType="i4"
+                      name="id_Bairro" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].ExternalColumns[id_estado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="id_estado" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].ExternalColumns[id_cidade]"
+                      dataType="i4"
+                      name="id_cidade" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Bairro]"
+                      dataType="wstr"
+                      length="72"
+                      name="Bairro" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Bairro_ABREV]"
+                      dataType="wstr"
+                      length="36"
+                      name="Bairro_ABREV" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].ExternalColumns[lat]"
+                      dataType="numeric"
+                      name="lat"
+                      precision="11"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].ExternalColumns[lng]"
+                      dataType="numeric"
+                      name="lng"
+                      precision="11"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output].ExternalColumns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      name="DT_CARGA" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Error Output].Columns[id_Bairro]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Error Output].Columns[id_Bairro]"
+                      name="id_Bairro" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Error Output].Columns[id_estado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Error Output].Columns[id_estado]"
+                      name="id_estado" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Error Output].Columns[id_cidade]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Error Output].Columns[id_cidade]"
+                      name="id_cidade" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Error Output].Columns[Bairro]"
+                      dataType="wstr"
+                      length="72"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Error Output].Columns[Bairro]"
+                      name="Bairro" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Error Output].Columns[Bairro_ABREV]"
+                      dataType="wstr"
+                      length="36"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Error Output].Columns[Bairro_ABREV]"
+                      name="Bairro_ABREV" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Error Output].Columns[lat]"
+                      dataType="numeric"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Error Output].Columns[lat]"
+                      name="lat"
+                      precision="11"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Error Output].Columns[lng]"
+                      dataType="numeric"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Error Output].Columns[lng]"
+                      name="lng"
+                      precision="11"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Error Output].Columns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Error Output].Columns[DT_CARGA]"
+                      name="DT_CARGA" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carga da stage STG_TC_SGE_BAIRRO.Paths[OLE DB Source Output]"
+              endId="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Limpa a stage STG_TC_SGE_BAIRRO"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Limpa a Stage Bairro"
+      DTS:DTSID="{3F11E134-D8E3-4106-B9C0-1DFE8449F685}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Limpa a stage STG_TC_SGE_BAIRRO"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5623CC09-542F-4EDB-BDD4-59FF800B97AA}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[STG_TC_SGE_BAIRRO]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{9A0920A8-9E9D-4B28-87A1-80CD9D8EAB3F}"
+      DTS:From="Package\Limpa a stage STG_TC_SGE_BAIRRO"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Carga da stage STG_TC_SGE_BAIRRO" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="259,42"
+          Id="Package\Carga da stage STG_TC_SGE_BAIRRO"
+          TopLeft="5.50000000000003,107.5" />
+        <NodeLayout
+          Size="254,42"
+          Id="Package\Limpa a stage STG_TC_SGE_BAIRRO"
+          TopLeft="8,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="135,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Carga da stage STG_TC_SGE_BAIRRO">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="326,42"
+          Id="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW"
+          TopLeft="5.50000000000003,107.5" />
+        <NodeLayout
+          Size="326,42"
+          Id="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package\Carga da stage STG_TC_SGE_BAIRRO.Paths[OLE DB Source Output]"
+          TopLeft="168.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga da stage STG_TC_SGE_BAIRRO\Grava dados na stage STG_TC_SGE_BAIRRO do DW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga da stage STG_TC_SGE_BAIRRO\Obtém os dados da tabela Tc_SGE_Bairro do SIGE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

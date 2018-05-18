@@ -1,0 +1,1804 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/14/2018 11:30:13 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAGGI-G"
+  DTS:CreatorName="MAGGI-G\vinic"
+  DTS:DTSID="{25C23DAC-27CF-4DD7-BEDF-89E63B7F8CC8}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="IN_STG_TC_SGE_USUARIO"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{B35B53E6-F79D-4FDB-9857-3A4F8A88A0E4}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[10.203.48.11.Sige3_Hom.ViniDutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{811F99B6-EFCD-44C2-B159-EAC370511121}"
+      DTS:ObjectName="10.203.48.11.Sige3_Hom.ViniDutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=10.203.48.11;User ID=ViniDutra;Initial Catalog=Sige3_Hom;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAT6/qe2skOESN8ocLsgXSaAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAbUbL6TqsZsRgB9rIkbe363b+t/KrVOJj64QkHwg5fvQAAAAAOgAAAAAIAACAAAACk0rdVjzTXoSlBd/wQ5z/OXC3Jp6eOSLgaqvgYsHnpFCAAAADuMX+omHj28955k/9ZFIm+ceNiau/4DQolF0kSTz+ZukAAAADeIr+2JCS82/tBPqMrfgVYgABkT34sUiI7jOvhaRhOZk7L6gRFpZgUPj5h+iYSKViRg2//ugg6acRRJ2xNoZxE</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{34FE9BE8-144C-46E0-83BE-8EB733279F9D}"
+      DTS:ObjectName="52.168.77.45.DW.vinicius.dutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=52.168.77.45;User ID=vinicius.dutra;Initial Catalog=DW;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAT6/qe2skOESN8ocLsgXSaAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABYDlKh3eN84hyLFp5rx47xiqWOACXtCDhwQzfe3xQ6fgAAAAAOgAAAAAIAACAAAAD8aVY1m5EHuvLaTEWw9O0EcYDHrpKp7CqRXN+Z41rVzSAAAAARAxFlQ53BAeAzlFIsQh9oxvkMy/1vBCrE4ZM/x7qCYUAAAABzpWB+kJnylxBINgYKR8qCZ+BCsGCOpgaDxQFzzBtyoZnffe8ydPyhywAKxGEWuxrNrb5hKJqBajZ5EqORYiv4</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AC8C0386-5DA1-493D-A36D-04C0938A985C}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="DT_FINAL">
+      <DTS:VariableValue
+        DTS:DataType="7">5/14/2018 11:34:28 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{36A2CF8C-35D6-4E2E-BC7D-78CC0E577BBD}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="DT_INICIAL">
+      <DTS:VariableValue
+        DTS:DataType="7">5/14/2018 11:34:17 AM</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga da stage STG_TC_SGE_USUARIO"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{A3149B4A-F17A-4148-80B7-2FB364039DB4}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga da stage STG_TC_SGE_USUARIO"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Grava dados na stage STG_TC_SGE_USUARIO do DW"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[STG_TC_SGE_USUARIO]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+                  connectionManagerRefId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[Id_usuario]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Id_usuario"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_USUARIO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Id_usuario]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[ID_Loja]"
+                      cachedDataType="i4"
+                      cachedName="ID_Loja"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_LOJA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[ID_Loja]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[CPF_Pessoa]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="11"
+                      cachedName="CPF_Pessoa"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[CPF_PESSOA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[CPF_Pessoa]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[Nome]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Nome"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[NOME]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Nome]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[Email]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="60"
+                      cachedName="Email"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[EMAIL]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Email]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[Lo_EmailValidado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Lo_EmailValidado"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LO_EMAILVALIDADO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_EmailValidado]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[Senha_Web]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="Senha_Web"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[SENHA_WEB]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Senha_Web]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[Lo_Ativo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Lo_Ativo"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LO_ATIVO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Ativo]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[Lo_Alerta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Lo_Alerta"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LO_ALERTA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Alerta]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[Lo_Alerta_Email]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Lo_Alerta_Email"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LO_ALERTA_EMAIL]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Alerta_Email]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[Lo_Alerta_Sms]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Lo_Alerta_Sms"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LO_ALERTA_SMS]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Alerta_Sms]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[Lo_Chat]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Lo_Chat"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LO_CHAT]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Chat]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[Lo_Master]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Lo_Master"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LO_MASTER]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Master]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[Lo_TrocarSenha]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Lo_TrocarSenha"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LO_TROCARSENHA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_TrocarSenha]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[Id_Menu_Inicial]"
+                      cachedDataType="i4"
+                      cachedName="Id_Menu_Inicial"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_MENU_INICIAL]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Menu_Inicial]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[Id_Perfil]"
+                      cachedDataType="i4"
+                      cachedName="Id_Perfil"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_PERFIL]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Perfil]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[Id_Canal_Chat]"
+                      cachedDataType="i4"
+                      cachedName="Id_Canal_Chat"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_CANAL_CHAT]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Canal_Chat]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[Login_Antigo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Login_Antigo"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LOGIN_ANTIGO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Login_Antigo]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[Lg_Us_Inc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Lg_Us_Inc"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_US_INC]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Inc]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[Lg_Dt_Inc]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Lg_Dt_Inc"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_DT_INC]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Inc]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[Lg_Us_Alt]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Lg_Us_Alt"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_US_ALT]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Alt]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[Lg_Dt_Alt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Lg_Dt_Alt"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_DT_ALT]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Alt]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[id_Grp_Usuario]"
+                      cachedDataType="i4"
+                      cachedName="id_Grp_Usuario"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_GRP_USUARIO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[id_Grp_Usuario]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[email_Inativo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="60"
+                      cachedName="email_Inativo"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[EMAIL_INATIVO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[email_Inativo]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[block_sige3]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="block_sige3"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[BLOCK_SIGE3]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[block_sige3]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[block_sige3_ok]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="block_sige3_ok"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[BLOCK_SIGE3_OK]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[block_sige3_ok]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[block_sige3_Lo_Proprietario]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="block_sige3_Lo_Proprietario"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[BLOCK_SIGE3_LO_PROPRIETARIO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[block_sige3_Lo_Proprietario]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[block_sige3_Chave]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="block_sige3_Chave"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[BLOCK_SIGE3_CHAVE]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[block_sige3_Chave]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[block_sige3_data_ok]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="block_sige3_data_ok"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[BLOCK_SIGE3_DATA_OK]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[block_sige3_data_ok]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[block_sige3_Gerar_Pdf]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="block_sige3_Gerar_Pdf"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[BLOCK_SIGE3_GERAR_PDF]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[block_sige3_Gerar_Pdf]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[block_sige3_Enviou_Email]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="block_sige3_Enviou_Email"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[BLOCK_SIGE3_ENVIOU_EMAIL]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[block_sige3_Enviou_Email]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[block_sige3_CNPJ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="14"
+                      cachedName="block_sige3_CNPJ"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[BLOCK_SIGE3_CNPJ]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[block_sige3_CNPJ]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[Nr_Matricula]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="Nr_Matricula"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[NR_MATRICULA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Nr_Matricula]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[DT_Demissao]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DT_Demissao"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[DT_DEMISSAO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[DT_Demissao]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[Id_Celula]"
+                      cachedDataType="i4"
+                      cachedName="Id_Celula"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_CELULA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Celula]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[TabelaMatricula]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="TabelaMatricula"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[TABELAMATRICULA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[TabelaMatricula]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].Columns[DT_CARGA]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DT_CARGA"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[DT_CARGA]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_USUARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ID_USUARIO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_LOJA]"
+                      dataType="i4"
+                      name="ID_LOJA" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[CPF_PESSOA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="11"
+                      name="CPF_PESSOA" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[NOME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NOME" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[EMAIL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      name="EMAIL" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LO_EMAILVALIDADO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="LO_EMAILVALIDADO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[SENHA_WEB]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="SENHA_WEB" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LO_ATIVO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="LO_ATIVO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LO_ALERTA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="LO_ALERTA" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LO_ALERTA_EMAIL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="LO_ALERTA_EMAIL" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LO_ALERTA_SMS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="LO_ALERTA_SMS" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LO_CHAT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="LO_CHAT" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LO_MASTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="LO_MASTER" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LO_TROCARSENHA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="LO_TROCARSENHA" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_MENU_INICIAL]"
+                      dataType="i4"
+                      name="ID_MENU_INICIAL" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_PERFIL]"
+                      dataType="i4"
+                      name="ID_PERFIL" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_CANAL_CHAT]"
+                      dataType="i4"
+                      name="ID_CANAL_CHAT" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LOGIN_ANTIGO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LOGIN_ANTIGO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_US_INC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="LG_US_INC" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_DT_INC]"
+                      dataType="dbTimeStamp"
+                      name="LG_DT_INC" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_US_ALT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="LG_US_ALT" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_DT_ALT]"
+                      dataType="dbTimeStamp"
+                      name="LG_DT_ALT" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_GRP_USUARIO]"
+                      dataType="i4"
+                      name="ID_GRP_USUARIO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[EMAIL_INATIVO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      name="EMAIL_INATIVO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[BLOCK_SIGE3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="BLOCK_SIGE3" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[BLOCK_SIGE3_OK]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="BLOCK_SIGE3_OK" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[BLOCK_SIGE3_LO_PROPRIETARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="BLOCK_SIGE3_LO_PROPRIETARIO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[BLOCK_SIGE3_CHAVE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="BLOCK_SIGE3_CHAVE" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[BLOCK_SIGE3_DATA_OK]"
+                      dataType="dbTimeStamp"
+                      name="BLOCK_SIGE3_DATA_OK" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[BLOCK_SIGE3_GERAR_PDF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="BLOCK_SIGE3_GERAR_PDF" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[BLOCK_SIGE3_ENVIOU_EMAIL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="BLOCK_SIGE3_ENVIOU_EMAIL" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[BLOCK_SIGE3_CNPJ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      name="BLOCK_SIGE3_CNPJ" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[NR_MATRICULA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="NR_MATRICULA" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[DT_DEMISSAO]"
+                      dataType="dbTimeStamp"
+                      name="DT_DEMISSAO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_CELULA]"
+                      dataType="i4"
+                      name="ID_CELULA" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[TABELAMATRICULA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="TABELAMATRICULA" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      name="DT_CARGA" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Obtém dados da tabela TC_SGE_USUARIO do SIGE"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        Id_usuario, ID_Loja, CPF_Pessoa, Nome, Email, Lo_EmailValidado, Senha_Web, Lo_Ativo, Lo_Alerta, Lo_Alerta_Email, Lo_Alerta_Sms, Lo_Chat, Lo_Master, Lo_TrocarSenha, Id_Menu_Inicial, Id_Perfil, Id_Canal_Chat, 
+                         Login_Antigo, Lg_Us_Inc, Lg_Dt_Inc, Lg_Us_Alt, Lg_Dt_Alt, id_Grp_Usuario, email_Inativo, block_sige3, block_sige3_ok, block_sige3_Lo_Proprietario, block_sige3_Chave, block_sige3_data_ok, block_sige3_Gerar_Pdf, 
+                         block_sige3_Enviou_Email, block_sige3_CNPJ, Nr_Matricula, DT_Demissao, Id_Celula, TabelaMatricula, GETDATE() as DT_CARGA
+FROM            Tc_Sge_Usuario
+WHERE        (Lg_Dt_Inc BETWEEN ? AND ?) OR
+                         (Lg_Dt_Alt BETWEEN ? AND ?)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"0:Input",{36A2CF8C-35D6-4E2E-BC7D-78CC0E577BBD};"1:Input",{AC8C0386-5DA1-493D-A36D-04C0938A985C};"2:Input",{36A2CF8C-35D6-4E2E-BC7D-78CC0E577BBD};"3:Input",{AC8C0386-5DA1-493D-A36D-04C0938A985C};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[10.203.48.11.Sige3_Hom.ViniDutra]"
+                  connectionManagerRefId="Package.ConnectionManagers[10.203.48.11.Sige3_Hom.ViniDutra]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Id_usuario]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_usuario]"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Id_usuario]"
+                      name="Id_usuario"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[ID_Loja]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[ID_Loja]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[ID_Loja]"
+                      name="ID_Loja"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[CPF_Pessoa]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[CPF_Pessoa]"
+                      length="11"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[CPF_Pessoa]"
+                      name="CPF_Pessoa"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Nome]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Nome]"
+                      length="50"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Nome]"
+                      name="Nome"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Email]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Email]"
+                      length="60"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Email]"
+                      name="Email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_EmailValidado]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lo_EmailValidado]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_EmailValidado]"
+                      name="Lo_EmailValidado"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Senha_Web]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Senha_Web]"
+                      length="40"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Senha_Web]"
+                      name="Senha_Web"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Ativo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lo_Ativo]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Ativo]"
+                      name="Lo_Ativo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Alerta]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lo_Alerta]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Alerta]"
+                      name="Lo_Alerta"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Alerta_Email]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lo_Alerta_Email]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Alerta_Email]"
+                      name="Lo_Alerta_Email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Alerta_Sms]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lo_Alerta_Sms]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Alerta_Sms]"
+                      name="Lo_Alerta_Sms"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Chat]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lo_Chat]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Chat]"
+                      name="Lo_Chat"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Master]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lo_Master]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Master]"
+                      name="Lo_Master"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_TrocarSenha]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lo_TrocarSenha]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_TrocarSenha]"
+                      name="Lo_TrocarSenha"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Menu_Inicial]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Menu_Inicial]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Menu_Inicial]"
+                      name="Id_Menu_Inicial"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Perfil]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Perfil]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Perfil]"
+                      name="Id_Perfil"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Canal_Chat]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Canal_Chat]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Canal_Chat]"
+                      name="Id_Canal_Chat"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Login_Antigo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Login_Antigo]"
+                      length="50"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Login_Antigo]"
+                      name="Login_Antigo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Inc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Us_Inc]"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Inc]"
+                      name="Lg_Us_Inc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Inc]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Dt_Inc]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Inc]"
+                      name="Lg_Dt_Inc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Alt]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Us_Alt]"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Alt]"
+                      name="Lg_Us_Alt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Alt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Dt_Alt]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Alt]"
+                      name="Lg_Dt_Alt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[id_Grp_Usuario]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[id_Grp_Usuario]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[id_Grp_Usuario]"
+                      name="id_Grp_Usuario"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[email_Inativo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[email_Inativo]"
+                      length="60"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[email_Inativo]"
+                      name="email_Inativo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[block_sige3]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[block_sige3]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[block_sige3]"
+                      name="block_sige3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[block_sige3_ok]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[block_sige3_ok]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[block_sige3_ok]"
+                      name="block_sige3_ok"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[block_sige3_Lo_Proprietario]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[block_sige3_Lo_Proprietario]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[block_sige3_Lo_Proprietario]"
+                      name="block_sige3_Lo_Proprietario"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[block_sige3_Chave]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[block_sige3_Chave]"
+                      length="40"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[block_sige3_Chave]"
+                      name="block_sige3_Chave"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[block_sige3_data_ok]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[block_sige3_data_ok]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[block_sige3_data_ok]"
+                      name="block_sige3_data_ok"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[block_sige3_Gerar_Pdf]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[block_sige3_Gerar_Pdf]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[block_sige3_Gerar_Pdf]"
+                      name="block_sige3_Gerar_Pdf"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[block_sige3_Enviou_Email]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[block_sige3_Enviou_Email]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[block_sige3_Enviou_Email]"
+                      name="block_sige3_Enviou_Email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[block_sige3_CNPJ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[block_sige3_CNPJ]"
+                      length="14"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[block_sige3_CNPJ]"
+                      name="block_sige3_CNPJ"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Nr_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Nr_Matricula]"
+                      length="6"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Nr_Matricula]"
+                      name="Nr_Matricula"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[DT_Demissao]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[DT_Demissao]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[DT_Demissao]"
+                      name="DT_Demissao"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Celula]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Celula]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Celula]"
+                      name="Id_Celula"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[TabelaMatricula]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[TabelaMatricula]"
+                      length="6"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[TabelaMatricula]"
+                      name="TabelaMatricula"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[DT_CARGA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].Columns[DT_CARGA]"
+                      name="DT_CARGA"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_usuario]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Id_usuario" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[ID_Loja]"
+                      dataType="i4"
+                      name="ID_Loja" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[CPF_Pessoa]"
+                      codePage="1252"
+                      dataType="str"
+                      length="11"
+                      name="CPF_Pessoa" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Nome]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Nome" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lo_EmailValidado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Lo_EmailValidado" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Senha_Web]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="Senha_Web" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lo_Ativo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Lo_Ativo" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lo_Alerta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Lo_Alerta" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lo_Alerta_Email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Lo_Alerta_Email" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lo_Alerta_Sms]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Lo_Alerta_Sms" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lo_Chat]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Lo_Chat" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lo_Master]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Lo_Master" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lo_TrocarSenha]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Lo_TrocarSenha" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Menu_Inicial]"
+                      dataType="i4"
+                      name="Id_Menu_Inicial" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Perfil]"
+                      dataType="i4"
+                      name="Id_Perfil" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Canal_Chat]"
+                      dataType="i4"
+                      name="Id_Canal_Chat" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Login_Antigo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Login_Antigo" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Us_Inc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Lg_Us_Inc" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Dt_Inc]"
+                      dataType="dbTimeStamp"
+                      name="Lg_Dt_Inc" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Us_Alt]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Lg_Us_Alt" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Dt_Alt]"
+                      dataType="dbTimeStamp"
+                      name="Lg_Dt_Alt" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[id_Grp_Usuario]"
+                      dataType="i4"
+                      name="id_Grp_Usuario" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[email_Inativo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      name="email_Inativo" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[block_sige3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="block_sige3" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[block_sige3_ok]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="block_sige3_ok" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[block_sige3_Lo_Proprietario]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="block_sige3_Lo_Proprietario" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[block_sige3_Chave]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="block_sige3_Chave" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[block_sige3_data_ok]"
+                      dataType="dbTimeStamp"
+                      name="block_sige3_data_ok" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[block_sige3_Gerar_Pdf]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="block_sige3_Gerar_Pdf" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[block_sige3_Enviou_Email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="block_sige3_Enviou_Email" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[block_sige3_CNPJ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      name="block_sige3_CNPJ" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Nr_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="Nr_Matricula" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[DT_Demissao]"
+                      dataType="dbTimeStamp"
+                      name="DT_Demissao" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Celula]"
+                      dataType="i4"
+                      name="Id_Celula" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[TabelaMatricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="TabelaMatricula" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      name="DT_CARGA" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_usuario]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_usuario]"
+                      name="Id_usuario" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[ID_Loja]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[ID_Loja]"
+                      name="ID_Loja" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[CPF_Pessoa]"
+                      codePage="1252"
+                      dataType="str"
+                      length="11"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[CPF_Pessoa]"
+                      name="CPF_Pessoa" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Nome]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Nome]"
+                      name="Nome" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Email]"
+                      name="Email" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lo_EmailValidado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lo_EmailValidado]"
+                      name="Lo_EmailValidado" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Senha_Web]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Senha_Web]"
+                      name="Senha_Web" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lo_Ativo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lo_Ativo]"
+                      name="Lo_Ativo" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lo_Alerta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lo_Alerta]"
+                      name="Lo_Alerta" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lo_Alerta_Email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lo_Alerta_Email]"
+                      name="Lo_Alerta_Email" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lo_Alerta_Sms]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lo_Alerta_Sms]"
+                      name="Lo_Alerta_Sms" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lo_Chat]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lo_Chat]"
+                      name="Lo_Chat" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lo_Master]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lo_Master]"
+                      name="Lo_Master" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lo_TrocarSenha]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lo_TrocarSenha]"
+                      name="Lo_TrocarSenha" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Menu_Inicial]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Menu_Inicial]"
+                      name="Id_Menu_Inicial" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Perfil]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Perfil]"
+                      name="Id_Perfil" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Canal_Chat]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Canal_Chat]"
+                      name="Id_Canal_Chat" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Login_Antigo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Login_Antigo]"
+                      name="Login_Antigo" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Us_Inc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Us_Inc]"
+                      name="Lg_Us_Inc" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Dt_Inc]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Dt_Inc]"
+                      name="Lg_Dt_Inc" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Us_Alt]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Us_Alt]"
+                      name="Lg_Us_Alt" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Dt_Alt]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Dt_Alt]"
+                      name="Lg_Dt_Alt" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[id_Grp_Usuario]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[id_Grp_Usuario]"
+                      name="id_Grp_Usuario" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[email_Inativo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[email_Inativo]"
+                      name="email_Inativo" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[block_sige3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[block_sige3]"
+                      name="block_sige3" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[block_sige3_ok]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[block_sige3_ok]"
+                      name="block_sige3_ok" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[block_sige3_Lo_Proprietario]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[block_sige3_Lo_Proprietario]"
+                      name="block_sige3_Lo_Proprietario" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[block_sige3_Chave]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[block_sige3_Chave]"
+                      name="block_sige3_Chave" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[block_sige3_data_ok]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[block_sige3_data_ok]"
+                      name="block_sige3_data_ok" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[block_sige3_Gerar_Pdf]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[block_sige3_Gerar_Pdf]"
+                      name="block_sige3_Gerar_Pdf" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[block_sige3_Enviou_Email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[block_sige3_Enviou_Email]"
+                      name="block_sige3_Enviou_Email" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[block_sige3_CNPJ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[block_sige3_CNPJ]"
+                      name="block_sige3_CNPJ" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Nr_Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Nr_Matricula]"
+                      name="Nr_Matricula" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[DT_Demissao]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[DT_Demissao]"
+                      name="DT_Demissao" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Celula]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Celula]"
+                      name="Id_Celula" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[TabelaMatricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[TabelaMatricula]"
+                      name="TabelaMatricula" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[DT_CARGA]"
+                      name="DT_CARGA" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carga da stage STG_TC_SGE_USUARIO.Paths[OLE DB Source Output]"
+              endId="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Limpa a stage STG_TC_SGE_USUARIO"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Limpa a stage STG_TC_SGE_USUARIO"
+      DTS:DTSID="{28A4D6C7-99DC-42C7-A837-764BDE16F08A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Limpa a stage STG_TC_SGE_USUARIO"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{34FE9BE8-144C-46E0-83BE-8EB733279F9D}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[STG_TC_SGE_USUARIO]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Obtém a data da carga do SGBD"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Obtém datas de pesquisa da tabela ponteiro"
+      DTS:DTSID="{b665e291-dbf2-4529-907b-9dfdeb89fa0b}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Obtém a data da carga do SGBD"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{34FE9BE8-144C-46E0-83BE-8EB733279F9D}"
+          SQLTask:SqlStatementSource="SELECT [DT_INICIAL],[DT_FINAL],[DT_INCLUSAO],[DT_ATUALIZACAO]&#xA;FROM [DW].[dbo].[PRM_DATE_POINTER]&#xA;WHERE [DS_SISTEMA] LIKE 'SIGE' AND DT_INCLUSAO IN (SELECT MAX(DT_INCLUSAO) FROM [DW].[dbo].[PRM_DATE_POINTER] WHERE [DS_SISTEMA] LIKE 'SIGE');"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="DT_FINAL"
+            SQLTask:DtsVariableName="User::DT_FINAL" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="DT_INICIAL"
+            SQLTask:DtsVariableName="User::DT_INICIAL" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{5E782152-E838-47A8-8B6B-202B1631F61A}"
+      DTS:From="Package\Limpa a stage STG_TC_SGE_USUARIO"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Carga da stage STG_TC_SGE_USUARIO" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{020B6F32-511C-4848-9E4C-A5F55CAF64D0}"
+      DTS:From="Package\Obtém a data da carga do SGBD"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Carga da stage STG_TC_SGE_USUARIO" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="266,42"
+          Id="Package\Carga da stage STG_TC_SGE_USUARIO"
+          TopLeft="310,107.5" />
+        <NodeLayout
+          Size="261,42"
+          Id="Package\Limpa a stage STG_TC_SGE_USUARIO"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Obtém a data da carga do SGBD"
+          TopLeft="327,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="136,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="264,60"
+              Start="0,0"
+              End="264,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.7847533632287" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.7847533632287"
+                    Point2="0,35.7847533632287"
+                    Point3="4,35.7847533632287" />
+                  <mssgle:LineSegment
+                    End="260,35.7847533632287" />
+                  <mssgle:CubicBezierSegment
+                    Point1="260,35.7847533632287"
+                    Point2="264,35.7847533632287"
+                    Point3="264,39.7847533632287" />
+                  <mssgle:LineSegment
+                    End="264,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="443,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="43,60"
+              Start="0,0"
+              End="43,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.7847533632287" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.7847533632287"
+                    Point2="0,35.7847533632287"
+                    Point3="4,35.7847533632287" />
+                  <mssgle:LineSegment
+                    End="39,35.7847533632287" />
+                  <mssgle:CubicBezierSegment
+                    Point1="39,35.7847533632287"
+                    Point2="43,35.7847533632287"
+                    Point3="43,39.7847533632287" />
+                  <mssgle:LineSegment
+                    End="43,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Carga da stage STG_TC_SGE_USUARIO">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="321,42"
+          Id="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE"
+          TopLeft="11.5,5.5" />
+        <NodeLayout
+          Size="333,42"
+          Id="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW"
+          TopLeft="5.50000000000003,107.5" />
+        <EdgeLayout
+          Id="Package\Carga da stage STG_TC_SGE_USUARIO.Paths[OLE DB Source Output]"
+          TopLeft="172,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga da stage STG_TC_SGE_USUARIO\Grava dados na stage STG_TC_SGE_USUARIO do DW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga da stage STG_TC_SGE_USUARIO\Obtém dados da tabela TC_SGE_USUARIO do SIGE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,570 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/17/2018 2:57:03 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAGGI-G"
+  DTS:CreatorName="MAGGI-G\vinic"
+  DTS:DTSID="{A1927501-DCE2-48CA-BFA2-648E6B998CAF}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="IN_STG_OLOS_AGENTLOGINDATA"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{C6EED068-FDB8-4011-B9C9-28BDFDBABD43}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[10.1.0.123.ExportData.OlosRemoteLogin]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{19DB919F-E3DE-4A69-845C-BC22F636CA28}"
+      DTS:ObjectName="10.1.0.123.ExportData.OlosRemoteLogin">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=10.1.0.123;User ID=OlosRemoteLogin;Initial Catalog=ExportData;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH0ueHa3BUUWfmA6Qv5NRlgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAARcdS82Hsgechq9YFyU5jv+vOiafTdMlqWvLVB/rwtmgAAAAAOgAAAAAIAACAAAADMXFWJEdFNl19r/uTYhv+kga3WpSXrC2RIRY/d63k9LyAAAAC/eLNPbA9r1DXYg5+lC7hPOQqzmiwf4u4UQbUL+8wN70AAAAB1Wevp0dYH8zEqx5IABYQ/S9+0+8mvL06u5weTg1XEkYnancQMC39VXVdPQ7D4tzpx68Is9HNyccoamCb3GoMi</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FF7A013D-714A-45A9-8C15-4DBD474FC6A6}"
+      DTS:ObjectName="52.168.77.45.DW.vinicius.dutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=52.168.77.45;User ID=vinicius.dutra;Initial Catalog=DW;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH0ueHa3BUUWfmA6Qv5NRlgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB0Naa03yNWERYAS38PRyvPfG6bGPgIF4SVLEB2zmRjBgAAAAAOgAAAAAIAACAAAABXctIeS5bWbzWohHRsxaK8ckfVHXfOKRwPUmYlPyUlzSAAAACX4w+jll1bPZri1dIAcEmtSs2xyzvto2EMy2CF58ad4kAAAABK66aChTetWeSzsLGGczU541W4Yb77EsoaFs1z9vOinjtHvaVj+xvk13clXh1XFVscvCjfo5dOGQ4iGKgO1yKG</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{B9A48B6D-2604-4ABB-BF4D-3C474649A26F}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga da stage STG_OLOS_AGENTLOGINDATA"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Carga na stage STG_OLOS_AGENTLOGINDATA"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[STG_OLOS_AGENTLOGINDATA]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+                  connectionManagerRefId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Inputs[OLE DB Destination Input].Columns[Data]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Data"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Inputs[OLE DB Destination Input].ExternalColumns[Data]"
+                      lineageId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].Columns[Data]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Inputs[OLE DB Destination Input].Columns[AgentId]"
+                      cachedDataType="i4"
+                      cachedName="AgentId"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Inputs[OLE DB Destination Input].ExternalColumns[AgentId]"
+                      lineageId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].Columns[AgentId]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Inputs[OLE DB Destination Input].Columns[Login]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Login"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Inputs[OLE DB Destination Input].ExternalColumns[Login]"
+                      lineageId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].Columns[Login]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Inputs[OLE DB Destination Input].Columns[PlataformID]"
+                      cachedDataType="i4"
+                      cachedName="PlataformID"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Inputs[OLE DB Destination Input].ExternalColumns[PlataformID]"
+                      lineageId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].Columns[PlataformID]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Inputs[OLE DB Destination Input].Columns[Logout]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Logout"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Inputs[OLE DB Destination Input].ExternalColumns[Logout]"
+                      lineageId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].Columns[Logout]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Inputs[OLE DB Destination Input].Columns[DT_CARGA]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DT_CARGA"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                      lineageId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].Columns[DT_CARGA]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Inputs[OLE DB Destination Input].ExternalColumns[Data]"
+                      dataType="dbTimeStamp"
+                      name="Data" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Inputs[OLE DB Destination Input].ExternalColumns[AgentId]"
+                      dataType="i4"
+                      name="AgentId" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Inputs[OLE DB Destination Input].ExternalColumns[Login]"
+                      dataType="dbTimeStamp"
+                      name="Login" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Inputs[OLE DB Destination Input].ExternalColumns[PlataformID]"
+                      dataType="i4"
+                      name="PlataformID" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Inputs[OLE DB Destination Input].ExternalColumns[Logout]"
+                      dataType="dbTimeStamp"
+                      name="Logout" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      name="DT_CARGA" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Obtém dados da tabela AgentLoginData"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        Data, AgentId, Login, PlataformID, Logout, GETDATE() AS DT_CARGA
+FROM            AgentLoginData</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[10.1.0.123.ExportData.OlosRemoteLogin]"
+                  connectionManagerRefId="Package.ConnectionManagers[10.1.0.123.ExportData.OlosRemoteLogin]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].Columns[Data]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].ExternalColumns[Data]"
+                      lineageId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].Columns[Data]"
+                      name="Data"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].Columns[AgentId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].ExternalColumns[AgentId]"
+                      lineageId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].Columns[AgentId]"
+                      name="AgentId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].Columns[Login]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].ExternalColumns[Login]"
+                      lineageId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].Columns[Login]"
+                      name="Login"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].Columns[PlataformID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].ExternalColumns[PlataformID]"
+                      lineageId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].Columns[PlataformID]"
+                      name="PlataformID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].Columns[Logout]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].ExternalColumns[Logout]"
+                      lineageId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].Columns[Logout]"
+                      name="Logout"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].Columns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].ExternalColumns[DT_CARGA]"
+                      lineageId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].Columns[DT_CARGA]"
+                      name="DT_CARGA"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].ExternalColumns[Data]"
+                      dataType="dbTimeStamp"
+                      name="Data" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].ExternalColumns[AgentId]"
+                      dataType="i4"
+                      name="AgentId" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].ExternalColumns[Login]"
+                      dataType="dbTimeStamp"
+                      name="Login" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].ExternalColumns[PlataformID]"
+                      dataType="i4"
+                      name="PlataformID" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].ExternalColumns[Logout]"
+                      dataType="dbTimeStamp"
+                      name="Logout" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output].ExternalColumns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      name="DT_CARGA" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Error Output].Columns[Data]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Error Output].Columns[Data]"
+                      name="Data" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Error Output].Columns[AgentId]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Error Output].Columns[AgentId]"
+                      name="AgentId" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Error Output].Columns[Login]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Error Output].Columns[Login]"
+                      name="Login" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Error Output].Columns[PlataformID]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Error Output].Columns[PlataformID]"
+                      name="PlataformID" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Error Output].Columns[Logout]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Error Output].Columns[Logout]"
+                      name="Logout" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Error Output].Columns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Error Output].Columns[DT_CARGA]"
+                      name="DT_CARGA" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA.Paths[OLE DB Source Output]"
+              endId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Limpa a stage STG_OLOS_AGENTLOGINDATA"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Limpa a stage STG_OLOS_AGENTLOGINDATA"
+      DTS:DTSID="{27A9C4B6-A680-4CDE-88C4-5378FE5C6B14}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Limpa a stage STG_OLOS_AGENTLOGINDATA"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FF7A013D-714A-45A9-8C15-4DBD474FC6A6}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[STG_OLOS_AGENTLOGINDATA]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{5D9506ED-1E41-4A02-8097-18629DF1A21B}"
+      DTS:From="Package\Limpa a stage STG_OLOS_AGENTLOGINDATA"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Carga da stage STG_OLOS_AGENTLOGINDATA" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="296,42"
+          Id="Package\Limpa a stage STG_OLOS_AGENTLOGINDATA"
+          TopLeft="8,5.5" />
+        <NodeLayout
+          Size="301,42"
+          Id="Package\Carga da stage STG_OLOS_AGENTLOGINDATA"
+          TopLeft="5.50000000000003,107.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="156,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Carga da stage STG_OLOS_AGENTLOGINDATA">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="267,42"
+          Id="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData"
+          TopLeft="22.5,5.5" />
+        <NodeLayout
+          Size="301,42"
+          Id="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA"
+          TopLeft="5.50000000000003,107.5" />
+        <EdgeLayout
+          Id="Package\Carga da stage STG_OLOS_AGENTLOGINDATA.Paths[OLE DB Source Output]"
+          TopLeft="156,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Obtém dados da tabela AgentLoginData">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga da stage STG_OLOS_AGENTLOGINDATA\Carga na stage STG_OLOS_AGENTLOGINDATA">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

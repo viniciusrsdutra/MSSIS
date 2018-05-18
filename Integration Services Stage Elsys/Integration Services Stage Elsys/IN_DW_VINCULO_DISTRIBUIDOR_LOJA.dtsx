@@ -1,0 +1,75 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/16/2018 11:25:00 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAGGI-G"
+  DTS:CreatorName="MAGGI-G\vinic"
+  DTS:DTSID="{611F59BE-34E7-4593-96D6-17B14A7FAB5A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="IN_DW_VINCULO_DISTRIBUIDOR_LOJA"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{75FA48E3-E038-4C70-8E77-A8073E295B7E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{49FF0FD7-A7EA-4B3A-AD49-7074BA47B257}"
+      DTS:ObjectName="52.168.77.45.DW.vinicius.dutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=52.168.77.45;User ID=vinicius.dutra;Initial Catalog=DW;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH0ueHa3BUUWfmA6Qv5NRlgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACLmstRELzk80EcfxxPXmqv9rBrPL8gr5w07piwC1qK7QAAAAAOgAAAAAIAACAAAAACp+vvYvElEf29hf9V7TPZJ+gYKNDIduAVkVyeYyeHvCAAAABpf+l8hOGiMzbV53Nsq7Nbxi1VGcdE3UwrlAd4ensp1EAAAACozQV2sbx5xmmxXSc3XIzClVn3VN5iF5flAHTPAH+JKP5/61SwLSZCLkACD86mKgLffRoRASt6Eqbr6AzuJ0F9</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga da DW_VINCULO_DISTRIBUIDOR_LOJA"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Carga da DW_VINCULO_DISTRIBUIDOR_LOJA"
+      DTS:DTSID="{C657C544-A81F-453F-B779-8F9D496904BF}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga da DW_VINCULO_DISTRIBUIDOR_LOJA"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{49FF0FD7-A7EA-4B3A-AD49-7074BA47B257}"
+          SQLTask:SqlStatementSource="MERGE [DBO].[DW_VINCULO_DISTRIBUIDOR_LOJA] AS DW&#xA;USING (SELECT LOJA.[SK_LOJA],DIST.[SK_DISTRIBUIDOR],DISTVINC.[CODIGO_PROJETO]&#xA;&#x9;&#x9;FROM [DBO].[ODS_DISTRIBUIDOR_VINCULADO] DISTVINC&#xA;&#x9;&#x9;LEFT OUTER JOIN [DBO].[DW_LOJA] LOJA ON (LOJA.[CODIGO_LOJA] = DISTVINC.CODIGO_LOJA)&#xA;&#x9;&#x9;LEFT OUTER JOIN [DBO].[DW_DISTRIBUIDOR] DIST ON (DIST.[CODIGO_DISTRIBUIDOR] = DISTVINC.[CODIGO_LOJA_DISTRIBUIDOR])&#xA;&#x9;&#x9;WHERE LOJA.[SK_LOJA] IS NOT NULL AND DIST.[SK_DISTRIBUIDOR] IS NOT NULL) AS ODS&#xA;ON (DW.[SK_DISTRIBUIDOR] = ODS.[SK_DISTRIBUIDOR] AND DW.[SK_LOJA] = ODS.[SK_LOJA] AND DW.[CODIGO_PROJETO] = ODS.[CODIGO_PROJETO])&#xA;WHEN MATCHED &#xA;THEN&#xA;&#x9;UPDATE SET &#xA;&#x9;&#x9;DW.[CODIGO_PROJETO] = ODS.[CODIGO_PROJETO], &#xA;&#x9;&#x9;DW.[DATA_ALTERACAO] = GETDATE()&#xA;WHEN NOT MATCHED BY TARGET &#xA;THEN &#xA;&#x9;INSERT ([SK_DISTRIBUIDOR],[SK_LOJA],[CODIGO_PROJETO],[DATA_INCLUSAO],[DATA_ALTERACAO],[DATA_INICIO_VIGENCIA],[DATA_FIM_VIGENCIA],[FLAG_MAIS_ATUAL])&#xA;&#x9;VALUES (ODS.[SK_DISTRIBUIDOR],ODS.[SK_LOJA],ODS.[CODIGO_PROJETO],GETDATE(),GETDATE(),'1900-01-01 00:00:00.000',NULL,'A')&#xA;;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="299,42"
+          Id="Package\Carga da DW_VINCULO_DISTRIBUIDOR_LOJA"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

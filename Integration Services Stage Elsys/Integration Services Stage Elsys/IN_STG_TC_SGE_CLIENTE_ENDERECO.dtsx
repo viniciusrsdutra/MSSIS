@@ -1,0 +1,1212 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/4/2018 5:15:43 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAGGI-G"
+  DTS:CreatorName="MAGGI-G\vinic"
+  DTS:DTSID="{791E31DB-FCB9-4A3F-AE77-9D4E1E62505F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="IN_STG_TC_SGE_CLIENTE_ENDERECO"
+  DTS:PackageType="5"
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{A9E009AD-A165-4D90-98E0-0425D8C0E7CF}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[10.203.48.11.Sige3_Hom.ViniDutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{066DB174-A2ED-44CD-99C7-7DEEE7A2E647}"
+      DTS:ObjectName="10.203.48.11.Sige3_Hom.ViniDutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=10.203.48.11;User ID=ViniDutra;Initial Catalog=Sige3_Hom;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAT6/qe2skOESN8ocLsgXSaAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADYWh2vGxt5uUpHUszcvtBMR4s+EFzJd9CZykq09wAUDAAAAAAOgAAAAAIAACAAAAD/ya25qtqXM5W31V6byaERUs+Bu4Z5FRPRg1XiW8gwTSAAAADgyWV42Nopk/mN6704UJzwbF0Ll+vs34AIomOAtIHTuEAAAAA1//RxMOODqsiTSvx18RV/9PAFTWlMi0kgc0nbtQ54EujaVA75zeVQYk1V1vofGCGV1AHX2BRj5H+RxBD9DG6U</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{24AD2A87-348B-4223-B840-1FDA8BB8BD39}"
+      DTS:ObjectName="52.168.77.45.DW.vinicius.dutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=52.168.77.45;User ID=vinicius.dutra;Initial Catalog=DW;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAT6/qe2skOESN8ocLsgXSaAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADReCUbmefQN2oFX76GY0hXwcryRhIiOysSui/xILL9bQAAAAAOgAAAAAIAACAAAADpstC48Ii2LOps4Kz3LXFVrPvjLhGHjz5wTSLZoxrY7CAAAABV4loTH7/JXSwiciziQSUwiAFM/qv/vOjLjT+AptO8C0AAAAD398DakTr5drCAAzWH1KNcyZwjnJuT7L2fMqyYXt56t7ed37KEkSO+xDnBLW2L+cG6l9zJfwzgtlAPgbU8M21t</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CEA014C6-DB1F-4C63-915C-74DC3879632D}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="DT_FINAL">
+      <DTS:VariableValue
+        DTS:DataType="7">5/9/2018 10:43:13 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CDFC1685-A623-4C77-96B6-9C257FDC0A29}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DT_INICIAL">
+      <DTS:VariableValue
+        DTS:DataType="7">5/9/2018 10:43:13 AM</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{FF5AEA61-2809-46D2-928A-80A46C1210D9}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga da stage STG_TC_SGE_CLIENTE_ENDERECO"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[STG_TC_SGE_CLIENTE_ENDERECO]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+                  connectionManagerRefId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].Columns[ID_Cliente]"
+                      cachedDataType="i4"
+                      cachedName="ID_Cliente"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_CLIENTE]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[ID_Cliente]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].Columns[Id_Endereco]"
+                      cachedDataType="i4"
+                      cachedName="Id_Endereco"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_ENDERECO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Id_Endereco]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].Columns[Descricao]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Descricao"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[DESCRICAO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Descricao]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].Columns[flg_Estado_Loja]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="flg_Estado_Loja"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[FLG_ESTADO_LOJA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[flg_Estado_Loja]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].Columns[Log_Endereco]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="Log_Endereco"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LOG_ENDERECO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Log_Endereco]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].Columns[Endereco]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Endereco"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ENDERECO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Endereco]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].Columns[Num_Endereco]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="Num_Endereco"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[NUM_ENDERECO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Num_Endereco]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].Columns[Endereco_Com]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="Endereco_Com"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ENDERECO_COM]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Endereco_Com]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].Columns[Bairro]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Bairro"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[BAIRRO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Bairro]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].Columns[ID_CIDADE]"
+                      cachedDataType="i4"
+                      cachedName="ID_CIDADE"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_CIDADE]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[ID_CIDADE]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].Columns[ID_Estado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="ID_Estado"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_ESTADO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[ID_Estado]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].Columns[Cep]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="Cep"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[CEP]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Cep]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].Columns[Lat]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="Lat"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LAT]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Lat]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].Columns[Lng]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="Lng"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LNG]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Lng]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].Columns[flg_Instalacao]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="flg_Instalacao"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[FLG_INSTALACAO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[flg_Instalacao]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].Columns[Lg_Us_Inc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Lg_Us_Inc"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_US_INC]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Inc]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].Columns[Lg_Dt_Inc]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Lg_Dt_Inc"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_DT_INC]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Inc]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].Columns[Lg_Us_Alt]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Lg_Us_Alt"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_US_ALT]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Alt]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].Columns[Lg_Dt_Alt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Lg_Dt_Alt"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_DT_ALT]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Alt]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].Columns[DT_CARGA]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DT_CARGA"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[DT_CARGA]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_CLIENTE]"
+                      dataType="i4"
+                      name="ID_CLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_ENDERECO]"
+                      dataType="i4"
+                      name="ID_ENDERECO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[DESCRICAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DESCRICAO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[FLG_ESTADO_LOJA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="FLG_ESTADO_LOJA" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LOG_ENDERECO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="LOG_ENDERECO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ENDERECO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ENDERECO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[NUM_ENDERECO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="NUM_ENDERECO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ENDERECO_COM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="ENDERECO_COM" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[BAIRRO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BAIRRO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_CIDADE]"
+                      dataType="i4"
+                      name="ID_CIDADE" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_ESTADO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="ID_ESTADO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[CEP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="CEP" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LAT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="LAT" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LNG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="LNG" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[FLG_INSTALACAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="FLG_INSTALACAO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_US_INC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="LG_US_INC" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_DT_INC]"
+                      dataType="dbTimeStamp"
+                      name="LG_DT_INC" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_US_ALT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="LG_US_ALT" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_DT_ALT]"
+                      dataType="dbTimeStamp"
+                      name="LG_DT_ALT" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      name="DT_CARGA" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Tc_Sge_Cliente_Endereco]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        ID_Cliente, Id_Endereco, Descricao, flg_Estado_Loja, Log_Endereco, Endereco, Num_Endereco, Endereco_Com, Bairro, ID_CIDADE, ID_Estado, Cep, Lat, Lng, flg_Instalacao, Lg_Us_Inc, Lg_Dt_Inc, Lg_Us_Alt, Lg_Dt_Alt, 
+                         GETDATE() AS DT_CARGA
+FROM            Tc_Sge_Cliente_Endereco
+WHERE        (Lg_Dt_Inc BETWEEN ? AND ?) OR
+                         (Lg_Dt_Alt BETWEEN ? AND ?)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"0:Input",{CDFC1685-A623-4C77-96B6-9C257FDC0A29};"1:Input",{CEA014C6-DB1F-4C63-915C-74DC3879632D};"2:Input",{CDFC1685-A623-4C77-96B6-9C257FDC0A29};"3:Input",{CEA014C6-DB1F-4C63-915C-74DC3879632D};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[10.203.48.11.Sige3_Hom.ViniDutra]"
+                  connectionManagerRefId="Package.ConnectionManagers[10.203.48.11.Sige3_Hom.ViniDutra]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[ID_Cliente]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[ID_Cliente]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[ID_Cliente]"
+                      name="ID_Cliente"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Id_Endereco]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Endereco]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Id_Endereco]"
+                      name="Id_Endereco"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Descricao]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Descricao]"
+                      length="50"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Descricao]"
+                      name="Descricao"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[flg_Estado_Loja]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[flg_Estado_Loja]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[flg_Estado_Loja]"
+                      name="flg_Estado_Loja"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Log_Endereco]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Log_Endereco]"
+                      length="5"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Log_Endereco]"
+                      name="Log_Endereco"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Endereco]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Endereco]"
+                      length="50"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Endereco]"
+                      name="Endereco"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Num_Endereco]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Num_Endereco]"
+                      length="15"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Num_Endereco]"
+                      name="Num_Endereco"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Endereco_Com]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Endereco_Com]"
+                      length="30"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Endereco_Com]"
+                      name="Endereco_Com"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Bairro]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Bairro]"
+                      length="50"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Bairro]"
+                      name="Bairro"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[ID_CIDADE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[ID_CIDADE]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[ID_CIDADE]"
+                      name="ID_CIDADE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[ID_Estado]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[ID_Estado]"
+                      length="2"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[ID_Estado]"
+                      name="ID_Estado"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Cep]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Cep]"
+                      length="8"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Cep]"
+                      name="Cep"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Lat]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lat]"
+                      length="12"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Lat]"
+                      name="Lat"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Lng]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lng]"
+                      length="12"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Lng]"
+                      name="Lng"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[flg_Instalacao]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[flg_Instalacao]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[flg_Instalacao]"
+                      name="flg_Instalacao"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Inc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Us_Inc]"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Inc]"
+                      name="Lg_Us_Inc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Inc]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Dt_Inc]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Inc]"
+                      name="Lg_Dt_Inc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Alt]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Us_Alt]"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Alt]"
+                      name="Lg_Us_Alt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Alt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Dt_Alt]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Alt]"
+                      name="Lg_Dt_Alt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[DT_CARGA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].Columns[DT_CARGA]"
+                      name="DT_CARGA"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[ID_Cliente]"
+                      dataType="i4"
+                      name="ID_Cliente" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Endereco]"
+                      dataType="i4"
+                      name="Id_Endereco" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Descricao]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Descricao" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[flg_Estado_Loja]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="flg_Estado_Loja" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Log_Endereco]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Log_Endereco" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Endereco]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Endereco" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Num_Endereco]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="Num_Endereco" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Endereco_Com]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="Endereco_Com" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Bairro]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Bairro" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[ID_CIDADE]"
+                      dataType="i4"
+                      name="ID_CIDADE" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[ID_Estado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="ID_Estado" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Cep]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Cep" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lat]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="Lat" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lng]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="Lng" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[flg_Instalacao]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="flg_Instalacao" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Us_Inc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Lg_Us_Inc" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Dt_Inc]"
+                      dataType="dbTimeStamp"
+                      name="Lg_Dt_Inc" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Us_Alt]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Lg_Us_Alt" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Dt_Alt]"
+                      dataType="dbTimeStamp"
+                      name="Lg_Dt_Alt" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output].ExternalColumns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      name="DT_CARGA" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[ID_Cliente]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[ID_Cliente]"
+                      name="ID_Cliente" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Endereco]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Endereco]"
+                      name="Id_Endereco" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Descricao]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Descricao]"
+                      name="Descricao" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[flg_Estado_Loja]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[flg_Estado_Loja]"
+                      name="flg_Estado_Loja" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Log_Endereco]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Log_Endereco]"
+                      name="Log_Endereco" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Endereco]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Endereco]"
+                      name="Endereco" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Num_Endereco]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Num_Endereco]"
+                      name="Num_Endereco" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Endereco_Com]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Endereco_Com]"
+                      name="Endereco_Com" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Bairro]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Bairro]"
+                      name="Bairro" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[ID_CIDADE]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[ID_CIDADE]"
+                      name="ID_CIDADE" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[ID_Estado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[ID_Estado]"
+                      name="ID_Estado" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Cep]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Cep]"
+                      name="Cep" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Lat]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Lat]"
+                      name="Lat" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Lng]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Lng]"
+                      name="Lng" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[flg_Instalacao]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[flg_Instalacao]"
+                      name="flg_Instalacao" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Us_Inc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Us_Inc]"
+                      name="Lg_Us_Inc" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Dt_Inc]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Dt_Inc]"
+                      name="Lg_Dt_Inc" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Us_Alt]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Us_Alt]"
+                      name="Lg_Us_Alt" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Dt_Alt]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Dt_Alt]"
+                      name="Lg_Dt_Alt" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[DT_CARGA]"
+                      name="DT_CARGA" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO.Paths[OLE DB Source Output]"
+              endId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Limpa a stage STG_TC_SGE_CLIENTE_ENDERECO"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Limpa a Stage Cliente_Endereco"
+      DTS:DTSID="{F20CDF82-8CCC-4AFD-A490-2D827E688E1F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Limpa a stage STG_TC_SGE_CLIENTE_ENDERECO"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{24AD2A87-348B-4223-B840-1FDA8BB8BD39}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[STG_TC_SGE_CLIENTE_ENDERECO]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Obtém a data da carga do SGBD"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Obtém datas de pesquisa da tabela ponteiro"
+      DTS:DTSID="{9195f115-5bf7-44a2-8d31-ee01f4ebde69}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Obtém a data da carga do SGBD"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{24AD2A87-348B-4223-B840-1FDA8BB8BD39}"
+          SQLTask:SqlStatementSource="SELECT [DT_INICIAL],[DT_FINAL],[DT_INCLUSAO],[DT_ATUALIZACAO]&#xA;FROM [DW].[dbo].[PRM_DATE_POINTER]&#xA;WHERE [DS_SISTEMA] LIKE 'SIGE' AND DT_INCLUSAO IN (SELECT MAX(DT_INCLUSAO) FROM [DW].[dbo].[PRM_DATE_POINTER] WHERE [DS_SISTEMA] LIKE 'SIGE');"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="DT_FINAL"
+            SQLTask:DtsVariableName="User::DT_FINAL" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="DT_INICIAL"
+            SQLTask:DtsVariableName="User::DT_INICIAL" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{FF16BABB-6070-452F-8713-2B79DDA8AB49}"
+      DTS:From="Package\Limpa a stage STG_TC_SGE_CLIENTE_ENDERECO"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{41B0E6F2-8DE8-4616-8EF4-09BB52C126BF}"
+      DTS:From="Package\Obtém a data da carga do SGBD"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="321,42"
+          Id="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO"
+          TopLeft="338,107.5" />
+        <NodeLayout
+          Size="316,42"
+          Id="Package\Limpa a stage STG_TC_SGE_CLIENTE_ENDERECO"
+          TopLeft="5.5,5.49999999999989" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Obtém a data da carga do SGBD"
+          TopLeft="382.5,5.49999999999989" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="163.5,47.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="282.833333333333,60"
+              Start="0,0"
+              End="282.833333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.8214507129572" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.8214507129572"
+                    Point2="0,35.8214507129572"
+                    Point3="4,35.8214507129572" />
+                  <mssgle:LineSegment
+                    End="278.833333333333,35.8214507129572" />
+                  <mssgle:CubicBezierSegment
+                    Point1="278.833333333333,35.8214507129572"
+                    Point2="282.833333333333,35.8214507129572"
+                    Point3="282.833333333333,39.8214507129572" />
+                  <mssgle:LineSegment
+                    End="282.833333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="498.5,47.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="52.1666666666666,60"
+              Start="0,0"
+              End="52.1666666666666,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.8214507129572" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.8214507129572"
+                    Point2="0,35.8214507129572"
+                    Point3="4,35.8214507129572" />
+                  <mssgle:LineSegment
+                    End="48.1666666666666,35.8214507129572" />
+                  <mssgle:CubicBezierSegment
+                    Point1="48.1666666666666,35.8214507129572"
+                    Point2="52.1666666666666,35.8214507129572"
+                    Point3="52.1666666666666,39.8214507129572" />
+                  <mssgle:LineSegment
+                    End="52.1666666666666,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="371,42"
+          Id="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE"
+          TopLeft="14,5.5" />
+        <NodeLayout
+          Size="388,42"
+          Id="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW"
+          TopLeft="5.50000000000003,107.5" />
+        <EdgeLayout
+          Id="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO.Paths[OLE DB Source Output]"
+          TopLeft="199.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Grava dados na stage STG_TC_SGE_CLIENTE_ENDERECO do DW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga da stage STG_TC_SGE_CLIENTE_ENDERECO\Obtém os dados da tabela Tc_SGE_Cliente_Endereco do SIGE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

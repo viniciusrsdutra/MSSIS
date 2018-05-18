@@ -1,0 +1,75 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/8/2018 5:19:00 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAGGI-G"
+  DTS:CreatorName="MAGGI-G\vinic"
+  DTS:DTSID="{1AE0835E-269F-4047-9BD7-29EFD7B3F750}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="IN_ODS_CONSUMIDOR"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{84969601-BD3E-49AE-BA59-ECAB6EDED80C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D790F0ED-4BBD-41E0-812F-24C92581E9B5}"
+      DTS:ObjectName="52.168.77.45.DW.vinicius.dutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=52.168.77.45;User ID=vinicius.dutra;Initial Catalog=DW;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAT6/qe2skOESN8ocLsgXSaAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAu3kNtCyvHf7ra0vcikbcBaQ0DEMPDae18f6sJfI/L1AAAAAAOgAAAAAIAACAAAACflVuFyLJ0XgddWjxxK3VgrdDEWK36HjT8dGeFv5bsTiAAAAC62uuRnhfqwWD+VOxR1jtoXFAi61i/qmDpXISHZjrdR0AAAAAom+rYk55agCnESfmqcm5c3nfL8TSotkCIXKuG9V8Aefd88SF12EHXW3uhxwGcDURlkgDwLU1FamtcKgrz8jWT</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga da ODS_CONSUMIDOR"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Carga da ODS_CONSUMIDOR"
+      DTS:DTSID="{EEB8B742-4F5F-4FF1-BEFD-2F46B28B134E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga da ODS_CONSUMIDOR"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D790F0ED-4BBD-41E0-812F-24C92581E9B5}"
+          SQLTask:SqlStatementSource="MERGE [dbo].[ODS_CONSUMIDOR] AS ODS&#xA;USING [dbo].[STG_TC_SGE_CLIENTE] AS STG&#xA;ON (ODS.[CODIGO_CONSUMIDOR] = STG.[ID_CLIENTE])&#xA;WHEN MATCHED &#xA;THEN &#xA;&#x9;UPDATE SET &#xA;&#x9;&#x9;ODS.[TIPO_CONSUMIDOR] = STG.[TP_CLIENTE],&#xA;&#x9;&#x9;ODS.[NOME_CONSUMIDOR] = STG.[RSOCIAL],&#xA;&#x9;&#x9;ODS.[NOME_FANTASIA_CONSUMIDOR] = STG.[NOMEFANTASIA],&#xA;&#x9;&#x9;ODS.[CNPJ_CONSUMIDOR] = STG.[CNPJ],&#xA;&#x9;&#x9;ODS.[INSCRICAO_ESTADUAL_CONSUMIDOR] = STG.[IE], &#xA;&#x9;&#x9;ODS.[CPF_CONSUMIDOR] = STG.[CPF], &#xA;&#x9;&#x9;ODS.[DDD_TELEFONE_CONSUMIDOR] = STG.[FONE_DDD], &#xA;&#x9;&#x9;ODS.[TELEFONE_CONSUMIDOR] = STG.[FONE], &#xA;&#x9;&#x9;ODS.[DDD_CELULAR_CONSUMIDOR] = STG.[CELULAR_DDD], &#xA;&#x9;&#x9;ODS.[CELULAR_CONSUMIDOR] = STG.[CELULAR], &#xA;&#x9;&#x9;ODS.[FLAG_SEXO_CONSUMIDOR] = STG.[FLG_SEXO], &#xA;&#x9;&#x9;ODS.[NOME_PAI_CONSUMIDOR] = STG.[NOME_PAI], &#xA;&#x9;&#x9;ODS.[NOME_MAE_CONSUMIDOR] = STG.[NOME_MAE], &#xA;&#x9;&#x9;ODS.[DATA_NASCIMENTO_CONSUMIDOR] = STG.[DAT_NASC], &#xA;&#x9;&#x9;ODS.[EMAIL_CONSUMIDOR] = STG.[EMAIL], &#xA;&#x9;&#x9;ODS.[RECEBE_EMAIL] = STG.[LO_EMAIL], &#xA;&#x9;&#x9;ODS.[RECEBE_SMS] = STG.[LO_SMS], &#xA;&#x9;&#x9;ODS.[LATITUDE_CONSUMIDOR] = STG.[LAT], &#xA;&#x9;&#x9;ODS.[LONGITUDE_CONSUMIDOR] = STG.[LNG], &#xA;&#x9;&#x9;ODS.[OBS] = STG.[OBS], &#xA;&#x9;&#x9;ODS.[LOG_USUARIO_INCLUSAO] = STG.[LG_US_INC], &#xA;&#x9;&#x9;ODS.[LOG_DATA_INCLUSAO] = STG.[LG_DT_INC], &#xA;&#x9;&#x9;ODS.[LOG_USUARIO_ALTERACAO] = STG.[LG_US_ALT], &#xA;&#x9;&#x9;ODS.[LOG_DATA_ALTERACAO] = STG.[LG_DT_ALT], &#xA;&#x9;&#x9;ODS.[RG_CONSUMIDOR] = STG.[RG],&#xA;&#x9;&#x9;ODS.[DATA_ALTERACAO] = GETDATE()&#xA;WHEN NOT MATCHED BY TARGET &#xA;THEN &#xA;&#x9;INSERT ([CODIGO_CONSUMIDOR],[TIPO_CONSUMIDOR],[NOME_CONSUMIDOR],[NOME_FANTASIA_CONSUMIDOR],[CNPJ_CONSUMIDOR],[INSCRICAO_ESTADUAL_CONSUMIDOR],[CPF_CONSUMIDOR],[DDD_TELEFONE_CONSUMIDOR],[TELEFONE_CONSUMIDOR],&#xA;[DDD_CELULAR_CONSUMIDOR],[CELULAR_CONSUMIDOR],[FLAG_SEXO_CONSUMIDOR],[NOME_PAI_CONSUMIDOR],[NOME_MAE_CONSUMIDOR],[DATA_NASCIMENTO_CONSUMIDOR],[EMAIL_CONSUMIDOR],[RECEBE_EMAIL],[RECEBE_SMS],&#xA;[LATITUDE_CONSUMIDOR],[LONGITUDE_CONSUMIDOR],[OBS],[LOG_USUARIO_INCLUSAO],[LOG_DATA_INCLUSAO],[LOG_USUARIO_ALTERACAO],[LOG_DATA_ALTERACAO],[RG_CONSUMIDOR],[DATA_INCLUSAO],[DATA_ALTERACAO]) &#xA;&#x9;VALUES (STG.[ID_CLIENTE],STG.[TP_CLIENTE],STG.[RSOCIAL],STG.[NOMEFANTASIA],STG.[CNPJ],STG.[IE],STG.[CPF],STG.[FONE_DDD],STG.[FONE],STG.[CELULAR_DDD],STG.[CELULAR],STG.[FLG_SEXO],STG.[NOME_PAI],&#xA;&#x9;&#x9;&#x9;STG.[NOME_MAE],STG.[DAT_NASC],STG.[EMAIL],STG.[LO_EMAIL],STG.[LO_SMS],STG.[LAT],STG.[LNG],STG.[OBS],STG.[LG_US_INC],STG.[LG_DT_INC],STG.[LG_US_ALT],STG.[LG_DT_ALT],STG.[RG],GETDATE(),GETDATE())&#xA;;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="219,42"
+          Id="Package\Carga da ODS_CONSUMIDOR"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

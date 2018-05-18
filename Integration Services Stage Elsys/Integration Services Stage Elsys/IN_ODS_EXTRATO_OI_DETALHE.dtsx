@@ -1,0 +1,75 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/10/2018 4:28:51 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAGGI-G"
+  DTS:CreatorName="MAGGI-G\vinic"
+  DTS:DTSID="{48021B24-39E0-44C7-8DF3-2B26D042BB21}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="IN_ODS_EXTRATO_OI_DETALHE"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{1EECA056-18C8-428A-B2E2-617800F47A0E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{229A9976-4FDB-4245-B164-45D0ACBE49CC}"
+      DTS:ObjectName="52.168.77.45.DW.vinicius.dutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=52.168.77.45;User ID=vinicius.dutra;Initial Catalog=DW;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH0ueHa3BUUWfmA6Qv5NRlgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABPLLcoD3C8O2H/xpXk8gNiWaseScuLO+9dB+iWw/2V7QAAAAAOgAAAAAIAACAAAAD20vTUFoarNCBCA/SMaoiCXxvwDRO2uM95Lkj23e2kSiAAAACq4YKRUn6drxDTQCEsOiDZ3b/uMKOCXQwaSqMHJVwQh0AAAABibPehVG4iJNgV9kY7y4iRpRfDgWPpFVmjrtdqUSlRMqnr4jsEwVsLYgLUMWAz6e74JkMd/zuxjqtyZFDzH9wq</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga da ODS_EXTRATO_OI_DETALHE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Carga da ODS_EXTRATO_OI_DETALHE"
+      DTS:DTSID="{49335AF7-EEB6-4C3E-8EDF-34F45215E8BA}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga da ODS_EXTRATO_OI_DETALHE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{229A9976-4FDB-4245-B164-45D0ACBE49CC}"
+          SQLTask:SqlStatementSource="MERGE [dbo].[ODS_EXTRATO_OI_DETALHE] AS ODS&#xA;USING [dbo].[STG_TC_SGE_EXTOI_DETALHE] AS STG&#xA;ON (ODS.[CODIGO_CONTRATO] = STG.[CONTRATO] AND ODS.[CODIGO_ORDEM_SERVICO] = STG.[ID_OS])&#xA;WHEN MATCHED &#xA;THEN &#xA;&#x9;UPDATE SET &#xA;&#x9;&#x9;ODS.[CODIGO_SERVICO] = STG.[ID_SERVICO],&#xA;&#x9;&#x9;ODS.[VALOR_PREVISTO_RECEBER_OI] = STG.[VALOR_PREVISTO_RECEBER_OI], &#xA;&#x9;&#x9;ODS.[VALOR_RECEBIDO_OI] = STG.[VALOR_RECEBIDO_OI], &#xA;&#x9;&#x9;ODS.[VALOR_PREVISTO_PAGAR_LOJA] = STG.[VALOR_PREVISTO_PAGAR_LOJA], &#xA;&#x9;&#x9;ODS.[VALOR_PAGO_LOJA] = STG.[VALOR_PAGO_LOJA], &#xA;&#x9;&#x9;ODS.[VALOR_PREVISTO_PAGAR_DISTRIBUIDOR] = STG.[VALOR_PREVISTO_PAGAR_DISTRIB], &#xA;&#x9;&#x9;ODS.[VALOR_PAGO_DISTRIBUIDOR] = STG.[VALOR_PAGO_DISTRIB], &#xA;&#x9;&#x9;ODS.[CODIGO_ORDEM_COMPRA_LOJA] = STG.[ID_OC_LOJA], &#xA;&#x9;&#x9;ODS.[CODIGO_ORDEM_COMPRA_DISTRIBUIDOR] = STG.[ID_OC_DISTRIB], &#xA;&#x9;&#x9;ODS.[CODIGO_LOJA] = STG.[ID_LOJA], &#xA;&#x9;&#x9;ODS.[CODIGO_DISTRIBUIDOR] = STG.[ID_DISTRIB], &#xA;&#x9;&#x9;ODS.[CODIGO_STATUS] = STG.[ID_STATUS], &#xA;&#x9;&#x9;ODS.[FLAG_UPGRADE] = STG.[FLGUPGRADE], &#xA;&#x9;&#x9;ODS.[FLAG_AVALIAR] = STG.[FLG_AVALIAR], &#xA;&#x9;&#x9;ODS.[DATA_HABILITACAO] = STG.[DT_HABILITACAO], &#xA;&#x9;&#x9;ODS.[DATA_GERACAO_ORDEM_COMPRA_PAGAMENTO] = STG.[DT_GER_OCPAGTO], &#xA;&#x9;&#x9;ODS.[DATA_CALCULO] = STG.[DT_CALCULO], &#xA;&#x9;&#x9;ODS.[OBSERVACAO] = STG.[OBS], &#xA;&#x9;&#x9;ODS.[CODIGO_SEQUENCIAL] = STG.[ID_SEQ], &#xA;&#x9;&#x9;ODS.[CPF_CONSUMIDOR] = STG.[CPF], &#xA;&#x9;&#x9;ODS.[MSG_CRITICA_RECEBIMENTO] = STG.[MSG_CRITICA_REC], &#xA;&#x9;&#x9;ODS.[MSG_CRITICA_PAGAMENTO] = STG.[MSG_CRITICA_PAG],&#xA;&#x9;&#x9;ODS.[DATA_ALTERACAO] = GETDATE()&#xA;WHEN NOT MATCHED BY TARGET &#xA;THEN &#xA;&#x9;INSERT ([CODIGO_CONTRATO],[CODIGO_ORDEM_SERVICO],[CODIGO_SERVICO],[VALOR_PREVISTO_RECEBER_OI],[VALOR_RECEBIDO_OI],[VALOR_PREVISTO_PAGAR_LOJA],[VALOR_PAGO_LOJA],[VALOR_PREVISTO_PAGAR_DISTRIBUIDOR],&#xA;&#x9;&#x9;&#x9;[VALOR_PAGO_DISTRIBUIDOR],[CODIGO_ORDEM_COMPRA_LOJA],[CODIGO_ORDEM_COMPRA_DISTRIBUIDOR],[CODIGO_LOJA],[CODIGO_DISTRIBUIDOR],[CODIGO_STATUS],[FLAG_UPGRADE],[FLAG_AVALIAR],[DATA_HABILITACAO],&#xA;&#x9;&#x9;&#x9;[DATA_GERACAO_ORDEM_COMPRA_PAGAMENTO],[DATA_CALCULO],[OBSERVACAO],[CODIGO_SEQUENCIAL],[CPF_CONSUMIDOR],[MSG_CRITICA_RECEBIMENTO],[MSG_CRITICA_PAGAMENTO],[DATA_INCLUSAO],[DATA_ALTERACAO])&#xA;&#x9;VALUES (STG.[CONTRATO],STG.[ID_OS],STG.[ID_SERVICO],STG.[VALOR_PREVISTO_RECEBER_OI],STG.[VALOR_RECEBIDO_OI],STG.[VALOR_PREVISTO_PAGAR_LOJA],STG.[VALOR_PAGO_LOJA],STG.[VALOR_PREVISTO_PAGAR_DISTRIB],&#xA;&#x9;&#x9;&#x9;STG.[VALOR_PAGO_DISTRIB],STG.[ID_OC_LOJA],STG.[ID_OC_DISTRIB],STG.[ID_LOJA],STG.[ID_DISTRIB],STG.[ID_STATUS],STG.[FLGUPGRADE],STG.[FLG_AVALIAR],STG.[DT_HABILITACAO],STG.[DT_GER_OCPAGTO],&#xA;&#x9;&#x9;&#x9;STG.[DT_CALCULO],STG.[OBS],STG.[ID_SEQ],STG.[CPF],STG.[MSG_CRITICA_REC],STG.[MSG_CRITICA_PAG],GETDATE(),GETDATE())&#xA;;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="264,42"
+          Id="Package\Carga da ODS_EXTRATO_OI_DETALHE"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

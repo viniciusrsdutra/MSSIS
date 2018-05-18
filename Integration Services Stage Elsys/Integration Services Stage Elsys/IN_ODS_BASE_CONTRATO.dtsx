@@ -1,0 +1,75 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/8/2018 5:30:50 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAGGI-G"
+  DTS:CreatorName="MAGGI-G\vinic"
+  DTS:DTSID="{BBFB22CB-F42B-41D7-8B44-58B72DCF86EF}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="IN_ODS_BASE_CONTRATO"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{59E698BB-3F47-4E9A-BEC1-09734187F07D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1423FDBA-9919-4273-BE9C-26EF4B05584B}"
+      DTS:ObjectName="52.168.77.45.DW.vinicius.dutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=52.168.77.45;User ID=vinicius.dutra;Initial Catalog=DW;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAT6/qe2skOESN8ocLsgXSaAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAa4ZVrd5bd/uyG8FG6MHTbd1FMqv0ZxBfx7BmY9Fw79AAAAAAOgAAAAAIAACAAAABAfCf5xbfXTfqJy9HECe/vFhtapYOPsqNY1Rl8GU3ONSAAAAA8cwzj2C3J228hUZ9x3TOFHe8ICT7jfKKqek3iH/VYOkAAAADoQZ83O56vJ9me3xwi0lNAx1YhFgMZCFsrvpYyKBd7p/2FfTRwIIPbj4dC+P/dI/095x/KbMgl+rTK2e5Kl/8u</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga da ODS_BASE_CONTRATO"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Carga da ODS_BASE_CONTRATO"
+      DTS:DTSID="{91832AFD-7B1E-42F4-9C9F-A1E156591E88}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga da ODS_BASE_CONTRATO"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1423FDBA-9919-4273-BE9C-26EF4B05584B}"
+          SQLTask:SqlStatementSource="MERGE [dbo].[ODS_BASE_CONTRATO] AS ODS&#xA;USING (SELECT C.[ID_CONTRATO],C.[ID_CLIENTE],C.[ID_ENDERECO],C.[ID_TP_CONTRATO],C.[ID_DOC],C.[ID_STATUS],S.[STATUS],C.[ID_SITUACAO],S.[SITUACAO],C.[ID_LOJA],C.[ID_USUARIO_VENDA],C.[ID_USUARIO_CONVERSAO],&#xA;        C.[ID_USUARIO_CANCELAMENTO],C.[DT_HABILITACAO],C.[DT_CONVERSAO],C.[DT_CANCELAMENTO],C.[LG_US_INC],C.[LG_DT_INC],C.[LG_US_ALT],C.[LG_DT_ALT],C.[FLG_CONTRATO_PAGO],C.[DT_CONTRATO],C.[ID_DISTRIB],&#xA;        C.[QTD_PPRINC],C.[QTD_PADIC],C.[QTD_PADIC_CAN],C.[QTD_PPRINC_CAN],C.[QTD_PPV],C.[LO_ELSYS],C.[FLGESTRELA],C.[DT_CARGA]&#xA;&#x9;&#x9;FROM [dbo].[STG_TC_SGE_CONTRATO] C&#xA;&#x9;&#x9;LEFT OUTER JOIN [dbo].[STG_TC_SGE_STATUS] S ON (C.[ID_DOC] = S.[ID_DOC] AND C.[ID_STATUS] = S.[ID_STATUS] AND C.[ID_SITUACAO] = S.[ID_SITUACAO] AND C.[ID_CONTRATO] IS NOT NULL)&#xA;&#x9;&#x9;WHERE C.[ID_CONTRATO] NOT LIKE '') AS STG&#xA;ON (ODS.[CODIGO_DOCUMENTO] = STG.[ID_DOC] AND ODS.[CODIGO_STATUS] = STG.[ID_STATUS] AND ODS.[CODIGO_SITUACAO] = STG.[ID_SITUACAO])&#xA;WHEN MATCHED &#xA;THEN &#xA;&#x9;UPDATE SET &#xA;&#x9;&#x9;ODS.[CODIGO_CONTRATO] = STG.[ID_CONTRATO],&#xA;&#x9;&#x9;ODS.[CODIGO_CONSUMIDOR] = STG.[ID_ENDERECO],&#xA;&#x9;&#x9;ODS.[CODIGO_ENDERECO] = STG.[ID_ENDERECO],&#xA;&#x9;&#x9;ODS.[CODIGO_TIPO_CONTRATO] = STG.[ID_TP_CONTRATO],&#xA;&#x9;&#x9;ODS.[STATUS_CONTRATO] = STG.[STATUS],&#xA;&#x9;&#x9;ODS.[SITUACAO_CONTRATO] = STG.[SITUACAO],&#xA;&#x9;&#x9;ODS.[CODIGO_LOJA] = STG.[ID_LOJA],&#xA;&#x9;&#x9;ODS.[CODIGO_USUARIO_VENDA] = STG.[ID_USUARIO_VENDA],&#xA;&#x9;&#x9;ODS.[CODIGO_USUARIO_CONVERSAO] = STG.[ID_USUARIO_CONVERSAO],&#xA;&#x9;&#x9;ODS.[CODIGO_USUARIO_CANCELAMENTO] = STG.[ID_USUARIO_CANCELAMENTO],&#xA;&#x9;&#x9;ODS.[DATA_HABILITACAO] = STG.[DT_HABILITACAO],&#xA;&#x9;&#x9;ODS.[DATA_CONVERSAO] = STG.[DT_CONVERSAO],&#xA;&#x9;&#x9;ODS.[DATA_CANCELAMENTO] = STG.[DT_CANCELAMENTO],&#xA;&#x9;&#x9;ODS.[LOG_USUARIO_INCLUSAO] = STG.[LG_US_INC],&#xA;&#x9;&#x9;ODS.[LOG_DATA_INCLUSAO] = STG.[LG_DT_INC],&#xA;&#x9;&#x9;ODS.[LOG_USUARIO_ALTERACAO] = STG.[LG_US_ALT],&#xA;&#x9;&#x9;ODS.[LOG_DATA_ALTERACAO] = STG.[LG_DT_ALT],&#xA;&#x9;&#x9;ODS.[FLAG_CONTRATO_PAGO] = STG.[FLG_CONTRATO_PAGO],&#xA;&#x9;&#x9;ODS.[DATA_CONTRATO] = STG.[DT_CONTRATO],&#xA;&#x9;&#x9;ODS.[CODIGO_DISTRIBUIDOR] = STG.[ID_DISTRIB],&#xA;&#x9;&#x9;ODS.[QUANTIDADE_PONTO_PRINCIPAL] = STG.[QTD_PPRINC],&#xA;&#x9;&#x9;ODS.[QUANTIDADE_PONTO_ADICIONAL] = STG.[QTD_PADIC],&#xA;&#x9;&#x9;ODS.[QUANTIDADE_PONTO_ADICIONAL_CANCELADO] = STG.[QTD_PADIC_CAN],&#xA;&#x9;&#x9;ODS.[QUANTIDADE_PONTO_PRINCIPAL_CANCELADO] = STG.[QTD_PPRINC_CAN],&#xA;&#x9;&#x9;ODS.[QUANTIDADE_PPV] = STG.[QTD_PPV],&#xA;&#x9;&#x9;ODS.[LO_ELSYS] = STG.[LO_ELSYS],&#xA;&#x9;&#x9;ODS.[DATA_ALTERACAO] = GETDATE()&#xA;WHEN NOT MATCHED BY TARGET &#xA;THEN &#xA;&#x9;INSERT ([CODIGO_CONTRATO],[CODIGO_CONSUMIDOR],[CODIGO_ENDERECO],[CODIGO_TIPO_CONTRATO],[CODIGO_DOCUMENTO],[CODIGO_STATUS],[STATUS_CONTRATO],[CODIGO_SITUACAO],[SITUACAO_CONTRATO],[CODIGO_LOJA],&#xA;       [CODIGO_USUARIO_VENDA],[CODIGO_USUARIO_CONVERSAO],[CODIGO_USUARIO_CANCELAMENTO],[DATA_HABILITACAO],[DATA_CONVERSAO],[DATA_CANCELAMENTO],[LOG_USUARIO_INCLUSAO],[LOG_DATA_INCLUSAO],&#xA;       [LOG_USUARIO_ALTERACAO],[LOG_DATA_ALTERACAO],[FLAG_CONTRATO_PAGO],[DATA_CONTRATO],[CODIGO_DISTRIBUIDOR],[QUANTIDADE_PONTO_PRINCIPAL],[QUANTIDADE_PONTO_ADICIONAL],[QUANTIDADE_PONTO_ADICIONAL_CANCELADO],&#xA;       [QUANTIDADE_PONTO_PRINCIPAL_CANCELADO],[QUANTIDADE_PPV],[LO_ELSYS],[DATA_INCLUSAO],[DATA_ALTERACAO]) &#xA;&#x9;VALUES (STG.[ID_CONTRATO],STG.[ID_ENDERECO],STG.[ID_ENDERECO],STG.[ID_TP_CONTRATO],STG.[ID_DOC],STG.[ID_STATUS],STG.[STATUS],STG.[ID_SITUACAO],STG.[SITUACAO],STG.[ID_LOJA],STG.[ID_USUARIO_VENDA],&#xA;&#x9;&#x9;&#x9;STG.[ID_USUARIO_CONVERSAO],STG.[ID_USUARIO_CANCELAMENTO],STG.[DT_HABILITACAO],STG.[DT_CONVERSAO],STG.[DT_CANCELAMENTO],STG.[LG_US_INC],STG.[LG_DT_INC],STG.[LG_US_ALT],STG.[LG_DT_ALT],&#xA;&#x9;&#x9;&#x9;STG.[FLG_CONTRATO_PAGO],STG.[DT_CONTRATO],STG.[ID_DISTRIB],STG.[QTD_PPRINC],STG.[QTD_PADIC],STG.[QTD_PADIC_CAN],STG.[QTD_PPRINC_CAN],STG.[QTD_PPV],STG.[LO_ELSYS],GETDATE(),GETDATE())&#xA;;&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="236,42"
+          Id="Package\Carga da ODS_BASE_CONTRATO"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

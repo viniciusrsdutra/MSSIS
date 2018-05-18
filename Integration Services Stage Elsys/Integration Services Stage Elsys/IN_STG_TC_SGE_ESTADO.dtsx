@@ -1,0 +1,1368 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/4/2018 3:41:17 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAGGI-G"
+  DTS:CreatorName="MAGGI-G\vinic"
+  DTS:DTSID="{58740962-66A9-4F01-9AA5-270A4A84736F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="IN_STG_TC_SGE_ESTADO"
+  DTS:PackageType="5"
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{9F6A6519-1A2E-4846-BD0C-C8D1FE8FB9E8}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[10.203.48.11.Sige3_Hom.ViniDutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{16DF524D-AAFB-4910-A913-30EEDCCDF04C}"
+      DTS:ObjectName="10.203.48.11.Sige3_Hom.ViniDutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=10.203.48.11;User ID=ViniDutra;Initial Catalog=Sige3_Hom;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAT6/qe2skOESN8ocLsgXSaAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACgJV9Shc5rO4aREdlWKjd81awbtdVA9XBeLyqu4Dq8mAAAAAAOgAAAAAIAACAAAABKFFJSGE5m7IEa4dqQuyqwRVNhziBUrgPM4SN1PRJ6VCAAAAANxwmwmk6H3Zygfes6PhsvboDrYaLi9lUsffqE5+CttkAAAADzGM+GrepbCXIUF5VXJVQBaWDnQ4FSvwbnGeG4NaG2NMuz8YYg/3MKJhqg9U/oSQIoHRW+qgxurDCuOX4B0LAq</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3178EFD0-8E09-476C-B6B8-1851189EA948}"
+      DTS:ObjectName="52.168.77.45.DW.vinicius.dutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=52.168.77.45;User ID=vinicius.dutra;Initial Catalog=DW;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAT6/qe2skOESN8ocLsgXSaAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA1ZsQV+PgcxE7TNDBhM5Wik9yLljz5+uwXYbA7t3m+MgAAAAAOgAAAAAIAACAAAACBTTlZIKPKZ80qlsKK3/mGXENb4s0KxNdlQ23v46ZP0SAAAAC1kUHRAjncDs8Fehyt+aQE2wOYkdSNwf/xHHxK4P6s0kAAAAABz7LYINSoaRWcXRRqW4r86gCjYfAWCvRjqMACZ5vNIv0SEW/jbugbg4+JobCExNGQNEuoDPZotG81G3zQfJja</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="{FC016433-BA6E-450D-B4BD-5A96A6CC7CDF}"
+      DTS:CreationName="Microsoft.LogProviderTextFile"
+      DTS:Description="Writes log entries for events to a CSV file"
+      DTS:DTSID="{AD8B1EDF-674A-4E44-8F4F-258200EFEBD4}"
+      DTS:ObjectName="SSIS log provider for Text files">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F7C81E60-A666-4C35-83D9-E645FDA4F06F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="DT_FINAL">
+      <DTS:VariableValue
+        DTS:DataType="7">5/9/2018 9:59:30 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5D6A36F3-A249-422B-B291-A0931BD55997}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="DT_INICIAL">
+      <DTS:VariableValue
+        DTS:DataType="7">5/9/2018 9:59:19 AM</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">11,7,OnError,19,OnExecStatusChanged,13,OnInformation,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,10,OnProgress,13,OnQueryCancel,12,OnTaskFailed,10,Diagnostic</DTS:Property>
+    <DTS:Property
+      DTS:EventName="Diagnostic"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="DiagnosticEx"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnExecStatusChanged"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnInformation"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostComponentCall"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostPrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePreComponentCall"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePreEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePrePrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelineRowsSent"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnProgress"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnQueryCancel"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnVariableValueChanged"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnWarning"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{AD8B1EDF-674A-4E44-8F4F-258200EFEBD4}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1A5974C3-335C-43EF-9C8C-2D25D7FBE50A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Grava dados na stage STG_TC_SGE_ESTADO do DW"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[STG_TC_SGE_ESTADO]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+                  connectionManagerRefId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].Columns[ID_Estado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="ID_Estado"
+                      externalMetadataColumnId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_ESTADO]"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[ID_Estado]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].Columns[Estado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="Estado"
+                      externalMetadataColumnId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ESTADO]"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Estado]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].Columns[Lat]"
+                      cachedDataType="numeric"
+                      cachedName="Lat"
+                      cachedPrecision="11"
+                      cachedScale="7"
+                      externalMetadataColumnId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LAT]"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Lat]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].Columns[Lng]"
+                      cachedDataType="numeric"
+                      cachedName="Lng"
+                      cachedPrecision="11"
+                      cachedScale="7"
+                      externalMetadataColumnId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LNG]"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Lng]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].Columns[Lg_Us_Inc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Lg_Us_Inc"
+                      externalMetadataColumnId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_US_INC]"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Inc]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].Columns[Lg_Dt_Inc]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Lg_Dt_Inc"
+                      externalMetadataColumnId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_DT_INC]"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Inc]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].Columns[Lg_Us_Alt]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Lg_Us_Alt"
+                      externalMetadataColumnId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_US_ALT]"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Alt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].Columns[Lg_Dt_Alt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Lg_Dt_Alt"
+                      externalMetadataColumnId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_DT_ALT]"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Alt]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].Columns[CoordsMapa]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="CoordsMapa"
+                      externalMetadataColumnId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].ExternalColumns[COORDSMAPA]"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[CoordsMapa]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].Columns[Lo_Tem_Regime_Especial_Hughes]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Lo_Tem_Regime_Especial_Hughes"
+                      externalMetadataColumnId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LO_TEM_REGIME_ESPECIAL_HUGHES]"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Tem_Regime_Especial_Hughes]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].Columns[Lo_GeraNF_Retorno]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Lo_GeraNF_Retorno"
+                      externalMetadataColumnId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LO_GERANF_RETORNO]"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Lo_GeraNF_Retorno]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].Columns[valor_Produto_Voucher]"
+                      cachedDataType="numeric"
+                      cachedName="valor_Produto_Voucher"
+                      cachedPrecision="12"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].ExternalColumns[VALOR_PRODUTO_VOUCHER]"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[valor_Produto_Voucher]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].Columns[DT_CARGA]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DT_CARGA"
+                      externalMetadataColumnId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[DT_CARGA]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_ESTADO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="ID_ESTADO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ESTADO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="ESTADO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LAT]"
+                      dataType="numeric"
+                      name="LAT"
+                      precision="11"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LNG]"
+                      dataType="numeric"
+                      name="LNG"
+                      precision="11"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_US_INC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="LG_US_INC" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_DT_INC]"
+                      dataType="dbTimeStamp"
+                      name="LG_DT_INC" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_US_ALT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="LG_US_ALT" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_DT_ALT]"
+                      dataType="dbTimeStamp"
+                      name="LG_DT_ALT" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].ExternalColumns[COORDSMAPA]"
+                      codePage="1252"
+                      dataType="text"
+                      name="COORDSMAPA" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LO_TEM_REGIME_ESPECIAL_HUGHES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="LO_TEM_REGIME_ESPECIAL_HUGHES" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LO_GERANF_RETORNO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="LO_GERANF_RETORNO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].ExternalColumns[VALOR_PRODUTO_VOUCHER]"
+                      dataType="numeric"
+                      name="VALOR_PRODUTO_VOUCHER"
+                      precision="12"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      name="DT_CARGA" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Obtém dados da tabela Tc_Sge_Estado do SIGE"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        ID_Estado, Estado, Lat, Lng, Lg_Us_Inc, Lg_Dt_Inc, Lg_Us_Alt, Lg_Dt_Alt, CoordsMapa, Lo_Tem_Regime_Especial_Hughes, Lo_GeraNF_Retorno, valor_Produto_Voucher, GETDATE() AS DT_CARGA
+FROM            Tc_Sge_Estado
+WHERE        (Lg_Dt_Inc BETWEEN ? AND ?) OR
+                         (Lg_Dt_Alt BETWEEN ? AND ?)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"0:Input",{5D6A36F3-A249-422B-B291-A0931BD55997};"1:Input",{F7C81E60-A666-4C35-83D9-E645FDA4F06F};"2:Input",{5D6A36F3-A249-422B-B291-A0931BD55997};"3:Input",{F7C81E60-A666-4C35-83D9-E645FDA4F06F};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[10.203.48.11.Sige3_Hom.ViniDutra]"
+                  connectionManagerRefId="Package.ConnectionManagers[10.203.48.11.Sige3_Hom.ViniDutra]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[ID_Estado]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].ExternalColumns[ID_Estado]"
+                      length="2"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[ID_Estado]"
+                      name="ID_Estado"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Estado]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Estado]"
+                      length="30"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Estado]"
+                      name="Estado"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Lat]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lat]"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Lat]"
+                      name="Lat"
+                      precision="11"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Lng]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lng]"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Lng]"
+                      name="Lng"
+                      precision="11"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Inc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Us_Inc]"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Inc]"
+                      name="Lg_Us_Inc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Inc]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Dt_Inc]"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Inc]"
+                      name="Lg_Dt_Inc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Alt]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Us_Alt]"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Alt]"
+                      name="Lg_Us_Alt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Alt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Dt_Alt]"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Alt]"
+                      name="Lg_Dt_Alt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[CoordsMapa]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].ExternalColumns[CoordsMapa]"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[CoordsMapa]"
+                      name="CoordsMapa"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Tem_Regime_Especial_Hughes]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lo_Tem_Regime_Especial_Hughes]"
+                      length="1"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Tem_Regime_Especial_Hughes]"
+                      name="Lo_Tem_Regime_Especial_Hughes"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Lo_GeraNF_Retorno]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lo_GeraNF_Retorno]"
+                      length="1"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[Lo_GeraNF_Retorno]"
+                      name="Lo_GeraNF_Retorno"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[valor_Produto_Voucher]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].ExternalColumns[valor_Produto_Voucher]"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[valor_Produto_Voucher]"
+                      name="valor_Produto_Voucher"
+                      precision="12"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].ExternalColumns[DT_CARGA]"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].Columns[DT_CARGA]"
+                      name="DT_CARGA"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].ExternalColumns[ID_Estado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="ID_Estado" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Estado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="Estado" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lat]"
+                      dataType="numeric"
+                      name="Lat"
+                      precision="11"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lng]"
+                      dataType="numeric"
+                      name="Lng"
+                      precision="11"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Us_Inc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Lg_Us_Inc" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Dt_Inc]"
+                      dataType="dbTimeStamp"
+                      name="Lg_Dt_Inc" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Us_Alt]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Lg_Us_Alt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Dt_Alt]"
+                      dataType="dbTimeStamp"
+                      name="Lg_Dt_Alt" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].ExternalColumns[CoordsMapa]"
+                      codePage="1252"
+                      dataType="text"
+                      name="CoordsMapa" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lo_Tem_Regime_Especial_Hughes]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Lo_Tem_Regime_Especial_Hughes" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lo_GeraNF_Retorno]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Lo_GeraNF_Retorno" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].ExternalColumns[valor_Produto_Voucher]"
+                      dataType="numeric"
+                      name="valor_Produto_Voucher"
+                      precision="12"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output].ExternalColumns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      name="DT_CARGA" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[ID_Estado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[ID_Estado]"
+                      name="ID_Estado" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[Estado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[Estado]"
+                      name="Estado" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[Lat]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[Lat]"
+                      name="Lat"
+                      precision="11"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[Lng]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[Lng]"
+                      name="Lng"
+                      precision="11"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Us_Inc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Us_Inc]"
+                      name="Lg_Us_Inc" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Dt_Inc]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Dt_Inc]"
+                      name="Lg_Dt_Inc" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Us_Alt]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Us_Alt]"
+                      name="Lg_Us_Alt" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Dt_Alt]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Dt_Alt]"
+                      name="Lg_Dt_Alt" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[CoordsMapa]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[CoordsMapa]"
+                      name="CoordsMapa" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[Lo_Tem_Regime_Especial_Hughes]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[Lo_Tem_Regime_Especial_Hughes]"
+                      name="Lo_Tem_Regime_Especial_Hughes" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[Lo_GeraNF_Retorno]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[Lo_GeraNF_Retorno]"
+                      name="Lo_GeraNF_Retorno" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[valor_Produto_Voucher]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[valor_Produto_Voucher]"
+                      name="valor_Produto_Voucher"
+                      precision="12"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[DT_CARGA]"
+                      name="DT_CARGA" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Limpa a stage STG_TC_SGE_ESTADO"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Limpa a stage STG_TC_SGE_ESTADO"
+      DTS:DTSID="{C1FFE507-5078-41E3-B52C-99FB5937CBD7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Limpa a stage STG_TC_SGE_ESTADO"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3178EFD0-8E09-476C-B6B8-1851189EA948}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[STG_TC_SGE_ESTADO]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Obtém a data da carga do SGBD"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Obtém datas de pesquisa da tabela ponteiro"
+      DTS:DTSID="{9AE09D0E-E97E-44E0-A247-A56C1F3E6456}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Obtém a data da carga do SGBD"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3178EFD0-8E09-476C-B6B8-1851189EA948}"
+          SQLTask:SqlStatementSource="SELECT [DT_INICIAL],[DT_FINAL],[DT_INCLUSAO],[DT_ATUALIZACAO]&#xA;FROM [DW].[dbo].[PRM_DATE_POINTER]&#xA;WHERE [DS_SISTEMA] LIKE 'SIGE' AND DT_INCLUSAO IN (SELECT MAX(DT_INCLUSAO) FROM [DW].[dbo].[PRM_DATE_POINTER] WHERE [DS_SISTEMA] LIKE 'SIGE');"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="DT_FINAL"
+            SQLTask:DtsVariableName="User::DT_FINAL" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="DT_INICIAL"
+            SQLTask:DtsVariableName="User::DT_INICIAL" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{36E0596A-42C9-4DFC-A9DB-708FC99A6095}"
+      DTS:From="Package\Limpa a stage STG_TC_SGE_ESTADO"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Data Flow Task" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{AA7F4BBE-B892-4E61-A3AA-2895886B7A79}"
+      DTS:From="Package\Obtém a data da carga do SGBD"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Data Flow Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="256,42"
+          Id="Package\Limpa a stage STG_TC_SGE_ESTADO"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Obtém a data da carga do SGBD"
+          TopLeft="322.5,5.5" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task"
+          TopLeft="263.5,186.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="133.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="205.5,139"
+              Start="0,0"
+              End="205.5,131.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,65.5"
+                    Point2="0,69.5"
+                    Point3="4,69.5" />
+                  <mssgle:LineSegment
+                    End="201.5,69.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="201.5,69.5"
+                    Point2="205.5,69.5"
+                    Point3="205.5,73.5" />
+                  <mssgle:LineSegment
+                    End="205.5,131.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="438.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-75.6666666666667,139"
+              Start="0,0"
+              End="-75.6666666666667,131.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,78.5255570117955" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,78.5255570117955"
+                    Point2="0,82.5255570117955"
+                    Point3="-4,82.5255570117955" />
+                  <mssgle:LineSegment
+                    End="-71.6666666666667,82.5255570117955" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-71.6666666666667,82.5255570117955"
+                    Point2="-75.6666666666667,82.5255570117955"
+                    Point3="-75.6666666666667,86.5255570117955" />
+                  <mssgle:LineSegment
+                    End="-75.6666666666667,131.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="305,42"
+          Id="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE"
+          TopLeft="17,5.5" />
+        <NodeLayout
+          Size="328,42"
+          Id="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW"
+          TopLeft="5.50000000000003,107.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="169.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Obtém dados da tabela Tc_Sge_Estado do SIGE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Grava dados na stage STG_TC_SGE_ESTADO do DW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

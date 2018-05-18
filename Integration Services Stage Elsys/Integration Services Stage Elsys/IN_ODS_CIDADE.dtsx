@@ -1,0 +1,75 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/8/2018 5:09:58 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAGGI-G"
+  DTS:CreatorName="MAGGI-G\vinic"
+  DTS:DTSID="{B223D7B0-DA50-4664-B1DF-90A9EBE7C40C}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="IN_ODS_CIDADE"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{3D290C39-E109-45CF-8E14-6C05243D4474}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7C8FAAAA-D676-4F88-B5DB-BF1153D402B0}"
+      DTS:ObjectName="52.168.77.45.DW.vinicius.dutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=52.168.77.45;User ID=vinicius.dutra;Initial Catalog=DW;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAT6/qe2skOESN8ocLsgXSaAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACtWbtmx4PmIFmej3aspvArOEVUA2Xz+Fcs/Mpn5OczvQAAAAAOgAAAAAIAACAAAABMbNR15zWh9+ko4Ebherq3HjO6OZ/WVIVYF/vqXOarFSAAAACAbwkcIt0UhLC1oyJw15Np17ryOUvNsl7iot7SqeeD3EAAAAAJVzL8EigN+BGZgY5B/X5YsRJBtYic8eIjHCZX1/8oPm0qRvtoYnW7cAEuSsEgJ/SlHgU7qXeN8nGmR0hfDVX3</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga da ODS_CIDADE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Carga da ODS_CIDADE"
+      DTS:DTSID="{5C91C6BF-226D-4900-8AB1-83DB58752F71}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga da ODS_CIDADE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{7C8FAAAA-D676-4F88-B5DB-BF1153D402B0}"
+          SQLTask:SqlStatementSource="MERGE [dbo].[ODS_CIDADE] AS ODS&#xA;USING [dbo].[STG_TC_SGE_CIDADE] AS STG&#xA;ON (ODS.[CODIGO_CIDADE] = STG.[ID_CIDADE] AND ODS.[ESTADO] = STG.[ID_ESTADO])&#xA;WHEN MATCHED &#xA;THEN &#xA;&#x9;UPDATE SET &#xA;&#x9;&#x9;ODS.[CIDADE] = STG.[CIDADE],&#xA;&#x9;&#x9;ODS.[NOME_CIDADE] = STG.[NOME_CIDADE],&#xA;&#x9;&#x9;ODS.[LATITUDE_CIDADE] = STG.[LAT],&#xA;&#x9;&#x9;ODS.[LONGITUDE_CIDADE] = STG.[LNG], &#xA;&#x9;&#x9;ODS.[FLAG_ABRE_BAIRRO] = STG.[FLG_ABRE_BAIRRO],&#xA;&#x9;&#x9;ODS.[LOG_USUARIO_INCLUSAO] = STG.[LG_US_INC], &#xA;&#x9;&#x9;ODS.[LOG_DATA_INCLUSAO] = STG.[LG_DT_INC], &#xA;&#x9;&#x9;ODS.[LOG_USUARIO_ALTERACAO] = STG.[LG_US_ALT], &#xA;&#x9;&#x9;ODS.[LOG_DATA_ALTERACAO] = STG.[LG_DT_ALT], &#xA;&#x9;&#x9;ODS.[TIPO_LOCAL] = STG.[TIPO_LOCAL],&#xA;&#x9;&#x9;ODS.[CODIGO_CIDADE_PAI] = STG.[ID_CIDADE_PAI],&#xA;&#x9;&#x9;ODS.[IBGE] = STG.[IBGE],&#xA;&#x9;&#x9;ODS.[CIDADE_SEM_ACENTO] = STG.[CIDADE_SEM_ACENTO],&#xA;&#x9;&#x9;ODS.[PERCENTUAL_COBERTURA_HUGHES] = STG.[PC_COBERTURA_HUGHES],&#xA;&#x9;&#x9;ODS.[CLASSIFICACAO_LOJA_HUGHES] = STG.[CLASS_LOJA_HUGHES], &#xA;&#x9;&#x9;ODS.[SITUACAO_MUNICIPIO] = STG.[SITUACAO_MUNICIPIO],&#xA;&#x9;&#x9;ODS.[CODIGO_GLOBO] = STG.[ID_GLOBO],&#xA;&#x9;&#x9;ODS.[POPULACAO] = STG.[POPULACAO],&#xA;&#x9;&#x9;ODS.[DTV] = STG.[DTV],&#xA;&#x9;&#x9;ODS.[TELESPECTADORES_POTENCIAIS] = STG.[TELE_POTENCIAIS],&#xA;&#x9;&#x9;ODS.[PESSOAS_DOMICILIO] = STG.[PESSOAS_DOMICILIO],&#xA;&#x9;&#x9;ODS.[PENETRACAO_DTV] = STG.[PENETRACAO_DTV],&#xA;&#x9;&#x9;ODS.[TEM_OI] = STG.[TEM_OI],&#xA;&#x9;&#x9;ODS.[TEM_SKY] = STG.[TEM_SKY],&#xA;&#x9;&#x9;ODS.[TEM_CLARO] = STG.[TEM_CLARO], &#xA;&#x9;&#x9;ODS.[ANTENA_OI] = STG.[ANTENA_OI],&#xA;&#x9;&#x9;ODS.[ANTENA_SKY] = STG.[ANTENA_SKY], &#xA;&#x9;&#x9;ODS.[ANTENA_CLARO] = STG.[ANTENA_CLARO],&#xA;&#x9;&#x9;ODS.[PONTOS] = STG.[PONTOS], &#xA;&#x9;&#x9;ODS.[PONTOS_MOTIVO] = STG.[PONTOS_MOTIVO],&#xA;&#x9;&#x9;ODS.[GLOBO_EXCLUSIVA] = STG.[LO_GLOBO_EXCLUSIVA],&#xA;&#x9;&#x9;ODS.[CLASSIFICACAO_LOJA_OI] = STG.[CLASS_LOJA_OI],&#xA;&#x9;&#x9;ODS.[DATA_ALTERACAO] = GETDATE()&#xA;WHEN NOT MATCHED BY TARGET &#xA;THEN &#xA;&#x9;INSERT ([ESTADO],[CODIGO_CIDADE],[CIDADE],[NOME_CIDADE],[LATITUDE_CIDADE],[LONGITUDE_CIDADE],[FLAG_ABRE_BAIRRO],[LOG_USUARIO_INCLUSAO],[LOG_DATA_INCLUSAO],[LOG_USUARIO_ALTERACAO],[LOG_DATA_ALTERACAO],&#xA;           [TIPO_LOCAL],[CODIGO_CIDADE_PAI],[IBGE],[CIDADE_SEM_ACENTO],[PERCENTUAL_COBERTURA_HUGHES],[CLASSIFICACAO_LOJA_HUGHES],[SITUACAO_MUNICIPIO],[CODIGO_GLOBO],[POPULACAO],[DTV],[TELESPECTADORES_POTENCIAIS],&#xA;           [PESSOAS_DOMICILIO],[PENETRACAO_DTV],[TEM_OI],[TEM_SKY],[TEM_CLARO],[ANTENA_OI],[ANTENA_SKY],[ANTENA_CLARO],[PONTOS],[PONTOS_MOTIVO],[GLOBO_EXCLUSIVA],[CLASSIFICACAO_LOJA_OI],[DATA_INCLUSAO],[DATA_ALTERACAO]) &#xA;&#x9;VALUES (STG.[ID_ESTADO],STG.[ID_CIDADE],STG.[CIDADE],STG.[NOME_CIDADE],STG.[LAT],STG.[LNG],STG.[FLG_ABRE_BAIRRO],STG.[LG_US_INC],STG.[LG_DT_INC],STG.[LG_US_ALT],STG.[LG_DT_ALT],STG.[TIPO_LOCAL],STG.[ID_CIDADE_PAI],STG.[IBGE],STG.[CIDADE_SEM_ACENTO],&#xA;&#x9;&#x9;&#x9;STG.[PC_COBERTURA_HUGHES],STG.[CLASS_LOJA_HUGHES],STG.[SITUACAO_MUNICIPIO],STG.[ID_GLOBO],STG.[POPULACAO],STG.[DTV],STG.[TELE_POTENCIAIS],STG.[PESSOAS_DOMICILIO],STG.[PENETRACAO_DTV],STG.[TEM_OI],STG.[TEM_SKY],&#xA;&#x9;&#x9;&#x9;STG.[TEM_CLARO],STG.[ANTENA_OI],STG.[ANTENA_SKY],STG.[ANTENA_CLARO],STG.[PONTOS],STG.[PONTOS_MOTIVO],STG.[LO_GLOBO_EXCLUSIVA],STG.[CLASS_LOJA_OI],GETDATE(),GETDATE())&#xA;;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Carga da ODS_CIDADE"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

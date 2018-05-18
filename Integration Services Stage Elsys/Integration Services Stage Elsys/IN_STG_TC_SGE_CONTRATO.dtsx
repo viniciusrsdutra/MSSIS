@@ -1,0 +1,1424 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/4/2018 6:13:46 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAGGI-G"
+  DTS:CreatorName="MAGGI-G\vinic"
+  DTS:DTSID="{3B8218FD-4821-4033-B2CE-A5D54C9B7039}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="IN_STG_TC_SGE_CONTRATO"
+  DTS:PackageType="5"
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{55D42640-3E70-4BFE-B931-D8D200286A88}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[10.203.48.11.Sige3_Hom.ViniDutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B48D7CF6-7D0A-4E96-9363-BCE4A70F24EB}"
+      DTS:ObjectName="10.203.48.11.Sige3_Hom.ViniDutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=10.203.48.11;User ID=ViniDutra;Initial Catalog=Sige3_Hom;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAT6/qe2skOESN8ocLsgXSaAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABzbkRpelXtwoUTBZoIF63wR3fAZmlfsOPzAZ7nzCDAhgAAAAAOgAAAAAIAACAAAABShmqXGHGAfi/c+6WrOTL4g5nvyG2/UuIo9ofXPFpk5yAAAAASqiJHUt9ZJM7zkPae45gHK2KbpkxImQgQa8SXuWU2PUAAAAAHupQb5Eh3MSmEQXWOgGlNGwWGT2/Qge7t62vhR6ho4Ju5bzDCBvuoqz0CLtPVtLg4v+A/o+fCnOfQQjOa02W9</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{17FC7439-3FAD-45BF-8B04-6B28498CF221}"
+      DTS:ObjectName="52.168.77.45.DW.vinicius.dutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=52.168.77.45;User ID=vinicius.dutra;Initial Catalog=DW;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAT6/qe2skOESN8ocLsgXSaAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAexDpomznH5/BQngkbMs3b4LM26rNn+tqfdrgaWxBOfQAAAAAOgAAAAAIAACAAAABPvOG60LiISZ2A6N72skD+NqbV658Rkbdg6VlZ2Wum7SAAAACQvealnMvHywM130xyyN2gMbkw8haBbUV2IZtxgCgfqEAAAABoCDgKpdTj3bksjBTPlp/zayacaxhyoyFqcQuf6W3PBLwnlh+K6kqpUB9uTBe0GshxralY5G0itPqq6+uFafFS</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3CC4A5E0-A688-4120-8CF6-360C13A91440}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="DT_FINAL">
+      <DTS:VariableValue
+        DTS:DataType="7">5/9/2018 10:55:01 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{259310A6-38C2-41E7-9298-F978EBB9D120}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="DT_INICIAL">
+      <DTS:VariableValue
+        DTS:DataType="7">5/9/2018 10:55:01 AM</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga da stage STG_TC_SGE_CONTRATO"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F043100F-DBEA-48D5-9CD6-8AE5992C9FDE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga da stage STG_TC_SGE_CONTRATO"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Grava dados na stage STG_TC_SGE_CONTRATO do DW"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[STG_TC_SGE_CONTRATO]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+                  connectionManagerRefId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[Id_Contrato]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="Id_Contrato"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_CONTRATO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Contrato]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[ID_Cliente]"
+                      cachedDataType="i4"
+                      cachedName="ID_Cliente"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_CLIENTE]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[ID_Cliente]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[Id_Endereco]"
+                      cachedDataType="i4"
+                      cachedName="Id_Endereco"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_ENDERECO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Endereco]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[Id_Tp_Contrato]"
+                      cachedDataType="i4"
+                      cachedName="Id_Tp_Contrato"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_TP_CONTRATO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Tp_Contrato]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[Id_Doc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="Id_Doc"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_DOC]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Doc]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[Id_Status]"
+                      cachedDataType="i4"
+                      cachedName="Id_Status"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_STATUS]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Status]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[Id_Situacao]"
+                      cachedDataType="i4"
+                      cachedName="Id_Situacao"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_SITUACAO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Situacao]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[ID_Loja]"
+                      cachedDataType="i4"
+                      cachedName="ID_Loja"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_LOJA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[ID_Loja]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[Id_Usuario_Venda]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Id_Usuario_Venda"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_USUARIO_VENDA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Usuario_Venda]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[Id_Usuario_Conversao]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Id_Usuario_Conversao"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_USUARIO_CONVERSAO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Usuario_Conversao]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[Id_Usuario_Cancelamento]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Id_Usuario_Cancelamento"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_USUARIO_CANCELAMENTO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Usuario_Cancelamento]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[Dt_Habilitacao]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Dt_Habilitacao"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[DT_HABILITACAO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Dt_Habilitacao]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[Dt_Conversao]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Dt_Conversao"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[DT_CONVERSAO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Dt_Conversao]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[Dt_Cancelamento]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Dt_Cancelamento"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[DT_CANCELAMENTO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Dt_Cancelamento]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[Lg_Us_Inc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Lg_Us_Inc"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_US_INC]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Inc]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[Lg_Dt_Inc]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Lg_Dt_Inc"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_DT_INC]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Inc]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[Lg_Us_Alt]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Lg_Us_Alt"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_US_ALT]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Alt]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[Lg_Dt_Alt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Lg_Dt_Alt"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_DT_ALT]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Alt]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[flg_contrato_pago]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="flg_contrato_pago"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[FLG_CONTRATO_PAGO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[flg_contrato_pago]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[Dt_Contrato]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Dt_Contrato"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[DT_CONTRATO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Dt_Contrato]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[Id_Distrib]"
+                      cachedDataType="i4"
+                      cachedName="Id_Distrib"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_DISTRIB]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Distrib]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[Qtd_PPrinc]"
+                      cachedDataType="i4"
+                      cachedName="Qtd_PPrinc"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[QTD_PPRINC]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Qtd_PPrinc]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[Qtd_PAdic]"
+                      cachedDataType="i4"
+                      cachedName="Qtd_PAdic"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[QTD_PADIC]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Qtd_PAdic]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[Qtd_PAdic_Can]"
+                      cachedDataType="i4"
+                      cachedName="Qtd_PAdic_Can"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[QTD_PADIC_CAN]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Qtd_PAdic_Can]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[Qtd_PPrinc_Can]"
+                      cachedDataType="i4"
+                      cachedName="Qtd_PPrinc_Can"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[QTD_PPRINC_CAN]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Qtd_PPrinc_Can]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[Qtd_PPV]"
+                      cachedDataType="i4"
+                      cachedName="Qtd_PPV"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[QTD_PPV]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Qtd_PPV]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[Lo_Elsys]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Lo_Elsys"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LO_ELSYS]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Elsys]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[FlgEstrela]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="FlgEstrela"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[FLGESTRELA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[FlgEstrela]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].Columns[DT_CARGA]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DT_CARGA"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[DT_CARGA]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_CONTRATO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="ID_CONTRATO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_CLIENTE]"
+                      dataType="i4"
+                      name="ID_CLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_ENDERECO]"
+                      dataType="i4"
+                      name="ID_ENDERECO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_TP_CONTRATO]"
+                      dataType="i4"
+                      name="ID_TP_CONTRATO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_DOC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="ID_DOC" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_STATUS]"
+                      dataType="i4"
+                      name="ID_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_SITUACAO]"
+                      dataType="i4"
+                      name="ID_SITUACAO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_LOJA]"
+                      dataType="i4"
+                      name="ID_LOJA" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_USUARIO_VENDA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ID_USUARIO_VENDA" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_USUARIO_CONVERSAO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ID_USUARIO_CONVERSAO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_USUARIO_CANCELAMENTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ID_USUARIO_CANCELAMENTO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[DT_HABILITACAO]"
+                      dataType="dbTimeStamp"
+                      name="DT_HABILITACAO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[DT_CONVERSAO]"
+                      dataType="dbTimeStamp"
+                      name="DT_CONVERSAO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[DT_CANCELAMENTO]"
+                      dataType="dbTimeStamp"
+                      name="DT_CANCELAMENTO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_US_INC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="LG_US_INC" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_DT_INC]"
+                      dataType="dbTimeStamp"
+                      name="LG_DT_INC" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_US_ALT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="LG_US_ALT" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_DT_ALT]"
+                      dataType="dbTimeStamp"
+                      name="LG_DT_ALT" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[FLG_CONTRATO_PAGO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="FLG_CONTRATO_PAGO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[DT_CONTRATO]"
+                      dataType="dbTimeStamp"
+                      name="DT_CONTRATO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_DISTRIB]"
+                      dataType="i4"
+                      name="ID_DISTRIB" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[QTD_PPRINC]"
+                      dataType="i4"
+                      name="QTD_PPRINC" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[QTD_PADIC]"
+                      dataType="i4"
+                      name="QTD_PADIC" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[QTD_PADIC_CAN]"
+                      dataType="i4"
+                      name="QTD_PADIC_CAN" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[QTD_PPRINC_CAN]"
+                      dataType="i4"
+                      name="QTD_PPRINC_CAN" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[QTD_PPV]"
+                      dataType="i4"
+                      name="QTD_PPV" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[LO_ELSYS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="LO_ELSYS" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[FLGESTRELA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="FLGESTRELA" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      name="DT_CARGA" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Obtém dados da tabela TC_SGE_CONTRATO do SIGE"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Tc_Sge_Contrato]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        Id_Contrato, ID_Cliente, Id_Endereco, Id_Tp_Contrato, Id_Doc, Id_Status, Id_Situacao, ID_Loja, Id_Usuario_Venda, Id_Usuario_Conversao, Id_Usuario_Cancelamento, Dt_Habilitacao, Dt_Conversao, Dt_Cancelamento, 
+                         Lg_Us_Inc, Lg_Dt_Inc, Lg_Us_Alt, Lg_Dt_Alt, flg_contrato_pago, Dt_Contrato, Id_Distrib, Qtd_PPrinc, Qtd_PAdic, Qtd_PAdic_Can, Qtd_PPrinc_Can, Qtd_PPV, Lo_Elsys, FlgEstrela, GETDATE() AS DT_CARGA
+FROM            Tc_Sge_Contrato
+WHERE        (Lg_Dt_Inc BETWEEN ? AND ?) OR
+                         (Lg_Dt_Alt BETWEEN ? AND ?)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"0:Input",{259310A6-38C2-41E7-9298-F978EBB9D120};"1:Input",{3CC4A5E0-A688-4120-8CF6-360C13A91440};"2:Input",{259310A6-38C2-41E7-9298-F978EBB9D120};"3:Input",{3CC4A5E0-A688-4120-8CF6-360C13A91440};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[10.203.48.11.Sige3_Hom.ViniDutra]"
+                  connectionManagerRefId="Package.ConnectionManagers[10.203.48.11.Sige3_Hom.ViniDutra]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Contrato]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Contrato]"
+                      length="30"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Contrato]"
+                      name="Id_Contrato"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[ID_Cliente]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[ID_Cliente]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[ID_Cliente]"
+                      name="ID_Cliente"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Endereco]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Endereco]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Endereco]"
+                      name="Id_Endereco"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Tp_Contrato]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Tp_Contrato]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Tp_Contrato]"
+                      name="Id_Tp_Contrato"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Doc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Doc]"
+                      length="2"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Doc]"
+                      name="Id_Doc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Status]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Status]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Status]"
+                      name="Id_Status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Situacao]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Situacao]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Situacao]"
+                      name="Id_Situacao"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[ID_Loja]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[ID_Loja]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[ID_Loja]"
+                      name="ID_Loja"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Usuario_Venda]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Usuario_Venda]"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Usuario_Venda]"
+                      name="Id_Usuario_Venda"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Usuario_Conversao]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Usuario_Conversao]"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Usuario_Conversao]"
+                      name="Id_Usuario_Conversao"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Usuario_Cancelamento]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Usuario_Cancelamento]"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Usuario_Cancelamento]"
+                      name="Id_Usuario_Cancelamento"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Dt_Habilitacao]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Dt_Habilitacao]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Dt_Habilitacao]"
+                      name="Dt_Habilitacao"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Dt_Conversao]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Dt_Conversao]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Dt_Conversao]"
+                      name="Dt_Conversao"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Dt_Cancelamento]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Dt_Cancelamento]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Dt_Cancelamento]"
+                      name="Dt_Cancelamento"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Inc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Us_Inc]"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Inc]"
+                      name="Lg_Us_Inc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Inc]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Dt_Inc]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Inc]"
+                      name="Lg_Dt_Inc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Alt]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Us_Alt]"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Alt]"
+                      name="Lg_Us_Alt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Alt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Dt_Alt]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Alt]"
+                      name="Lg_Dt_Alt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[flg_contrato_pago]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[flg_contrato_pago]"
+                      length="3"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[flg_contrato_pago]"
+                      name="flg_contrato_pago"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Dt_Contrato]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Dt_Contrato]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Dt_Contrato]"
+                      name="Dt_Contrato"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Distrib]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Distrib]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Id_Distrib]"
+                      name="Id_Distrib"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Qtd_PPrinc]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Qtd_PPrinc]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Qtd_PPrinc]"
+                      name="Qtd_PPrinc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Qtd_PAdic]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Qtd_PAdic]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Qtd_PAdic]"
+                      name="Qtd_PAdic"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Qtd_PAdic_Can]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Qtd_PAdic_Can]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Qtd_PAdic_Can]"
+                      name="Qtd_PAdic_Can"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Qtd_PPrinc_Can]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Qtd_PPrinc_Can]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Qtd_PPrinc_Can]"
+                      name="Qtd_PPrinc_Can"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Qtd_PPV]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Qtd_PPV]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Qtd_PPV]"
+                      name="Qtd_PPV"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Elsys]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lo_Elsys]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Elsys]"
+                      name="Lo_Elsys"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[FlgEstrela]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[FlgEstrela]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[FlgEstrela]"
+                      name="FlgEstrela"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[DT_CARGA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].Columns[DT_CARGA]"
+                      name="DT_CARGA"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Contrato]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="Id_Contrato" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[ID_Cliente]"
+                      dataType="i4"
+                      name="ID_Cliente" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Endereco]"
+                      dataType="i4"
+                      name="Id_Endereco" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Tp_Contrato]"
+                      dataType="i4"
+                      name="Id_Tp_Contrato" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Doc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="Id_Doc" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Status]"
+                      dataType="i4"
+                      name="Id_Status" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Situacao]"
+                      dataType="i4"
+                      name="Id_Situacao" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[ID_Loja]"
+                      dataType="i4"
+                      name="ID_Loja" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Usuario_Venda]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Id_Usuario_Venda" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Usuario_Conversao]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Id_Usuario_Conversao" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Usuario_Cancelamento]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Id_Usuario_Cancelamento" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Dt_Habilitacao]"
+                      dataType="dbTimeStamp"
+                      name="Dt_Habilitacao" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Dt_Conversao]"
+                      dataType="dbTimeStamp"
+                      name="Dt_Conversao" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Dt_Cancelamento]"
+                      dataType="dbTimeStamp"
+                      name="Dt_Cancelamento" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Us_Inc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Lg_Us_Inc" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Dt_Inc]"
+                      dataType="dbTimeStamp"
+                      name="Lg_Dt_Inc" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Us_Alt]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Lg_Us_Alt" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Dt_Alt]"
+                      dataType="dbTimeStamp"
+                      name="Lg_Dt_Alt" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[flg_contrato_pago]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="flg_contrato_pago" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Dt_Contrato]"
+                      dataType="dbTimeStamp"
+                      name="Dt_Contrato" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Id_Distrib]"
+                      dataType="i4"
+                      name="Id_Distrib" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Qtd_PPrinc]"
+                      dataType="i4"
+                      name="Qtd_PPrinc" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Qtd_PAdic]"
+                      dataType="i4"
+                      name="Qtd_PAdic" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Qtd_PAdic_Can]"
+                      dataType="i4"
+                      name="Qtd_PAdic_Can" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Qtd_PPrinc_Can]"
+                      dataType="i4"
+                      name="Qtd_PPrinc_Can" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Qtd_PPV]"
+                      dataType="i4"
+                      name="Qtd_PPV" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lo_Elsys]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Lo_Elsys" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[FlgEstrela]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="FlgEstrela" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output].ExternalColumns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      name="DT_CARGA" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Contrato]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Contrato]"
+                      name="Id_Contrato" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[ID_Cliente]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[ID_Cliente]"
+                      name="ID_Cliente" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Endereco]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Endereco]"
+                      name="Id_Endereco" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Tp_Contrato]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Tp_Contrato]"
+                      name="Id_Tp_Contrato" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Doc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Doc]"
+                      name="Id_Doc" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Status]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Status]"
+                      name="Id_Status" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Situacao]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Situacao]"
+                      name="Id_Situacao" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[ID_Loja]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[ID_Loja]"
+                      name="ID_Loja" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Usuario_Venda]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Usuario_Venda]"
+                      name="Id_Usuario_Venda" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Usuario_Conversao]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Usuario_Conversao]"
+                      name="Id_Usuario_Conversao" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Usuario_Cancelamento]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Usuario_Cancelamento]"
+                      name="Id_Usuario_Cancelamento" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Dt_Habilitacao]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Dt_Habilitacao]"
+                      name="Dt_Habilitacao" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Dt_Conversao]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Dt_Conversao]"
+                      name="Dt_Conversao" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Dt_Cancelamento]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Dt_Cancelamento]"
+                      name="Dt_Cancelamento" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Us_Inc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Us_Inc]"
+                      name="Lg_Us_Inc" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Dt_Inc]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Dt_Inc]"
+                      name="Lg_Dt_Inc" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Us_Alt]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Us_Alt]"
+                      name="Lg_Us_Alt" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Dt_Alt]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Dt_Alt]"
+                      name="Lg_Dt_Alt" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[flg_contrato_pago]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[flg_contrato_pago]"
+                      name="flg_contrato_pago" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Dt_Contrato]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Dt_Contrato]"
+                      name="Dt_Contrato" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Distrib]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Id_Distrib]"
+                      name="Id_Distrib" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Qtd_PPrinc]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Qtd_PPrinc]"
+                      name="Qtd_PPrinc" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Qtd_PAdic]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Qtd_PAdic]"
+                      name="Qtd_PAdic" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Qtd_PAdic_Can]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Qtd_PAdic_Can]"
+                      name="Qtd_PAdic_Can" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Qtd_PPrinc_Can]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Qtd_PPrinc_Can]"
+                      name="Qtd_PPrinc_Can" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Qtd_PPV]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Qtd_PPV]"
+                      name="Qtd_PPV" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lo_Elsys]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[Lo_Elsys]"
+                      name="Lo_Elsys" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[FlgEstrela]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[FlgEstrela]"
+                      name="FlgEstrela" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[DT_CARGA]"
+                      name="DT_CARGA" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carga da stage STG_TC_SGE_CONTRATO.Paths[OLE DB Source Output]"
+              endId="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Limpa a stage STG_TC_SGE_CONTRATO"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Limpa dados da stage STG_TC_SGE_CONTRATO"
+      DTS:DTSID="{A65FD315-2F76-4D8B-B062-3AAB8A1C3294}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Limpa a stage STG_TC_SGE_CONTRATO"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{17FC7439-3FAD-45BF-8B04-6B28498CF221}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[STG_TC_SGE_CONTRATO]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Obtém a data da carga do SGBD"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Obtém datas de pesquisa da tabela ponteiro"
+      DTS:DTSID="{df0309df-4394-41a2-948d-0a479887af42}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Obtém a data da carga do SGBD"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{17FC7439-3FAD-45BF-8B04-6B28498CF221}"
+          SQLTask:SqlStatementSource="SELECT [DT_INICIAL],[DT_FINAL],[DT_INCLUSAO],[DT_ATUALIZACAO]&#xA;FROM [DW].[dbo].[PRM_DATE_POINTER]&#xA;WHERE [DS_SISTEMA] LIKE 'SIGE' AND DT_INCLUSAO IN (SELECT MAX(DT_INCLUSAO) FROM [DW].[dbo].[PRM_DATE_POINTER] WHERE [DS_SISTEMA] LIKE 'SIGE');"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="DT_FINAL"
+            SQLTask:DtsVariableName="User::DT_FINAL" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="DT_INICIAL"
+            SQLTask:DtsVariableName="User::DT_INICIAL" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{AA1E6F97-BB15-471B-A1F8-E251893026F3}"
+      DTS:From="Package\Limpa a stage STG_TC_SGE_CONTRATO"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Carga da stage STG_TC_SGE_CONTRATO" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{922F69ED-BFAC-4906-A680-821AB6944064}"
+      DTS:From="Package\Obtém a data da carga do SGBD"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Carga da stage STG_TC_SGE_CONTRATO" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="276,42"
+          Id="Package\Carga da stage STG_TC_SGE_CONTRATO"
+          TopLeft="293,107.5" />
+        <NodeLayout
+          Size="271,42"
+          Id="Package\Limpa a stage STG_TC_SGE_CONTRATO"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Obtém a data da carga do SGBD"
+          TopLeft="333.5,8.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="141,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="245.333333333333,60"
+              Start="0,0"
+              End="245.333333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.792507204611" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.792507204611"
+                    Point2="0,35.792507204611"
+                    Point3="4,35.792507204611" />
+                  <mssgle:LineSegment
+                    End="241.333333333333,35.792507204611" />
+                  <mssgle:CubicBezierSegment
+                    Point1="241.333333333333,35.792507204611"
+                    Point2="245.333333333333,35.792507204611"
+                    Point3="245.333333333333,39.792507204611" />
+                  <mssgle:LineSegment
+                    End="245.333333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="449.5,50.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="26.1666666666666,57"
+              Start="0,0"
+              End="26.1666666666666,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.0028818443804" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.0028818443804"
+                    Point2="0,34.0028818443804"
+                    Point3="4,34.0028818443804" />
+                  <mssgle:LineSegment
+                    End="22.1666666666666,34.0028818443804" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.1666666666666,34.0028818443804"
+                    Point2="26.1666666666666,34.0028818443804"
+                    Point3="26.1666666666666,38.0028818443804" />
+                  <mssgle:LineSegment
+                    End="26.1666666666666,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Carga da stage STG_TC_SGE_CONTRATO">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="342,42"
+          Id="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW"
+          TopLeft="5.50000000000003,107.5" />
+        <NodeLayout
+          Size="342,42"
+          Id="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package\Carga da stage STG_TC_SGE_CONTRATO.Paths[OLE DB Source Output]"
+          TopLeft="176.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga da stage STG_TC_SGE_CONTRATO\Grava dados na stage STG_TC_SGE_CONTRATO do DW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga da stage STG_TC_SGE_CONTRATO\Obtém dados da tabela TC_SGE_CONTRATO do SIGE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

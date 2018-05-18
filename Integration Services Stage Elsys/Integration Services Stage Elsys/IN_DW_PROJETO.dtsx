@@ -1,0 +1,75 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/16/2018 11:25:00 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAGGI-G"
+  DTS:CreatorName="MAGGI-G\vinic"
+  DTS:DTSID="{4E9E43AA-8D5D-4861-BD4B-5FEA187AEF4F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="IN_DW_PROJETO"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{4DA75A4D-A359-4960-947F-3AB639618424}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{EDF5A960-A3C1-49F8-842D-994B132067B2}"
+      DTS:ObjectName="52.168.77.45.DW.vinicius.dutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=52.168.77.45;User ID=vinicius.dutra;Initial Catalog=DW;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH0ueHa3BUUWfmA6Qv5NRlgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB/gMl+7us8EgdS3AJj9x7P8gYNCniYBhdBoXHWr28YNAAAAAAOgAAAAAIAACAAAACvgTq5BveLSLmk0fUW1LPBK+kFt0A3USmpBQPD+nIkoiAAAAAxCSZlw40O2MBw29FF7/wp6URCEvq3uoy6+TydGgZG2EAAAABAwG9ojlTgoKojvx0d0/D9TocdbpgeOBGF6QtEcF+Pyacio6hRFE5+BYFlhNaeiDFERy9TE+LMMoW0pg9BXquo</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga da DW_PROJETO"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Carga da DW_PROJETO"
+      DTS:DTSID="{50127198-6457-46D5-9EFB-97F5C235A040}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga da DW_PROJETO"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{EDF5A960-A3C1-49F8-842D-994B132067B2}"
+          SQLTask:SqlStatementSource="MERGE [DBO].[DW_PROJETO] AS DW&#xA;USING [DBO].[ODS_PROJETO_ELSYS] AS ODS&#xA;ON (DW.[CODIGO_PROJETO] = ODS.[CODIGO_PROJETO])&#xA;WHEN MATCHED &#xA;THEN&#xA;&#x9;UPDATE SET &#xA;&#x9;&#x9;DW.[NOME_PROJETO] = ODS.[PROJETO], &#xA;&#x9;&#x9;DW.[DATA_ALTERACAO] = GETDATE()&#xA;WHEN NOT MATCHED BY TARGET &#xA;THEN &#xA;&#x9;INSERT ([CODIGO_PROJETO],[NOME_PROJETO],[DATA_INCLUSAO],[DATA_ALTERACAO])&#xA;&#x9;VALUES (ODS.[CODIGO_PROJETO],ODS.[PROJETO],GETDATE(),GETDATE())&#xA;;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Carga da DW_PROJETO"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

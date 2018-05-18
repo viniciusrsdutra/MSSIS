@@ -1,0 +1,315 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/8/2018 11:41:41 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-MQ3AK60"
+  DTS:CreatorName="DESKTOP-MQ3AK60\dev"
+  DTS:DTSID="{89694483-7B56-46C9-A737-2F11BF48976E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="IN_ODS_REDE_CREDENCIADA"
+  DTS:PackageType="5"
+  DTS:VersionBuild="50"
+  DTS:VersionGUID="{33C861B2-BA55-41A3-9B42-10DB3AD28F98}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Cria chave primária da tabela temporária TMP_ODS_REDE_CREDENCIADA_10"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Cria chave primária da tabela temporária TMP_ODS_REDE_CREDENCIADA_10"
+      DTS:DTSID="{B41B0952-AB48-4EC6-9830-8B5019091C48}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Cria chave primária da tabela temporária TMP_ODS_REDE_CREDENCIADA_10"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{442921B0-6920-45D0-AE43-7D6EAF20086B}"
+          SQLTask:SqlStatementSource="ALTER TABLE TMP_ODS_REDE_CREDENCIADA_10 ADD CONSTRAINT [TMP_ODS_REDE_CREDENCIADA_10_pk] PRIMARY KEY CLUSTERED &#xA;(&#xA;&#x9;[CODIGO_REDE_CREDENCIADA] ASC&#xA;) ON [PRIMARY]&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Cria uma temp com a volumetria nova + atualizada + histórico"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Cria uma temp com a volumetria nova + atualizada + histórico"
+      DTS:DTSID="{0C700A2D-B7DF-41DC-8F10-C6FFA92D4CC9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Cria uma temp com a volumetria nova + atualizada + histórico"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{442921B0-6920-45D0-AE43-7D6EAF20086B}"
+          SQLTask:SqlStatementSource="SELECT A.* &#xA;INTO TMP_ODS_REDE_CREDENCIADA_10 &#xA;FROM   (SELECT a.codigo_rede_credenciada, &#xA;               a.codigo_documento, &#xA;               a.codigo_status, &#xA;               a.status_rede_credenciada, &#xA;               a.codigo_situacao, &#xA;               a.situacao_rede_credenciada, &#xA;               a.tipo_rede_credenciada, &#xA;               a.razao_social, &#xA;               a.nome_fantasia, &#xA;               a.cnpj, &#xA;               a.inscricao_estadual, &#xA;               a.logradouro_endereco, &#xA;               a.endereco, &#xA;               a.numero_endereco, &#xA;               a.complemento_endereco, &#xA;               a.bairro_endereco, &#xA;               a.estado_endereco, &#xA;               a.codigo_cidade_endereco, &#xA;               a.cep_endereco, &#xA;               a.ddd_telefone, &#xA;               a.telefone, &#xA;               a.ddd_celular, &#xA;               a.celular, &#xA;               a.email, &#xA;               a.recebe_email, &#xA;               a.recebe_sms, &#xA;               a.latitude, &#xA;               a.longitude, &#xA;               a.flag_classificacao, &#xA;               a.obs, &#xA;               a.quantidade_dias_entrega, &#xA;               a.codigo_banco, &#xA;               a.banco, &#xA;               a.banco_agencia, &#xA;               a.banco_conta_corrente, &#xA;               a.banco_nome_titular, &#xA;               a.url_loja_web, &#xA;               a.flag_sap, &#xA;               a.flag_pdv, &#xA;               a.data_ativacao, &#xA;               a.usuario_ativacao, &#xA;               a.flag_ordem_pagamento, &#xA;               a.codigo_regional, &#xA;               a.flag_encontre_lojista, &#xA;               a.data_distribuidor_nova_loja, &#xA;               a.data_abertura_empresa, &#xA;               a.classificacao_distribuidor, &#xA;               a.flag_aceita_regra_indicacao, &#xA;               a.log_usuario_inclusao, &#xA;               a.log_data_inclusao, &#xA;               a.log_usuario_alteracao, &#xA;               a.log_data_alteracao, &#xA;               a.data_validade, &#xA;               a.im, &#xA;               a.ddd_telefone_2, &#xA;               a.telefone_2, &#xA;               a.ddd_celular_2, &#xA;               a.celular_2, &#xA;               a.ddd_celular_3, &#xA;               a.celular_3, &#xA;               a.prazo_entrega, &#xA;               a.data_aprovacao_adm, &#xA;               a.usuario_aprovacao_adm, &#xA;               a.data_aprovacao_fiscal, &#xA;               a.usuario_aprovacao_fiscal, &#xA;               a.loja_nao_emite_xml, &#xA;               a.loja_devolve_tudo_hughes, &#xA;               a.data_ultima_alteracao_dados_bancarios, &#xA;               a.codigo_transportadora, &#xA;               a.codigo_tributo_iss, &#xA;               a.simples_nacional, &#xA;               a.flag_cae_oi, &#xA;               a.flag_cae_hughes, &#xA;               a.data_ultima_compra, &#xA;               a.data_ultima_habilitacao, &#xA;               a.logradouro_endereco_correspondencia, &#xA;               a.endereco_correspondencia, &#xA;               a.numero_endereco_correspondencia, &#xA;               a.complemento_endereco_correspondencia, &#xA;               a.bairro_endereco_correspondencia, &#xA;               a.codigo_cidade_endereco_correspondencia, &#xA;               a.estado_endereco_correspondencia, &#xA;               a.cep_endereco_correspondencia, &#xA;               a.codigo_tipo_loja, &#xA;               a.descricao_tipo_loja, &#xA;               a.banco_conta_digito, &#xA;               a.banco_agencia_digito, &#xA;               a.logradouro_endereco_financeiro, &#xA;               a.endereco_financeiro, &#xA;               a.numero_endereco_financeiro, &#xA;               a.complemento_endereco_financeiro, &#xA;               a.bairro_endereco_financeiro, &#xA;               a.codigo_cidade_endereco_financeiro, &#xA;               a.estado_endereco_financeiro, &#xA;               a.cep_endereco_financeiro, &#xA;               a.data_inclusao, &#xA;               a.data_alteracao &#xA;        FROM   dbo.ods_rede_credenciada A &#xA;               LEFT JOIN [DBO].[stg_tc_sge_loja] B &#xA;                      ON ( A.codigo_rede_credenciada = B.id_loja ) &#xA;        WHERE  B.id_loja IS NULL &#xA;        UNION ALL &#xA;        SELECT A.[id_loja]                         AS CODIGO_REDE_CREDENCIADA, &#xA;               A.[id_doc]                          AS CODIGO_DOCUMENTO, &#xA;               A.[id_situacao]                     AS CODIGO_STATUS, &#xA;               B.[situacao]                        AS STATUS_REDE_CREDENCIADA, &#xA;               A.[id_status]                       AS CODIGO_SITUACAO, &#xA;               B.[status]                          AS SITUACAO_REDE_CREDENCIADA, &#xA;               A.[tp_loja]                         AS TIPO_REDE_CREDENCIADA, &#xA;               A.[rsocial]                         AS RAZAO_SOCIAL, &#xA;               A.[nomefantasia]                    AS NOME_FANTASIA, &#xA;               A.[cnpj]                            AS CNPJ, &#xA;               A.[ie]                              AS INSCRICAO_ESTADUAL, &#xA;               A.[log_endereco]                    AS LOGRADOURO_ENDERECO, &#xA;               A.[endereco]                        AS ENDERECO, &#xA;               A.[num_endereco]                    AS NUMERO_ENDERECO, &#xA;               A.[endereco_com]                    AS COMPLEMENTO_ENDERECO, &#xA;               A.[bairro]                          AS BAIRRO_ENDERECO, &#xA;               A.[id_estado]                       AS ESTADO_ENDERECO, &#xA;               A.[id_cidade]                       AS CODIGO_CIDADE_ENDERECO, &#xA;               A.[cep]                             AS CEP_ENDERECO, &#xA;               A.[fone_ddd]                        AS DDD_TELEFONE, &#xA;               A.[fone]                            AS TELEFONE, &#xA;               A.[celular_ddd]                     AS DDD_CELULAR, &#xA;               A.[celular]                         AS CELULAR, &#xA;               A.[email]                           AS EMAIL, &#xA;               A.[lo_email]                        AS RECEBE_EMAIL, &#xA;               A.[lo_sms]                          AS RECEBE_SMS, &#xA;               A.[lat]                             AS LATITUDE, &#xA;               A.[lng]                             AS LONGITUDE, &#xA;               A.[flg_class]                       AS FLAG_CLASSIFICACAO, &#xA;               A.[obs]                             AS OBS, &#xA;               A.[qtddias_entrega]                 AS QUANTIDADE_DIAS_ENTREGA, &#xA;               A.[id_banco]                        AS CODIGO_BANCO, &#xA;               C.[nome_banco]                      AS BANCO, &#xA;               A.[bc_agencia]                      AS BANCO_AGENCIA, &#xA;               A.[bc_conta]                        AS BANCO_CONTA_CORRENTE, &#xA;               A.[bc_nome_titular_conta]           AS BANCO_NOME_TITULAR, &#xA;               A.[url_loja_web]                    AS URL_LOJA_WEB, &#xA;               A.[flg_sap]                         AS FLAG_SAP, &#xA;               A.[flg_pdv]                         AS FLAG_PDV, &#xA;               A.[ativacao_data]                   AS DATA_ATIVACAO, &#xA;               A.[ativacao_usuario]                AS USUARIO_ATIVACAO, &#xA;               A.[flg_ordempagto]                  AS FLAG_ORDEM_PAGAMENTO, &#xA;               A.[id_regional]                     AS CODIGO_REGIONAL, &#xA;               A.[flg_encontrelojista]             AS FLAG_ENCONTRE_LOJISTA, &#xA;               A.[dt_distrib_nova_loja]            AS &#xA;               DATA_DISTRIBUIDOR_NOVA_LOJA, &#xA;               A.[dt_abertura_empresa]             AS DATA_ABERTURA_EMPRESA, &#xA;               A.[classificacao]                   AS CLASSIFICACAO_DISTRIBUIDOR &#xA;               , &#xA;               A.[flg_aceita_regra_indicacao]      AS &#xA;               FLAG_ACEITA_REGRA_INDICACAO, &#xA;               A.[lg_us_inc]                       AS LOG_USUARIO_INCLUSAO, &#xA;               A.[lg_dt_inc]                       AS LOG_DATA_INCLUSAO, &#xA;               A.[lg_us_alt]                       AS LOG_USUARIO_ALTERACAO, &#xA;               A.[lg_dt_alt]                       AS LOG_DATA_ALTERACAO, &#xA;               A.[dt_validade]                     AS DATA_VALIDADE, &#xA;               A.[im]                              AS IM, &#xA;               A.[fone2_ddd]                       AS DDD_TELEFONE_2, &#xA;               A.[fone2]                           AS TELEFONE_2, &#xA;               A.[celular2_ddd]                    AS DDD_CELULAR_2, &#xA;               A.[celular2]                        AS CELULAR_2, &#xA;               A.[celular3_ddd]                    AS DDD_CELULAR_3, &#xA;               A.[celular3]                        AS CELULAR_3, &#xA;               A.[prazo_entrega]                   AS PRAZO_ENTREGA, &#xA;               A.[dt_aprovacao_adm]                AS DATA_APROVACAO_ADM, &#xA;               A.[dt_aprovacao_user]               AS USUARIO_APROVACAO_ADM, &#xA;               A.[dt_aprovacao_fiscal]             AS DATA_APROVACAO_FISCAL, &#xA;               A.[dt_aprovacao_fiscal_user]        AS USUARIO_APROVACAO_FISCAL, &#xA;               A.[loja_nao_emite_xml]              AS LOJA_NAO_EMITE_XML, &#xA;               A.[loja_devolve_tudo_hughes]        AS LOJA_DEVOLVE_TUDO_HUGHES, &#xA;               A.[lg_dt_alt_dadosbancarios]        AS &#xA;               DATA_ULTIMA_ALTERACAO_DADOS_BANCARIOS, &#xA;               A.[id_transp]                       AS CODIGO_TRANSPORTADORA, &#xA;               A.[cod_trib_iss]                    AS CODIGO_TRIBUTO_ISS, &#xA;               A.[lo_simples_nacional]             AS SIMPLES_NACIONAL, &#xA;               A.[flg_cae_oi]                      AS FLAG_CAE_OI, &#xA;               A.[flg_cae_hughes]                  AS FLAG_CAE_HUGHES, &#xA;               A.[dt_ultimacompra]                 AS DATA_ULTIMA_COMPRA, &#xA;               A.[dt_ultimahab]                    AS DATA_ULTIMA_HABILITACAO, &#xA;               A.[log_endereco_cor]                AS &#xA;               LOGRADOURO_ENDERECO_CORRESPONDENCIA, &#xA;               A.[endereco_cor]                    AS ENDERECO_CORRESPONDENCIA, &#xA;               A.[num_endereco_cor]                AS &#xA;               NUMERO_ENDERECO_CORRESPONDENCIA, &#xA;               A.[endereco_com_cor]                AS &#xA;               COMPLEMENTO_ENDERECO_CORRESPONDENCIA, &#xA;               A.[bairro_cor]                      AS &#xA;               BAIRRO_ENDERECO_CORRESPONDENCIA, &#xA;               A.[id_cidade_cor]                   AS &#xA;               CODIGO_CIDADE_ENDERECO_CORRESPONDENCIA, &#xA;               A.[id_estado_cor]                   AS &#xA;               ESTADO_ENDERECO_CORRESPONDENCIA, &#xA;               A.[cep_cor]                         AS &#xA;               CEP_ENDERECO_CORRESPONDENCIA, &#xA;               A.[id_tipo_loja]                    AS CODIGO_TIPO_LOJA, &#xA;               D.[descricao]                       AS DESCRICAO_TIPO_LOJA, &#xA;               A.[bc_conta_dg]                     AS BANCO_CONTA_DIGITO, &#xA;               A.[bc_agencia_dg]                   AS BANCO_AGENCIA_DIGITO, &#xA;               A.[lo_endereco_fiscalxfinanceiro]   AS &#xA;               LOGRADOURO_ENDERECO_FINANCEIRO, &#xA;               A.[endereco_finan]                  AS ENDERECO_FINANCEIRO, &#xA;               A.[num_endereco_finan]              AS NUMERO_ENDERECO_FINANCEIRO &#xA;               , &#xA;               A.[endereco_com_finan]              AS &#xA;               COMPLEMENTO_ENDERECO_FINANCEIRO, &#xA;               A.[bairro_finan]                    AS BAIRRO_ENDERECO_FINANCEIRO &#xA;               , &#xA;               A.[id_cidade_finan]                 AS &#xA;               CODIGO_CIDADE_ENDERECO_FINANCEIRO &#xA;               , &#xA;               A.[id_estado_finan]                 AS &#xA;               ESTADO_ENDERECO_FINANCEIRO, &#xA;               A.[cep_finan]                       AS CEP_ENDERECO_FINANCEIRO, &#xA;               Isnull(AA.data_inclusao, Getdate()) AS DATA_INCLUSAO, &#xA;               Getdate()                           AS DATA_ALTERACAO &#xA;        FROM   [DBO].[stg_tc_sge_loja] AS A WITH(nolock) &#xA;               LEFT JOIN dbo.ods_rede_credenciada AA &#xA;                      ON ( A.id_loja = AA.codigo_rede_credenciada ) &#xA;               LEFT OUTER JOIN [DBO].[stg_tc_sge_status] AS B WITH(nolock) &#xA;                            ON ( A.[id_doc] = B.[id_doc] &#xA;                                 AND A.[id_situacao] = B.[id_situacao] &#xA;                                 AND A.[id_status] = B.[id_status] ) &#xA;               LEFT OUTER JOIN [DBO].[stg_tc_sge_banco] AS C WITH(nolock) &#xA;                            ON ( A.[id_banco] = C.[id_banco] ) &#xA;               LEFT OUTER JOIN [DBO].[stg_tc_sge_loja_tipo] AS D WITH(nolock) &#xA;                            ON ( A.[id_tipo_loja] = D.[id_tipo_loja] )) A " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Dropa tabela temporária"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Dropa tabela temporária"
+      DTS:DTSID="{71026D74-1358-4D97-A5E9-2FFF64A7AF7E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dropa tabela temporária"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{442921B0-6920-45D0-AE43-7D6EAF20086B}"
+          SQLTask:SqlStatementSource="if exists ( select * from dw.dbo.sysobjects where UPPER(name) = 'TMP_ODS_REDE_CREDENCIADA_10' &#xA;and type='U' ) &#xA;drop table dw.dbo.TMP_ODS_REDE_CREDENCIADA_10&#xA;go" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Dropa tabela temporária final"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Dropa tabela temporária"
+      DTS:DTSID="{9BD181FF-40C8-4408-AE58-5173FF86EF3B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dropa tabela temporária final"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{442921B0-6920-45D0-AE43-7D6EAF20086B}"
+          SQLTask:SqlStatementSource="if exists ( select * from dw.dbo.sysobjects where UPPER(name) = 'TMP_ODS_REDE_CREDENCIADA_10' &#xA;and type='U' ) &#xA;drop table dw.dbo.TMP_ODS_REDE_CREDENCIADA_10&#xA;go" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insere na ODS_REDE_CREDENCIADA"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Insere na ODS_REDE_CREDENCIADA"
+      DTS:DTSID="{D7D0E09D-B6B6-4DF3-AEA6-4E76F4C9250B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insere na ODS_REDE_CREDENCIADA"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{442921B0-6920-45D0-AE43-7D6EAF20086B}"
+          SQLTask:SqlStatementSource="ALTER TABLE TMP_ODS_REDE_CREDENCIADA_10&#xA;SWITCH TO  DBO.ODS_REDE_CREDENCIADA " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Trunca a tabela ODS_REDE_CREDENCIADA"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarefa Executar SQL"
+      DTS:DTSID="{59B98412-122D-4302-88FF-23AF0F2A86E6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Trunca a tabela ODS_REDE_CREDENCIADA"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{442921B0-6920-45D0-AE43-7D6EAF20086B}"
+          SQLTask:SqlStatementSource="truncate table dbo.ODS_REDE_CREDENCIADA" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição]"
+      DTS:CreationName=""
+      DTS:DTSID="{9281C360-D278-46E5-ABCD-B6B68A748608}"
+      DTS:From="Package\Cria uma temp com a volumetria nova + atualizada + histórico"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição"
+      DTS:To="Package\Cria chave primária da tabela temporária TMP_ODS_REDE_CREDENCIADA_10" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{8C0883A4-777E-48E4-BB69-490FD83941A7}"
+      DTS:From="Package\Cria chave primária da tabela temporária TMP_ODS_REDE_CREDENCIADA_10"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição 1"
+      DTS:To="Package\Trunca a tabela ODS_REDE_CREDENCIADA" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{58B3255D-1C37-40C4-8BE0-BA6AD9261E27}"
+      DTS:From="Package\Dropa tabela temporária"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição 2"
+      DTS:To="Package\Cria uma temp com a volumetria nova + atualizada + histórico" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{707CC73D-CB62-4E37-923F-2D120EAA0AE3}"
+      DTS:From="Package\Insere na ODS_REDE_CREDENCIADA"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição 3"
+      DTS:To="Package\Dropa tabela temporária final" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{0DF085F1-6A26-4E27-9A62-194AD661E053}"
+      DTS:From="Package\Trunca a tabela ODS_REDE_CREDENCIADA"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição 4"
+      DTS:To="Package\Insere na ODS_REDE_CREDENCIADA" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="446,42"
+          Id="Package\Cria chave primária da tabela temporária TMP_ODS_REDE_CREDENCIADA_10"
+          TopLeft="5.50000000000003,209.5" />
+        <NodeLayout
+          Size="375,42"
+          Id="Package\Cria uma temp com a volumetria nova + atualizada + histórico"
+          TopLeft="41,107.5" />
+        <NodeLayout
+          Size="194,42"
+          Id="Package\Dropa tabela temporária"
+          TopLeft="131.5,5.5" />
+        <NodeLayout
+          Size="217,42"
+          Id="Package\Dropa tabela temporária final"
+          TopLeft="120,515.5" />
+        <NodeLayout
+          Size="255,42"
+          Id="Package\Insere na ODS_REDE_CREDENCIADA"
+          TopLeft="101,413.5" />
+        <NodeLayout
+          Size="284,42"
+          Id="Package\Trunca a tabela ODS_REDE_CREDENCIADA"
+          TopLeft="86.5000000000001,311.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição]"
+          TopLeft="228.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 1]"
+          TopLeft="228.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 2]"
+          TopLeft="228.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 3]"
+          TopLeft="228.5,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 4]"
+          TopLeft="228.5,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

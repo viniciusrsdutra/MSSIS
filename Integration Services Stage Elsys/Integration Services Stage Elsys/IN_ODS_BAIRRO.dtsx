@@ -1,0 +1,75 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/10/2018 4:28:51 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAGGI-G"
+  DTS:CreatorName="MAGGI-G\vinic"
+  DTS:DTSID="{29CFE5A9-4DEC-4D46-A508-0366FE67C95A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="IN_ODS_BAIRRO"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{A610B7AD-CD21-41F1-B554-BAAE99B19A06}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F8637189-D2A5-486E-A2AD-058EC5C9F8B6}"
+      DTS:ObjectName="52.168.77.45.DW.vinicius.dutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=52.168.77.45;User ID=vinicius.dutra;Initial Catalog=DW;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAT6/qe2skOESN8ocLsgXSaAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAy6fhAFjoZ0YPjDUVM35zH2Aa0Gg3UUbxGxcst3C6oiQAAAAAOgAAAAAIAACAAAACFSuLtjs98mLVuPWFKgvGlo9bBLGTfIA2z8lMCWjA6DSAAAADg27McEYrDIjtiEM/PE2Ck3MKoEIkJOTRs159XlrR/AUAAAABSBGNUkQTvSuRhC3Tj3mRVHO2UFyt9REU64h03jkytgGItS8owaGtKd0jObyCl8GjYxO2Qcjse3YNWBf+N6ebY</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga da ODS_BAIRRO"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{CE5956BD-F078-4C75-9845-A50E86A8D6EE}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga da ODS_BAIRRO"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F8637189-D2A5-486E-A2AD-058EC5C9F8B6}"
+          SQLTask:SqlStatementSource="MERGE [dbo].[ODS_BAIRRO] AS ODS&#xA;USING [dbo].[STG_TC_SGE_BAIRRO] AS STG&#xA;ON (ODS.[CODIGO_BAIRRO] = STG.[ID_BAIRRO])&#xA;WHEN MATCHED &#xA;THEN &#xA;&#x9;UPDATE SET &#xA;&#x9;&#x9;ODS.[BAIRRO] = STG.[BAIRRO],&#xA;&#x9;&#x9;ODS.[BAIRRO_ABREVIADO] = STG.[BAIRRO_ABREV],&#xA;&#x9;&#x9;ODS.[LATITUDE_BAIRRO] = STG.[LAT],&#xA;&#x9;&#x9;ODS.[LONGITUDE_BAIRRO] = STG.[LNG],&#xA;&#x9;&#x9;ODS.[DATA_ALTERACAO] = GETDATE()&#xA;WHEN NOT MATCHED BY TARGET &#xA;THEN &#xA;&#x9;INSERT ([CODIGO_BAIRRO],[ESTADO],[CODIGO_CIDADE],[BAIRRO],[BAIRRO_ABREVIADO],[LATITUDE_BAIRRO],[LONGITUDE_BAIRRO],[DATA_INCLUSAO],[DATA_ALTERACAO]) &#xA;&#x9;VALUES (STG.[ID_BAIRRO],STG.[ID_ESTADO],STG.[ID_CIDADE],STG.[BAIRRO],STG.[BAIRRO_ABREV],STG.[LAT],STG.[LNG],GETDATE(),GETDATE())&#xA;;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Carga da ODS_BAIRRO"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

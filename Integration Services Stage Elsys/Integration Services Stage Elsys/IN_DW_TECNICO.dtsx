@@ -1,0 +1,75 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/16/2018 11:25:00 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAGGI-G"
+  DTS:CreatorName="MAGGI-G\vinic"
+  DTS:DTSID="{91A62F0E-208F-4428-AE82-15D3DB1008C3}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="IN_DW_TECNICO"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{353933AF-68E9-4C0F-97E6-37D80079BA7A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{011F4732-B21C-4615-9DBA-BCC61166CA48}"
+      DTS:ObjectName="52.168.77.45.DW.vinicius.dutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=52.168.77.45;User ID=vinicius.dutra;Initial Catalog=DW;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH0ueHa3BUUWfmA6Qv5NRlgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC7lPwGvu+l0hR0L4YmMN0fQlolfmXCfD2843ugIMO+ZAAAAAAOgAAAAAIAACAAAAAtvv/Aa/VBqJJ4lG53AHSnXjA05kBY+CzDl7OxT8e6ryAAAADDPiRA/p51u0yy7W6/NhgkEjdih+fpwv0EZHtBHWUEDkAAAAAQ9H5EG1xhmE5ITLcyAqmFZpSfCNWqAoL5Y//ayo3AchxRPt++2t99ksrhrFiMq7iDKRreTPAoYFQSfa8lq34g</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga da DW_TECNICO"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Carga da DW_TECNICO"
+      DTS:DTSID="{5B99F21A-808B-45EA-9D65-D52CDBE2501C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga da DW_TECNICO"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{011F4732-B21C-4615-9DBA-BCC61166CA48}"
+          SQLTask:SqlStatementSource="MERGE [DBO].[DW_TECNICO] AS DW&#xA;USING (SELECT LOJA.[SK_LOJA],LOJA.[CNPJ] AS CNPJ_LOJA,DIST.[SK_DISTRIBUIDOR],DIST.[CNPJ] AS CNPJ_DIST,ODSTECLOJA.[CODIGO_LOJA],ODSTECLOJA.[CODIGO_TECNICO],ODSTECLOJA.[ATIVO_LOJA],ODSTECLOJA.[LOG_USUARIO_INCLUSAO],&#xA;&#x9;ODSTECLOJA.[LOG_DATA_INCLUSAO],ODSTECLOJA.[LOG_USUARIO_ALTERACAO],ODSTECLOJA.[LOG_DATA_ALTERACAO],ODSTECLOJA.[ATIVO_TECNICO],ODSTECLOJA.[CPF_TECNICO],ODSTECLOJA.[NOME_TECNICO],ODSTECLOJA.[RG_TECNICO],&#xA;&#x9;ODSTECLOJA.[LOGRADOURO_ENDERECO],ODSTECLOJA.[ENDERECO],ODSTECLOJA.[NUMERO_ENDERECO],ODSTECLOJA.[COMPLEMENTO_ENDERECO],ODSTECLOJA.[CIDADE_ENDERECO],ODSTECLOJA.[ESTADO_ENDERECO],ODSTECLOJA.[CEP_ENDERECO],&#xA;&#x9;ODSTECLOJA.[DDD_TELEFONE],ODSTECLOJA.[TELEFONE],ODSTECLOJA.[DDD_CELULAR],ODSTECLOJA.[CELULAR],ODSTECLOJA.[DDD_CELULAR_2],ODSTECLOJA.[CELULAR_2],ODSTECLOJA.[DDD_CELULAR_3],ODSTECLOJA.[CELULAR_3],&#xA;&#x9;ODSTECLOJA.[EMAIL],ODSTECLOJA.[EMAIL_2],ODSTECLOJA.[RECEBE_EMAIL],ODSTECLOJA.[RECEBE_SMS],ODSTECLOJA.[DATA_NASCIMENTO],ODSTECLOJA.[SEXO],ODSTECLOJA.[LATITUDE_TECNICO],ODSTECLOJA.[LONGITUDE_TECNICO],&#xA;&#x9;ODSTECLOJA.[DATA_INCLUSAO],ODSTECLOJA.[DATA_ALTERACAO]&#xA;&#x9;FROM [DBO].[ODS_TECNICO_LOJA] ODSTECLOJA&#xA;&#x9;LEFT OUTER JOIN [DBO].[DW_LOJA] LOJA ON (LOJA.[CODIGO_LOJA] = ODSTECLOJA.[CODIGO_LOJA])&#xA;&#x9;LEFT OUTER JOIN [DBO].[DW_DISTRIBUIDOR] DIST ON (DIST.[CODIGO_DISTRIBUIDOR] = ODSTECLOJA.[CODIGO_LOJA])&#xA;&#x9;WHERE LOJA.[SK_LOJA] IS NOT NULL AND DIST.[SK_DISTRIBUIDOR] IS NULL) AS ODS&#xA;ON (DW.[CODIGO_TECNICO] = ODS.[CODIGO_TECNICO] AND DW.[CODIGO_LOJA] = ODS.[CODIGO_LOJA])&#xA;WHEN MATCHED &#xA;THEN&#xA;&#x9;UPDATE SET &#xA;&#x9;&#x9;DW.[ATIVO_LOJA] = ODS.[ATIVO_LOJA], &#xA;&#x9;&#x9;DW.[TECNICO_ATIVO] = ODS.[ATIVO_TECNICO],&#xA;&#x9;&#x9;DW.[CPF_TECNICO] = ODS.[CPF_TECNICO], &#xA;&#x9;&#x9;DW.[NOME_TECNICO] = ODS.[NOME_TECNICO],&#xA;&#x9;&#x9;DW.[RG_TECNICO] = ODS.[RG_TECNICO],&#xA;&#x9;&#x9;DW.[LOGRADOURO] = ODS.[LOGRADOURO_ENDERECO],&#xA;&#x9;&#x9;DW.[ENDERECO] = ODS.[ENDERECO], &#xA;&#x9;&#x9;DW.[NUMERO_ENDERECO] = ODS.[NUMERO_ENDERECO], &#xA;&#x9;&#x9;DW.[COMPLEMENTO_ENDERECO] = ODS.[COMPLEMENTO_ENDERECO], &#xA;&#x9;&#x9;DW.[BAIRRO] = '',&#xA;&#x9;&#x9;DW.[CEP] = ODS.[CEP_ENDERECO], &#xA;&#x9;&#x9;DW.[ESTADO] = ODS.[ESTADO_ENDERECO], &#xA;&#x9;&#x9;DW.[CIDADE] = ODS.[CIDADE_ENDERECO], &#xA;&#x9;&#x9;DW.[DDD_TELEFONE_TECNICO] = ODS.[DDD_TELEFONE], &#xA;&#x9;&#x9;DW.[TELEFONE_TECNICO] = ODS.[TELEFONE], &#xA;&#x9;&#x9;DW.[DDD_CELULAR_TECNICO] = ODS.[DDD_CELULAR], &#xA;&#x9;&#x9;DW.[CELULAR_TECNICO] = ODS.[CELULAR], &#xA;&#x9;&#x9;DW.[DDD_CELULAR_TECNICO_2] = ODS.[DDD_CELULAR_2], &#xA;&#x9;&#x9;DW.[CELULAR_TECNICO_2] = ODS.[CELULAR_2], &#xA;&#x9;&#x9;DW.[DDD_CELULAR_TECNICO_3] = ODS.[DDD_CELULAR_3], &#xA;&#x9;&#x9;DW.[CELULAR_TECNICO_3] = ODS.[CELULAR_3], &#xA;&#x9;&#x9;DW.[EMAIL_TECNICO] = ODS.[EMAIL], &#xA;&#x9;&#x9;DW.[EMAIL_TECNICO_2] = ODS.[EMAIL_2], &#xA;&#x9;&#x9;DW.[RECEBE_EMAIL] = ODS.[RECEBE_EMAIL], &#xA;&#x9;&#x9;DW.[RECEBE_SMS] = ODS.[RECEBE_SMS], &#xA;&#x9;&#x9;DW.[DATA_NASCIMENTO] = ODS.[DATA_NASCIMENTO], &#xA;&#x9;&#x9;DW.[SEXO] = ODS.[SEXO], &#xA;&#x9;&#x9;DW.[LATITUDE_TECNICO] = ODS.[LATITUDE_TECNICO], &#xA;&#x9;&#x9;DW.[LONGITUDE_TECNICO] = ODS.[LONGITUDE_TECNICO], &#xA;&#x9;&#x9;DW.[DATA_ALTERACAO] = GETDATE()&#xA;WHEN NOT MATCHED BY TARGET &#xA;THEN &#xA;&#x9;INSERT ([SK_LOJA],[CODIGO_TECNICO],[CODIGO_LOJA],[ATIVO_LOJA],[TECNICO_ATIVO],[CPF_TECNICO],[NOME_TECNICO],[RG_TECNICO],[LOGRADOURO],[ENDERECO],[NUMERO_ENDERECO],[COMPLEMENTO_ENDERECO],[BAIRRO],[CEP],[ESTADO],[CIDADE],&#xA;&#x9;&#x9;&#x9;[DDD_TELEFONE_TECNICO],[TELEFONE_TECNICO],[DDD_CELULAR_TECNICO],[CELULAR_TECNICO],[DDD_CELULAR_TECNICO_2],[CELULAR_TECNICO_2],[DDD_CELULAR_TECNICO_3],[CELULAR_TECNICO_3],[EMAIL_TECNICO],[EMAIL_TECNICO_2],&#xA;&#x9;&#x9;&#x9;[RECEBE_EMAIL],[RECEBE_SMS],[DATA_NASCIMENTO],[SEXO],[LATITUDE_TECNICO],[LONGITUDE_TECNICO],[DATA_INCLUSAO],[DATA_ALTERACAO],[DATA_INICIO_VIGENCIA],[DATA_FIM_VIGENCIA],[FLAG_MAIS_ATUAL])&#xA;&#x9;VALUES (ODS.[SK_LOJA],ODS.[CODIGO_TECNICO],ODS.[CODIGO_LOJA],ODS.[ATIVO_LOJA],ODS.[ATIVO_TECNICO],ODS.[CPF_TECNICO],ODS.[NOME_TECNICO],ODS.[RG_TECNICO],ODS.[LOGRADOURO_ENDERECO],ODS.[ENDERECO],ODS.[NUMERO_ENDERECO],&#xA;&#x9;&#x9;&#x9;ODS.[COMPLEMENTO_ENDERECO],NULL,ODS.[CEP_ENDERECO],ODS.[ESTADO_ENDERECO],ODS.[CIDADE_ENDERECO],ODS.[DDD_TELEFONE],ODS.[TELEFONE],ODS.[DDD_CELULAR],ODS.[CELULAR],ODS.[DDD_CELULAR_2],ODS.[CELULAR_2],&#xA;&#x9;&#x9;&#x9;ODS.[DDD_CELULAR_3],ODS.[CELULAR_3],ODS.[EMAIL],ODS.[EMAIL_2],ODS.[RECEBE_EMAIL],ODS.[RECEBE_SMS],ODS.[DATA_NASCIMENTO],ODS.[SEXO],ODS.[LATITUDE_TECNICO],ODS.[LONGITUDE_TECNICO],GETDATE(),GETDATE(),&#xA;&#x9;&#x9;&#x9;'1900-01-01 00:00:00.000',NULL,'A')&#xA;;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Carga da DW_TECNICO"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

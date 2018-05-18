@@ -1,0 +1,75 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/14/2018 1:34:16 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAGGI-G"
+  DTS:CreatorName="MAGGI-G\vinic"
+  DTS:DTSID="{47B237B4-CBC6-41A5-8216-3FD91BD23A5C}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="IN_ODS_USUARIO"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{E2A7E3D8-4D40-4E7A-BFFB-180BFACE6510}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D4A01209-F935-4E50-9ECF-F3E09ED507DB}"
+      DTS:ObjectName="52.168.77.45.DW.vinicius.dutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=52.168.77.45;User ID=vinicius.dutra;Initial Catalog=DW;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAT6/qe2skOESN8ocLsgXSaAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAASVrSR3fSv8eiXaxqelWlAV4q/KRs/kcM+X3dkzeRcRgAAAAAOgAAAAAIAACAAAABpggqJkos04Wiq8lW7ZldsuNq3i6Ps7U4CS7Hqr28ftCAAAAC+sn8BfPLeNllcMN9uQeEQpmAewRxWa8IqpLBmavI040AAAABGv/Xz+5nRs2aIrW/sVx60+Iueya729nvylDj7PT2R9Xukij9e32lXM8jgmXFIkNmGOmyxwCL2ijdWuQqraGeU</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga da ODS_USUARIO"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Carga da ODS_USUARIO"
+      DTS:DTSID="{F2F98880-AFA5-4639-8838-D09BE3AFA0EC}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga da ODS_USUARIO"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D4A01209-F935-4E50-9ECF-F3E09ED507DB}"
+          SQLTask:SqlStatementSource="MERGE [dbo].[ODS_USUARIO] AS ODS&#xA;USING [dbo].[STG_TC_SGE_USUARIO] AS STG&#xA;ON (ODS.[CODIGO_USUARIO] = STG.[ID_USUARIO])&#xA;WHEN MATCHED &#xA;THEN &#xA;&#x9;UPDATE SET &#xA;&#x9;&#x9;ODS.[CODIGO_REDE_CREDENCIADA] = STG.[ID_LOJA],&#xA;&#x9;&#x9;ODS.[CPF_PESSOA] = STG.[CPF_PESSOA],&#xA;&#x9;&#x9;ODS.[NOME_USUARIO] = STG.[NOME], &#xA;&#x9;&#x9;ODS.[EMAIL] = STG.[EMAIL], &#xA;&#x9;&#x9;ODS.[EMAIL_VALIDADO] = STG.[LO_EMAILVALIDADO],&#xA;&#x9;&#x9;ODS.[ATIVO] = STG.[LO_ATIVO], &#xA;&#x9;&#x9;ODS.[ALERTA] = STG.[LO_ALERTA], &#xA;&#x9;&#x9;ODS.[ALERTA_EMAIL] = STG.[LO_ALERTA_EMAIL], &#xA;&#x9;&#x9;ODS.[ALERTA_SMS] = STG.[LO_ALERTA_SMS], &#xA;&#x9;&#x9;ODS.[MASTER] = STG.[LO_MASTER], &#xA;&#x9;&#x9;ODS.[LOG_USUARIO_INCLUSAO] = STG.[LG_US_INC], &#xA;&#x9;&#x9;ODS.[LOG_DATA_INCLUSAO] = STG.[LG_DT_INC], &#xA;&#x9;&#x9;ODS.[LOG_USUARIO_ALTERACAO] = STG.[LG_US_ALT], &#xA;&#x9;&#x9;ODS.[LOG_DATA_ALTERACAO] = STG.[LG_DT_ALT], &#xA;&#x9;&#x9;ODS.[NUMERO_MATRICULA] = STG.[NR_MATRICULA], &#xA;&#x9;&#x9;ODS.[DATA_DEMISSAO] = STG.[DT_DEMISSAO], &#xA;&#x9;&#x9;ODS.[CODIGO_CELULA] = STG.[ID_CELULA], &#xA;&#x9;&#x9;ODS.[TABELA_MATRICULA] = STG.[TABELAMATRICULA],&#xA;&#x9;&#x9;ODS.[DATA_ALTERACAO] = GETDATE()&#xA;WHEN NOT MATCHED BY TARGET &#xA;THEN &#xA;&#x9;INSERT ([CODIGO_USUARIO],[CODIGO_REDE_CREDENCIADA],[CPF_PESSOA],[NOME_USUARIO],[EMAIL],[EMAIL_VALIDADO],[ATIVO],[ALERTA],[ALERTA_EMAIL],[ALERTA_SMS],[MASTER],[LOG_USUARIO_INCLUSAO],&#xA;&#x9;&#x9;&#x9;[LOG_DATA_INCLUSAO],[LOG_USUARIO_ALTERACAO],[LOG_DATA_ALTERACAO],[NUMERO_MATRICULA],[DATA_DEMISSAO],[CODIGO_CELULA],[TABELA_MATRICULA],[DATA_INCLUSAO],[DATA_ALTERACAO])&#xA;&#x9;VALUES (STG.[ID_USUARIO],STG.[ID_LOJA],STG.[CPF_PESSOA],STG.[NOME],STG.[EMAIL],STG.[LO_EMAILVALIDADO],STG.[LO_ATIVO],STG.[LO_ALERTA],STG.[LO_ALERTA_EMAIL],STG.[LO_ALERTA_SMS],&#xA;&#x9;&#x9;&#x9;STG.[LO_MASTER],STG.[LG_US_INC],STG.[LG_DT_INC],STG.[LG_US_ALT],STG.[LG_DT_ALT],STG.[NR_MATRICULA],STG.[DT_DEMISSAO],STG.[ID_CELULA],STG.[TABELAMATRICULA],GETDATE(),GETDATE())&#xA;;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Carga da ODS_USUARIO"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

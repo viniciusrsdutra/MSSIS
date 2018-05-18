@@ -1,0 +1,75 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/16/2018 11:25:00 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAGGI-G"
+  DTS:CreatorName="MAGGI-G\vinic"
+  DTS:DTSID="{CB54B5EA-3E00-4989-86BC-BD878679E3EE}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="IN_DW_META_VENDA_SERVICO_REGIONAL"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{28224DDA-E9DC-4C9F-B442-EC8D4A5E5A3E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{244AA2B8-8D06-4883-9339-8B4685CE2918}"
+      DTS:ObjectName="52.168.77.45.DW.vinicius.dutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=52.168.77.45;User ID=vinicius.dutra;Initial Catalog=DW;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAH0ueHa3BUUWfmA6Qv5NRlgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAkIPY+QOXIU89tCrReejeEBnGGx6u9nUgfcBn4CzelCgAAAAAOgAAAAAIAACAAAAB762zB/g7Oy/qE9HRjDV04izAyqAvmYsPuKxMSJ8HCLSAAAACXwNDbpnzoxst42y9aCfIrFV5I4HUhUP3IHWs1zIxkCUAAAAAPYMOrv1+1qfhwTNQKxLxICP5+uxbj/jHbHNP/0j8+hTHsBuV+EWRwDs7+1TilMDETyeYiKiDK3HnA/N+l7zGw</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga da DW_META_VENDA_SERVICO_REGIONAL"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Carga da DW_META_VENDA_SERVICO_REGIONAL"
+      DTS:DTSID="{ED9360AA-4E08-4597-8589-C3332FF035BE}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga da DW_META_VENDA_SERVICO_REGIONAL"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{244AA2B8-8D06-4883-9339-8B4685CE2918}"
+          SQLTask:SqlStatementSource="MERGE [DBO].[DW_META_VENDA_SERVICO_REGIONAL] AS DW&#xA;USING (SELECT META.[MES_ANO],META.[CODIGO_PROJETO],META.[CODIGO_IDENTIFICACAO],PROJ.[PROJETO],META.[CODIGO_ENTIDADE],META.[VALOR_META] AS CONVERSAO_PACOTE,'-1' AS VENDAS_INSTALADAS,GETDATE() AS [DATA_INCLUSAO],&#xA;&#x9;&#x9;GETDATE() AS [DATA_ALTERACAO], '1900-01-01 00:00:00.000' AS INICIO_VIGENCIA,'A' AS FLAG_MAIS_ATUAL&#xA;&#x9;&#x9;FROM [DBO].[ODS_META_VENDA_SERVICO] META&#xA;&#x9;&#x9;LEFT OUTER JOIN [DW].[DBO].[ODS_PROJETO_ELSYS] PROJ ON (META.[CODIGO_PROJETO] = PROJ.CODIGO_PROJETO)&#xA;&#x9;&#x9;WHERE META.[ENTIDADE_META] LIKE 'REGIONAL' AND META.[TIPO_INDICADOR] LIKE 'CONVERSÃO PACOTE PAGO') AS ODS&#xA;ON (DW.[MES_ANO] = ODS.[MES_ANO] AND DW.[CODIGO_PROJETO] = ODS.[CODIGO_PROJETO] AND DW.[CODIGO_REGIONAL] = ODS.[CODIGO_ENTIDADE])&#xA;WHEN MATCHED &#xA;THEN&#xA;&#x9;UPDATE SET &#xA;&#x9;&#x9;DW.[CONVERSAO_PACOTE_PAGO] = ODS.CONVERSAO_PACOTE, &#xA;&#x9;&#x9;DW.[VENDA_INSTALADA] = ODS.VENDAS_INSTALADAS,&#xA;&#x9;&#x9;DW.[DATA_ALTERACAO] = GETDATE()&#xA;WHEN NOT MATCHED BY TARGET &#xA;THEN &#xA;&#x9;INSERT ([MES_ANO],[CODIGO_PROJETO],[NOME_PROJETO],[CODIGO_REGIONAL],[CONVERSAO_PACOTE_PAGO],[VENDA_INSTALADA],[DATA_INCLUSAO],[DATA_ALTERACAO],[DATA_INICIO_VIGENCIA],[DATA_FIM_VIGENCIA],[FLAG_MAIS_ATUAL])&#xA;&#x9;VALUES (ODS.[MES_ANO],ODS.[CODIGO_PROJETO],ODS.[PROJETO],ODS.[CODIGO_ENTIDADE],ODS.[CONVERSAO_PACOTE],ODS.[VENDAS_INSTALADAS],GETDATE(),GETDATE(),'1900-01-01 00:00:00.000',NULL,'A')&#xA;;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="318,42"
+          Id="Package\Carga da DW_META_VENDA_SERVICO_REGIONAL"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

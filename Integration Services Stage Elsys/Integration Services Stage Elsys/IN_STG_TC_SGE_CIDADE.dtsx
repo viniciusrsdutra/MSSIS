@@ -1,0 +1,1698 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/4/2018 3:49:21 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAGGI-G"
+  DTS:CreatorName="MAGGI-G\vinic"
+  DTS:DTSID="{C76F29DA-89CC-4B5A-AAD0-25D0A05F2EB5}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="IN_STG_TC_SGE_CIDADE"
+  DTS:PackageType="5"
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{72C9A0A1-0302-455A-8422-17BD4D0CB01E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[10.203.48.11.Sige3_Hom.ViniDutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5B038240-E3C9-42BB-B7EE-251F4D5F9F49}"
+      DTS:ObjectName="10.203.48.11.Sige3_Hom.ViniDutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=10.203.48.11;User ID=ViniDutra;Initial Catalog=Sige3_Hom;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAT6/qe2skOESN8ocLsgXSaAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACqcU5WtT7RonXpVBd+brxwOcw+X3BfmfmF/zlsT4ov5QAAAAAOgAAAAAIAACAAAADP5mEzXLhUlr4zgOnxCSRKUzhqoQ9jrmwhB+SgHJOTziAAAADDAXI4MPLMJW9mFBUL7N4/D6ToWbzzpWZ9rQOCBtRZNUAAAADrTcXWfo0Cq5BjHkx7+DzIOCDLwoCBKRUAHB9zG9SwfGXCLAHGDaOwpy1NbtYGsO7KFmWuM3TeLMk4x57NC0vx</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0C177010-4747-4C20-A7E7-A4AF9ED857ED}"
+      DTS:ObjectName="52.168.77.45.DW.vinicius.dutra">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=52.168.77.45;User ID=vinicius.dutra;Initial Catalog=DW;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAT6/qe2skOESN8ocLsgXSaAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAXxRJJCUEMfckV/qJvkqt5cEsLKT/YZR5DVkGjysaOewAAAAAOgAAAAAIAACAAAAAD1Zhb31sj5g4V6Q8O9PEuCjWA6CMw6GEjG6cWzMXySiAAAAAWF5kcd1/mNyVvcVeL7HeYXYySsOsdUNUgwqWSEv1UKUAAAAAIMWTC1Om04IY/Ujc33OKTnaVVC7VxNKsGXUMIi8k97v78a1+uXgRo393A40Oz37nNdugWbic/pGSfS35DyZmT</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{09E3F7CA-E519-4F41-8A60-686E6A43124E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="DT_FINAL">
+      <DTS:VariableValue
+        DTS:DataType="7">5/9/2018 10:16:00 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{896A9AA7-4D55-45CC-A304-B18891542341}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="DT_INICIAL">
+      <DTS:VariableValue
+        DTS:DataType="7">5/9/2018 10:16:00 AM</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga da stage STG_TC_SGE_CIDADE"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{DDCCC4E7-CD4F-4BA0-828B-09BD791521E1}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga da stage STG_TC_SGE_CIDADE"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Grava dados na stage STG_TC_SGE_CIDADE do DW"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[STG_TC_SGE_CIDADE]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+                  connectionManagerRefId="Package.ConnectionManagers[52.168.77.45.DW.vinicius.dutra]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[ID_Estado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="ID_Estado"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_ESTADO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[ID_Estado]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[Lg_Us_Inc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Lg_Us_Inc"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_US_INC]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Inc]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[Lg_Dt_Inc]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Lg_Dt_Inc"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_DT_INC]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Inc]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[Lg_Us_Alt]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Lg_Us_Alt"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_US_ALT]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Alt]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[Lg_Dt_Alt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Lg_Dt_Alt"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_DT_ALT]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Alt]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[DT_CARGA]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DT_CARGA"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[DT_CARGA]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[ID_CIDADE]"
+                      cachedDataType="i4"
+                      cachedName="ID_CIDADE"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_CIDADE]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[ID_CIDADE]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[Cidade]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="Cidade"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[CIDADE]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Cidade]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[Nome_Cidade]"
+                      cachedDataType="wstr"
+                      cachedLength="60"
+                      cachedName="Nome_Cidade"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[NOME_CIDADE]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Nome_Cidade]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[lat]"
+                      cachedDataType="numeric"
+                      cachedName="lat"
+                      cachedPrecision="11"
+                      cachedScale="7"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[LAT]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[lat]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[lng]"
+                      cachedDataType="numeric"
+                      cachedName="lng"
+                      cachedPrecision="11"
+                      cachedScale="7"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[LNG]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[lng]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[FLG_Abre_Bairro]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="FLG_Abre_Bairro"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[FLG_ABRE_BAIRRO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[FLG_Abre_Bairro]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[tipo_local]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="tipo_local"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_LOCAL]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[tipo_local]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[id_Cidade_Pai]"
+                      cachedDataType="i4"
+                      cachedName="id_Cidade_Pai"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_CIDADE_PAI]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[id_Cidade_Pai]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[IBGE]"
+                      cachedDataType="i4"
+                      cachedName="IBGE"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[IBGE]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[IBGE]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[cidade_sem_acento]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="cidade_sem_acento"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[CIDADE_SEM_ACENTO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[cidade_sem_acento]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[Pc_Cobertura_Hughes]"
+                      cachedDataType="numeric"
+                      cachedName="Pc_Cobertura_Hughes"
+                      cachedPrecision="6"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[PC_COBERTURA_HUGHES]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Pc_Cobertura_Hughes]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[Class_Loja_Hughes]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Class_Loja_Hughes"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[CLASS_LOJA_HUGHES]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Class_Loja_Hughes]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[Situacao_Municipio]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Situacao_Municipio"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[SITUACAO_MUNICIPIO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Situacao_Municipio]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[id_Globo]"
+                      cachedDataType="i4"
+                      cachedName="id_Globo"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_GLOBO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[id_Globo]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[Populacao]"
+                      cachedDataType="i4"
+                      cachedName="Populacao"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[POPULACAO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Populacao]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[Dtv]"
+                      cachedDataType="i4"
+                      cachedName="Dtv"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[DTV]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Dtv]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[Tele_Potenciais]"
+                      cachedDataType="i4"
+                      cachedName="Tele_Potenciais"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[TELE_POTENCIAIS]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Tele_Potenciais]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[Pessoas_Domicilio]"
+                      cachedDataType="numeric"
+                      cachedName="Pessoas_Domicilio"
+                      cachedPrecision="10"
+                      cachedScale="6"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[PESSOAS_DOMICILIO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Pessoas_Domicilio]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[Penetracao_DTV]"
+                      cachedDataType="numeric"
+                      cachedName="Penetracao_DTV"
+                      cachedPrecision="10"
+                      cachedScale="6"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[PENETRACAO_DTV]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Penetracao_DTV]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[Tem_OI]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Tem_OI"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[TEM_OI]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Tem_OI]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[Tem_SKY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Tem_SKY"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[TEM_SKY]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Tem_SKY]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[Tem_CLARO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Tem_CLARO"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[TEM_CLARO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Tem_CLARO]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[Antena_OI]"
+                      cachedDataType="i4"
+                      cachedName="Antena_OI"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[ANTENA_OI]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Antena_OI]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[Antena_SKY]"
+                      cachedDataType="i4"
+                      cachedName="Antena_SKY"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[ANTENA_SKY]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Antena_SKY]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[Antena_CLARO]"
+                      cachedDataType="i4"
+                      cachedName="Antena_CLARO"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[ANTENA_CLARO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Antena_CLARO]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[PONTOS]"
+                      cachedDataType="i4"
+                      cachedName="PONTOS"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[PONTOS]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[PONTOS]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[PONTOS_MOTIVO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="PONTOS_MOTIVO"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[PONTOS_MOTIVO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[PONTOS_MOTIVO]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[Lo_Globo_Exclusiva]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Lo_Globo_Exclusiva"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[LO_GLOBO_EXCLUSIVA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Globo_Exclusiva]" />
+                    <inputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].Columns[Class_Loja_OI]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Class_Loja_OI"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[CLASS_LOJA_OI]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Class_Loja_OI]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_CIDADE]"
+                      dataType="i4"
+                      name="ID_CIDADE" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_ESTADO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="ID_ESTADO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[CIDADE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="CIDADE" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[NOME_CIDADE]"
+                      dataType="wstr"
+                      length="60"
+                      name="NOME_CIDADE" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[LAT]"
+                      dataType="numeric"
+                      name="LAT"
+                      precision="11"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[LNG]"
+                      dataType="numeric"
+                      name="LNG"
+                      precision="11"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[FLG_ABRE_BAIRRO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="FLG_ABRE_BAIRRO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_US_INC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="LG_US_INC" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_DT_INC]"
+                      dataType="dbTimeStamp"
+                      name="LG_DT_INC" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_US_ALT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="LG_US_ALT" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[LG_DT_ALT]"
+                      dataType="dbTimeStamp"
+                      name="LG_DT_ALT" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_LOCAL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="TIPO_LOCAL" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_CIDADE_PAI]"
+                      dataType="i4"
+                      name="ID_CIDADE_PAI" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[IBGE]"
+                      dataType="i4"
+                      name="IBGE" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[CIDADE_SEM_ACENTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="CIDADE_SEM_ACENTO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[PC_COBERTURA_HUGHES]"
+                      dataType="numeric"
+                      name="PC_COBERTURA_HUGHES"
+                      precision="6"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[CLASS_LOJA_HUGHES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="CLASS_LOJA_HUGHES" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[SITUACAO_MUNICIPIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="SITUACAO_MUNICIPIO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[ID_GLOBO]"
+                      dataType="i4"
+                      name="ID_GLOBO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[POPULACAO]"
+                      dataType="i4"
+                      name="POPULACAO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[DTV]"
+                      dataType="i4"
+                      name="DTV" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[TELE_POTENCIAIS]"
+                      dataType="i4"
+                      name="TELE_POTENCIAIS" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[PESSOAS_DOMICILIO]"
+                      dataType="numeric"
+                      name="PESSOAS_DOMICILIO"
+                      precision="10"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[PENETRACAO_DTV]"
+                      dataType="numeric"
+                      name="PENETRACAO_DTV"
+                      precision="10"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[TEM_OI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="TEM_OI" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[TEM_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="TEM_SKY" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[TEM_CLARO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="TEM_CLARO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[ANTENA_OI]"
+                      dataType="i4"
+                      name="ANTENA_OI" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[ANTENA_SKY]"
+                      dataType="i4"
+                      name="ANTENA_SKY" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[ANTENA_CLARO]"
+                      dataType="i4"
+                      name="ANTENA_CLARO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[PONTOS]"
+                      dataType="i4"
+                      name="PONTOS" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[PONTOS_MOTIVO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="PONTOS_MOTIVO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[LO_GLOBO_EXCLUSIVA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="LO_GLOBO_EXCLUSIVA" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[CLASS_LOJA_OI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="CLASS_LOJA_OI" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      name="DT_CARGA" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Obtém os dados da tabela Tc_SGE_Cidade do SIGE"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Tc_Sge_Cidade]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        ID_CIDADE, ID_Estado, Cidade, Nome_Cidade, lat, lng, FLG_Abre_Bairro, Lg_Us_Inc, Lg_Dt_Inc, Lg_Us_Alt, Lg_Dt_Alt, tipo_local, id_Cidade_Pai, IBGE, cidade_sem_acento, Pc_Cobertura_Hughes, Class_Loja_Hughes, 
+                         Situacao_Municipio, id_Globo, Populacao, Dtv, Tele_Potenciais, Pessoas_Domicilio, Penetracao_DTV, Tem_OI, Tem_SKY, Tem_CLARO, Antena_OI, Antena_SKY, Antena_CLARO, PONTOS, PONTOS_MOTIVO, 
+                         Lo_Globo_Exclusiva, Class_Loja_OI, GETDATE() AS DT_CARGA
+FROM            Tc_Sge_Cidade
+WHERE        (Lg_Dt_Inc BETWEEN ? AND ?) OR
+                         (Lg_Dt_Alt BETWEEN ? AND ?)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"0:Input",{896A9AA7-4D55-45CC-A304-B18891542341};"1:Input",{09E3F7CA-E519-4F41-8A60-686E6A43124E};"2:Input",{896A9AA7-4D55-45CC-A304-B18891542341};"3:Input",{09E3F7CA-E519-4F41-8A60-686E6A43124E};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[10.203.48.11.Sige3_Hom.ViniDutra]"
+                  connectionManagerRefId="Package.ConnectionManagers[10.203.48.11.Sige3_Hom.ViniDutra]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[ID_Estado]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[ID_Estado]"
+                      length="2"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[ID_Estado]"
+                      name="ID_Estado"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Inc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Us_Inc]"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Inc]"
+                      name="Lg_Us_Inc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Inc]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Dt_Inc]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Inc]"
+                      name="Lg_Dt_Inc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Alt]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Us_Alt]"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Us_Alt]"
+                      name="Lg_Us_Alt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Alt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Dt_Alt]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Lg_Dt_Alt]"
+                      name="Lg_Dt_Alt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[DT_CARGA]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[DT_CARGA]"
+                      name="DT_CARGA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[ID_CIDADE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[ID_CIDADE]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[ID_CIDADE]"
+                      name="ID_CIDADE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Cidade]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Cidade]"
+                      length="40"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Cidade]"
+                      name="Cidade"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Nome_Cidade]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Nome_Cidade]"
+                      length="60"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Nome_Cidade]"
+                      name="Nome_Cidade"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[lat]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[lat]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[lat]"
+                      name="lat"
+                      precision="11"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[lng]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[lng]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[lng]"
+                      name="lng"
+                      precision="11"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[FLG_Abre_Bairro]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[FLG_Abre_Bairro]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[FLG_Abre_Bairro]"
+                      name="FLG_Abre_Bairro"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[tipo_local]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[tipo_local]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[tipo_local]"
+                      name="tipo_local"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[id_Cidade_Pai]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[id_Cidade_Pai]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[id_Cidade_Pai]"
+                      name="id_Cidade_Pai"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[IBGE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[IBGE]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[IBGE]"
+                      name="IBGE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[cidade_sem_acento]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[cidade_sem_acento]"
+                      length="40"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[cidade_sem_acento]"
+                      name="cidade_sem_acento"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Pc_Cobertura_Hughes]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Pc_Cobertura_Hughes]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Pc_Cobertura_Hughes]"
+                      name="Pc_Cobertura_Hughes"
+                      precision="6"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Class_Loja_Hughes]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Class_Loja_Hughes]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Class_Loja_Hughes]"
+                      name="Class_Loja_Hughes"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Situacao_Municipio]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Situacao_Municipio]"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Situacao_Municipio]"
+                      name="Situacao_Municipio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[id_Globo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[id_Globo]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[id_Globo]"
+                      name="id_Globo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Populacao]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Populacao]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Populacao]"
+                      name="Populacao"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Dtv]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Dtv]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Dtv]"
+                      name="Dtv"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Tele_Potenciais]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Tele_Potenciais]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Tele_Potenciais]"
+                      name="Tele_Potenciais"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Pessoas_Domicilio]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Pessoas_Domicilio]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Pessoas_Domicilio]"
+                      name="Pessoas_Domicilio"
+                      precision="10"
+                      scale="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Penetracao_DTV]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Penetracao_DTV]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Penetracao_DTV]"
+                      name="Penetracao_DTV"
+                      precision="10"
+                      scale="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Tem_OI]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Tem_OI]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Tem_OI]"
+                      name="Tem_OI"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Tem_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Tem_SKY]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Tem_SKY]"
+                      name="Tem_SKY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Tem_CLARO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Tem_CLARO]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Tem_CLARO]"
+                      name="Tem_CLARO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Antena_OI]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Antena_OI]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Antena_OI]"
+                      name="Antena_OI"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Antena_SKY]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Antena_SKY]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Antena_SKY]"
+                      name="Antena_SKY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Antena_CLARO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Antena_CLARO]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Antena_CLARO]"
+                      name="Antena_CLARO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[PONTOS]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[PONTOS]"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[PONTOS]"
+                      name="PONTOS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[PONTOS_MOTIVO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[PONTOS_MOTIVO]"
+                      length="30"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[PONTOS_MOTIVO]"
+                      name="PONTOS_MOTIVO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Globo_Exclusiva]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lo_Globo_Exclusiva]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Lo_Globo_Exclusiva]"
+                      name="Lo_Globo_Exclusiva"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Class_Loja_OI]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Class_Loja_OI]"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].Columns[Class_Loja_OI]"
+                      name="Class_Loja_OI"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[ID_Estado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="ID_Estado" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Us_Inc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Lg_Us_Inc" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Dt_Inc]"
+                      dataType="dbTimeStamp"
+                      name="Lg_Dt_Inc" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Us_Alt]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Lg_Us_Alt" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lg_Dt_Alt]"
+                      dataType="dbTimeStamp"
+                      name="Lg_Dt_Alt" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      name="DT_CARGA" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[ID_CIDADE]"
+                      dataType="i4"
+                      name="ID_CIDADE" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Cidade]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="Cidade" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Nome_Cidade]"
+                      dataType="wstr"
+                      length="60"
+                      name="Nome_Cidade" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[lat]"
+                      dataType="numeric"
+                      name="lat"
+                      precision="11"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[lng]"
+                      dataType="numeric"
+                      name="lng"
+                      precision="11"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[FLG_Abre_Bairro]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="FLG_Abre_Bairro" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[tipo_local]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="tipo_local" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[id_Cidade_Pai]"
+                      dataType="i4"
+                      name="id_Cidade_Pai" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[IBGE]"
+                      dataType="i4"
+                      name="IBGE" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[cidade_sem_acento]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="cidade_sem_acento" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Pc_Cobertura_Hughes]"
+                      dataType="numeric"
+                      name="Pc_Cobertura_Hughes"
+                      precision="6"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Class_Loja_Hughes]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Class_Loja_Hughes" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Situacao_Municipio]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Situacao_Municipio" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[id_Globo]"
+                      dataType="i4"
+                      name="id_Globo" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Populacao]"
+                      dataType="i4"
+                      name="Populacao" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Dtv]"
+                      dataType="i4"
+                      name="Dtv" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Tele_Potenciais]"
+                      dataType="i4"
+                      name="Tele_Potenciais" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Pessoas_Domicilio]"
+                      dataType="numeric"
+                      name="Pessoas_Domicilio"
+                      precision="10"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Penetracao_DTV]"
+                      dataType="numeric"
+                      name="Penetracao_DTV"
+                      precision="10"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Tem_OI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Tem_OI" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Tem_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Tem_SKY" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Tem_CLARO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Tem_CLARO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Antena_OI]"
+                      dataType="i4"
+                      name="Antena_OI" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Antena_SKY]"
+                      dataType="i4"
+                      name="Antena_SKY" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Antena_CLARO]"
+                      dataType="i4"
+                      name="Antena_CLARO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[PONTOS]"
+                      dataType="i4"
+                      name="PONTOS" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[PONTOS_MOTIVO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="PONTOS_MOTIVO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Lo_Globo_Exclusiva]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Lo_Globo_Exclusiva" />
+                    <externalMetadataColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output].ExternalColumns[Class_Loja_OI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Class_Loja_OI" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[ID_CIDADE]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[ID_CIDADE]"
+                      name="ID_CIDADE" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[ID_Estado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[ID_Estado]"
+                      name="ID_Estado" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Cidade]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Cidade]"
+                      name="Cidade" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Nome_Cidade]"
+                      dataType="wstr"
+                      length="60"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Nome_Cidade]"
+                      name="Nome_Cidade" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[lat]"
+                      dataType="numeric"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[lat]"
+                      name="lat"
+                      precision="11"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[lng]"
+                      dataType="numeric"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[lng]"
+                      name="lng"
+                      precision="11"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[FLG_Abre_Bairro]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[FLG_Abre_Bairro]"
+                      name="FLG_Abre_Bairro" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Us_Inc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Us_Inc]"
+                      name="Lg_Us_Inc" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Dt_Inc]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Dt_Inc]"
+                      name="Lg_Dt_Inc" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Us_Alt]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Us_Alt]"
+                      name="Lg_Us_Alt" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Dt_Alt]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Lg_Dt_Alt]"
+                      name="Lg_Dt_Alt" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[tipo_local]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[tipo_local]"
+                      name="tipo_local" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[id_Cidade_Pai]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[id_Cidade_Pai]"
+                      name="id_Cidade_Pai" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[IBGE]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[IBGE]"
+                      name="IBGE" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[cidade_sem_acento]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[cidade_sem_acento]"
+                      name="cidade_sem_acento" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Pc_Cobertura_Hughes]"
+                      dataType="numeric"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Pc_Cobertura_Hughes]"
+                      name="Pc_Cobertura_Hughes"
+                      precision="6"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Class_Loja_Hughes]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Class_Loja_Hughes]"
+                      name="Class_Loja_Hughes" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Situacao_Municipio]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Situacao_Municipio]"
+                      name="Situacao_Municipio" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[id_Globo]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[id_Globo]"
+                      name="id_Globo" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Populacao]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Populacao]"
+                      name="Populacao" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Dtv]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Dtv]"
+                      name="Dtv" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Tele_Potenciais]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Tele_Potenciais]"
+                      name="Tele_Potenciais" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Pessoas_Domicilio]"
+                      dataType="numeric"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Pessoas_Domicilio]"
+                      name="Pessoas_Domicilio"
+                      precision="10"
+                      scale="6" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Penetracao_DTV]"
+                      dataType="numeric"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Penetracao_DTV]"
+                      name="Penetracao_DTV"
+                      precision="10"
+                      scale="6" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Tem_OI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Tem_OI]"
+                      name="Tem_OI" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Tem_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Tem_SKY]"
+                      name="Tem_SKY" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Tem_CLARO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Tem_CLARO]"
+                      name="Tem_CLARO" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Antena_OI]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Antena_OI]"
+                      name="Antena_OI" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Antena_SKY]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Antena_SKY]"
+                      name="Antena_SKY" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Antena_CLARO]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Antena_CLARO]"
+                      name="Antena_CLARO" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[PONTOS]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[PONTOS]"
+                      name="PONTOS" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[PONTOS_MOTIVO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[PONTOS_MOTIVO]"
+                      name="PONTOS_MOTIVO" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Lo_Globo_Exclusiva]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Lo_Globo_Exclusiva]"
+                      name="Lo_Globo_Exclusiva" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Class_Loja_OI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[Class_Loja_OI]"
+                      name="Class_Loja_OI" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[DT_CARGA]"
+                      name="DT_CARGA" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carga da stage STG_TC_SGE_CIDADE.Paths[OLE DB Source Output]"
+              endId="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Limpa a stage STG_TC_SGE_CIDADE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Limpa a Stage STG_TC_SGE_CIDADE"
+      DTS:DTSID="{BD67B3FD-1A05-4DA2-AD7D-E7395EA72404}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Limpa a stage STG_TC_SGE_CIDADE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{0C177010-4747-4C20-A7E7-A4AF9ED857ED}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[STG_TC_SGE_CIDADE]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Obtém a data da carga do SGBD"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Obtém datas de pesquisa da tabela ponteiro"
+      DTS:DTSID="{b6ee7aaf-a300-4b39-898f-fe6b587a3592}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Obtém a data da carga do SGBD"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{0C177010-4747-4C20-A7E7-A4AF9ED857ED}"
+          SQLTask:SqlStatementSource="SELECT [DT_INICIAL],[DT_FINAL],[DT_INCLUSAO],[DT_ATUALIZACAO]&#xA;FROM [DW].[dbo].[PRM_DATE_POINTER]&#xA;WHERE [DS_SISTEMA] LIKE 'SIGE' AND DT_INCLUSAO IN (SELECT MAX(DT_INCLUSAO) FROM [DW].[dbo].[PRM_DATE_POINTER] WHERE [DS_SISTEMA] LIKE 'SIGE');"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="DT_FINAL"
+            SQLTask:DtsVariableName="User::DT_FINAL" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="DT_INICIAL"
+            SQLTask:DtsVariableName="User::DT_INICIAL" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{1F94F029-11E8-4300-9C17-AA991DA1CEFC}"
+      DTS:From="Package\Limpa a stage STG_TC_SGE_CIDADE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Carga da stage STG_TC_SGE_CIDADE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{106C46A7-5181-461B-9FBF-D30A711EE161}"
+      DTS:From="Package\Obtém a data da carga do SGBD"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Carga da stage STG_TC_SGE_CIDADE" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="259,42"
+          Id="Package\Carga da stage STG_TC_SGE_CIDADE"
+          TopLeft="307,107.5" />
+        <NodeLayout
+          Size="254,42"
+          Id="Package\Limpa a stage STG_TC_SGE_CIDADE"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Obtém a data da carga do SGBD"
+          TopLeft="320.5,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="132.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="262.166666666667,60"
+              Start="0,0"
+              End="262.166666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.7789716039908" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.7789716039908"
+                    Point2="0,35.7789716039908"
+                    Point3="4,35.7789716039908" />
+                  <mssgle:LineSegment
+                    End="258.166666666667,35.7789716039908" />
+                  <mssgle:CubicBezierSegment
+                    Point1="258.166666666667,35.7789716039908"
+                    Point2="262.166666666667,35.7789716039908"
+                    Point3="262.166666666667,39.7789716039908" />
+                  <mssgle:LineSegment
+                    End="262.166666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="436.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="41.8333333333333,60"
+              Start="0,0"
+              End="41.8333333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.7789716039908" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.7789716039908"
+                    Point2="0,35.7789716039908"
+                    Point3="4,35.7789716039908" />
+                  <mssgle:LineSegment
+                    End="37.8333333333333,35.7789716039908" />
+                  <mssgle:CubicBezierSegment
+                    Point1="37.8333333333333,35.7789716039908"
+                    Point2="41.8333333333333,35.7789716039908"
+                    Point3="41.8333333333333,39.7789716039908" />
+                  <mssgle:LineSegment
+                    End="41.8333333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Carga da stage STG_TC_SGE_CIDADE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="326,42"
+          Id="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="326,42"
+          Id="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW"
+          TopLeft="5.50000000000003,107.5" />
+        <EdgeLayout
+          Id="Package\Carga da stage STG_TC_SGE_CIDADE.Paths[OLE DB Source Output]"
+          TopLeft="168.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga da stage STG_TC_SGE_CIDADE\Grava dados na stage STG_TC_SGE_CIDADE do DW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga da stage STG_TC_SGE_CIDADE\Obtém os dados da tabela Tc_SGE_Cidade do SIGE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
